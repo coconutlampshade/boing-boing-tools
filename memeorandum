@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+import requests
+from bs4 import BeautifulSoup
+
+# Scrape memeorandum river
+url = "https://www.memeorandum.com/river"
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
+r = requests.get(url, headers=headers)
+soup = BeautifulSoup(r.text, "html.parser")
+
+# Extract headlines (skip source-only links)
+articles = []
+seen_urls = set()
+
+for a in soup.select('a[href]'):
+    href = a.get('href', '')
+    text = a.get_text(strip=True)
+
+    # Filter for actual article links (not source names, not internal links)
+    if (text and
+        len(text) > 30 and  # Headlines are longer than source names
+        href.startswith('http') and
+        'memeorandum' not in href and
+        href not in seen_urls):
+
+        seen_urls.add(href)
+        articles.append({"title": text, "url": href})
+
+        if len(articles) >= 20:
+            break
+
+print("Pick the ones you want posts about:\n")
+for i, article in enumerate(articles, 1):
+    print(f"{i}. {article['title'][:100]}")
+    print(f"   {article['url']}\n")
