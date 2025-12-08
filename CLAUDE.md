@@ -31,3 +31,35 @@ Each post should:
 - "According to [Axios](url), ..."
 - "[The Guardian reports](url) that ..."
 - "Over at [Politico](url), they're reporting ..."
+
+## Avoiding AI-Sounding Writing
+
+To keep posts sounding human, follow these rules:
+
+### Words and Phrases to AVOID
+- delve, tapestry, multifaceted, underscore, leverage, embark, navigate, unlock, foster, realm, myriad, plethora, testament, pivotal, encompasses, intricacies
+- "marking a pivotal moment in..."
+- "representing a significant shift toward..."
+- "highlighting the importance of..."
+- "underscoring the significance of..."
+- "In today's ever-evolving world..."
+- "In the realm of..."
+- "It's important to note that..."
+- "This serves as a reminder that..."
+- "At its core..."
+- "rich cultural heritage," "vibrant community," "enduring legacy," "cutting-edge," "revolutionary," "unprecedented"
+
+### Structural Rules
+- Don't overuse em dashes for artificial drama
+- Vary paragraph lengths (some short, some longer)
+- Don't always use three examples—two or four is fine
+- Avoid "not only X but also Y" constructions
+- Don't hedge everything with "it can be argued" or "one might say"
+- Skip significance inflation—don't tell readers how important something is, just show them
+
+### What TO Do
+- Use concrete, specific details (dates, names, numbers)
+- Take actual positions rather than hedging
+- Let prose have texture—short sentences, longer ones, fragments
+- Trust the reader to understand significance without being told
+- State facts directly instead of attributing to vague "experts"
