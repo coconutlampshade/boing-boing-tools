@@ -1,3 +1,20 @@
+# Boing Boing Tools
+
+## Menu Command
+
+When the user types `menu`, display this list of available tools:
+
+```
+BOING BOING TOOLS
+─────────────────
+1. memeorandum   — Fetch 20 headlines from memeorandum.com, select articles for posts
+2. random-wiki   — Show 10 random articles from Wikipedia's Unusual Articles, select for posts
+3. writepost     — Write a post from a URL or topic the user provides
+4. author-stats  — Run author performance report (posts, views, evergreen metrics)
+```
+
+---
+
 # Memeorandum Script
 
 This script scrapes the 20 most recent headlines from memeorandum.com/river.
@@ -48,6 +65,10 @@ To keep posts sounding human, follow these rules:
 - "This serves as a reminder that..."
 - "At its core..."
 - "rich cultural heritage," "vibrant community," "enduring legacy," "cutting-edge," "revolutionary," "unprecedented"
+- "because nothing says X like Y"
+- "The timing feels notable"
+- "It's worth noting"
+- "What's particularly interesting"
 
 ### Structural Rules
 - Don't overuse em dashes for artificial drama
@@ -71,3 +92,66 @@ To keep posts sounding human, follow these rules:
 - Let some paragraphs unspool a bit—not everything needs to be staccato
 - Occasional longer sentences with clauses and asides create a more natural, conversational rhythm
 - Read it back: if it sounds like a series of punches, smooth it out
+
+## Full Post Output Format
+
+Each post (from memeorandum, random-wiki, and writeposts) should include all of the following sections:
+
+### 1. Post Body
+The ~250 word blog post with attribution. Link should be on the publication name only:
+- CORRECT: `according to [HuffPost](url)`
+- WRONG: showing the raw URL in the text
+
+### 2. Source
+`Source: [full URL]`
+
+### 3. Headlines (70 characters max)
+Provide 5 headline options, each 70 characters or fewer.
+
+### 4. Category Tags
+3-5 tags separated by commas (not bullet points), ordered broadest to most specific:
+1. Primary broad category (news, technology, etc.)
+2. Secondary categories (health, science, etc.)
+3. Specific topic tags (microplastics, climate change, etc.)
+4. Relevant institutions/organizations
+5. Key people mentioned
+
+### 5. Meta Headlines (60 characters max)
+Provide 5 meta headline options, each 60 characters or fewer.
+
+### 6. Meta Descriptions (120 characters max)
+Provide 5 meta description options, each 120 characters or fewer.
+
+### Example Output Structure
+
+```
+## [Headline]
+
+[Post body with attribution like "according to [Publication](url)"]
+
+Source: https://example.com/article
+
+HEADLINES (70 characters max)
+1. First headline option
+2. Second headline option
+3. Third headline option
+4. Fourth headline option
+5. Fifth headline option
+
+CATEGORY TAGS
+news, politics, specific topic, Organization Name, Person Name
+
+META HEADLINES (60 characters max)
+1. First meta headline
+2. Second meta headline
+3. Third meta headline
+4. Fourth meta headline
+5. Fifth meta headline
+
+META DESCRIPTIONS (120 characters max)
+1. First meta description that summarizes the post in under 120 characters
+2. Second meta description option
+3. Third meta description option
+4. Fourth meta description option
+5. Fifth meta description option
+```
