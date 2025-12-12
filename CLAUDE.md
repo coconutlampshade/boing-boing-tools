@@ -93,6 +93,10 @@ The publication name should be plain text. The hyperlink goes on a descriptive p
 - "The Guardian reports that [climate scientists have discovered](url) a troubling trend..."
 - "Over at Politico, they're reporting [the senator will not seek reelection](url)..."
 
+## Wikipedia Attribution
+
+For posts based on Wikipedia articles (from random-wiki), do NOT include inline links in the post body. Write naturally without attribution phrases like "According to Wikipedia." Just include the URL in the Source section at the bottom—the editor will add the link manually where appropriate.
+
 ## Avoiding AI-Sounding Writing
 
 To keep posts sounding human, follow these rules:
