@@ -8,7 +8,7 @@ When the user types `menu`, display this list of available tools:
 BOING BOING TOOLS
 ─────────────────
 1. memeorandum   — Fetch 20 headlines from memeorandum.com, select articles for posts
-2. random-wiki   — Show 10 random articles from Wikipedia's Unusual Articles, select for posts
+2. random-wiki   — Show 20 random articles from Wikipedia's Unusual Articles, select for posts
 3. writepost     — Write a post from a URL or topic the user provides
 4. author-stats  — Run author performance report (posts, views, evergreen metrics)
 ```
@@ -24,6 +24,48 @@ This script scrapes the 20 most recent headlines from memeorandum.com/river.
 1. Run the `memeorandum` script to display the 20 most recent headlines with numbered options
 2. User selects which articles they want posts about (e.g., "3, 7, 12")
 3. For each selected article, fetch the full article content and generate a ~250 word blog post
+
+---
+
+# Random Wiki Script
+
+This tool displays 20 random articles from Wikipedia's Unusual Articles page for the user to select for blog posts.
+
+## Source
+
+Articles MUST be pulled exclusively from: https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles
+
+Do NOT use Wikipedia's general random article feature. Only articles listed on the Unusual Articles page qualify.
+
+## Workflow
+
+1. Fetch the Wikipedia Unusual Articles page
+2. Extract article links and randomly select 20 of them
+3. For each article, fetch its summary and display:
+   - Numbered list (1-20)
+   - Article title
+   - One-sentence description of what makes it unusual/interesting
+   - URL
+4. User selects which articles they want posts about (e.g., "3, 7, 12")
+5. For each selected article, fetch the full content and generate a ~250 word blog post
+
+## Example Output Format
+
+```
+UNUSUAL WIKIPEDIA ARTICLES
+──────────────────────────
+1. Tarrare
+   French showman who could eat enormous quantities of meat, including live animals.
+   https://en.wikipedia.org/wiki/Tarrare
+
+2. Euthanasia Coaster
+   Hypothetical roller coaster designed to kill its passengers humanely.
+   https://en.wikipedia.org/wiki/Euthanasia_Coaster
+
+[...continues to 20]
+```
+
+---
 
 ## Blog Post Style
 
