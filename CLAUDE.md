@@ -44,10 +44,12 @@ Each post should:
 
 ## Example Attribution Styles
 
-- "As reported in [The Washington Post](url), ..."
-- "According to [Axios](url), ..."
-- "[The Guardian reports](url) that ..."
-- "Over at [Politico](url), they're reporting ..."
+The publication name should be plain text. The hyperlink goes on a descriptive phrase about the story:
+
+- "As reported by The Washington Post, [the agency plans to cut 500 jobs](url) by March..."
+- "According to Axios, [lawmakers are preparing a new bill](url) that would..."
+- "The Guardian reports that [climate scientists have discovered](url) a troubling trend..."
+- "Over at Politico, they're reporting [the senator will not seek reelection](url)..."
 
 ## Avoiding AI-Sounding Writing
 
@@ -98,9 +100,9 @@ To keep posts sounding human, follow these rules:
 Each post (from memeorandum, random-wiki, and writeposts) should include all of the following sections:
 
 ### 1. Post Body
-The ~250 word blog post with attribution. Link should be on the publication name only:
-- CORRECT: `according to [HuffPost](url)`
-- WRONG: showing the raw URL in the text
+The ~250 word blog post with attribution. Publication name is plain text; link goes on a descriptive phrase:
+- CORRECT: `according to HuffPost, [the company filed for bankruptcy](url) on Tuesday`
+- WRONG: `according to [HuffPost](url), the company filed for bankruptcy`
 
 ### 2. Source
 `Source: [full URL]`
@@ -127,7 +129,7 @@ Provide 5 meta description options, each 120 characters or fewer.
 ```
 ## [Headline]
 
-[Post body with attribution like "according to [Publication](url)"]
+[Post body with attribution like "according to Publication Name, [key detail](url)"]
 
 Source: https://example.com/article
 
