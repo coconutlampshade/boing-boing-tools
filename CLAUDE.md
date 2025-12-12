@@ -39,15 +39,13 @@ Do NOT use Wikipedia's general random article feature. Only articles listed on t
 
 ## Workflow
 
-1. Fetch the Wikipedia Unusual Articles page
-2. Extract article links and randomly select 20 of them
-3. For each article, fetch its summary and display:
+1. Run `python3 /Users/mark/Desktop/boing-boing-tools/random_wiki.py` to fetch and display 20 random unusual articles
    - Numbered list (1-20)
    - Article title
    - One-sentence description of what makes it unusual/interesting
    - URL
-4. User selects which articles they want posts about (e.g., "3, 7, 12")
-5. For each selected article, fetch the full content and generate a ~250 word blog post
+2. User selects which articles they want posts about (e.g., "3, 7, 12")
+3. For each selected article, fetch the full content and generate a ~250 word blog post
 
 ## Example Output Format
 
