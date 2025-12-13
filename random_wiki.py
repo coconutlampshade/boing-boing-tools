@@ -11,7 +11,6 @@ import urllib.request
 import urllib.parse
 import re
 import sys
-import json
 import random
 from html import unescape
 

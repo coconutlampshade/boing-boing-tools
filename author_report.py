@@ -84,7 +84,6 @@ def main():
 
     after_date = first_day.strftime("%Y-%m-%dT00:00:00")
     before_date = last_day.strftime("%Y-%m-%dT00:00:00")
-    stats_date = first_day.strftime("%Y-%m-%d")
 
     token = get_token()
 
