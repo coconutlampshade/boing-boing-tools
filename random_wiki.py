@@ -3,16 +3,37 @@
 Random Wikipedia Unusual Articles fetcher.
 
 Usage:
-  python3 random_wiki.py              # List 20 random unusual articles
-  python3 random_wiki.py "Article"    # Fetch full content for an article
-  python3 random_wiki.py url          # Fetch content from a Wikipedia URL
+  python3 random_wiki.py                    # List 20 random unusual articles
+  python3 random_wiki.py "Article"          # Fetch full content for an article
+  python3 random_wiki.py url                # Fetch content from a Wikipedia URL
+  python3 random_wiki.py --preview "Article"  # Quick 2-3 sentence summary
+  python3 random_wiki.py -p "Article"         # Short form of --preview
 """
 import urllib.request
 import urllib.parse
+import json
 import re
 import sys
 import random
 from html import unescape
+
+
+def fetch_article_summary(title):
+    """Fetch a quick 2-3 sentence summary via Wikipedia API."""
+    encoded = urllib.parse.quote(title.replace(' ', '_'))
+    api_url = f'https://en.wikipedia.org/api/rest_v1/page/summary/{encoded}'
+    req = urllib.request.Request(api_url, headers={
+        'User-Agent': 'Mozilla/5.0 (compatible; BoingBoingBot/1.0)',
+        'Accept': 'application/json'
+    })
+    try:
+        response = urllib.request.urlopen(req).read().decode('utf-8')
+        data = json.loads(response)
+        extract = data.get('extract', 'No summary available.')
+        url = data.get('content_urls', {}).get('desktop', {}).get('page', '')
+        return extract, url
+    except urllib.error.HTTPError as e:
+        return f"Error fetching summary: {e.code} {e.reason}", ""
 
 
 def fetch_article_content(title):
@@ -79,18 +100,38 @@ def list_unusual_articles():
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
-        arg = ' '.join(sys.argv[1:])
-        # Check if it's a URL
-        if 'wikipedia.org/wiki/' in arg:
-            title = extract_title_from_url(arg)
-            if title:
-                print(f"=== {title} ===\n")
-                print(fetch_article_content(title))
+        # Check for preview flag
+        if sys.argv[1] in ('--preview', '-p'):
+            if len(sys.argv) > 2:
+                arg = ' '.join(sys.argv[2:])
+                # Handle URL or title
+                if 'wikipedia.org/wiki/' in arg:
+                    title = extract_title_from_url(arg)
+                else:
+                    title = arg
+                if title:
+                    summary, url = fetch_article_summary(title)
+                    print(f"=== {title} ===\n")
+                    print(summary)
+                    if url:
+                        print(f"\n{url}")
+                else:
+                    print("Could not parse input")
             else:
-                print("Could not parse Wikipedia URL")
+                print("Usage: random_wiki.py --preview \"Article Title\"")
         else:
-            # Treat as article title
-            print(f"=== {arg} ===\n")
-            print(fetch_article_content(arg))
+            arg = ' '.join(sys.argv[1:])
+            # Check if it's a URL
+            if 'wikipedia.org/wiki/' in arg:
+                title = extract_title_from_url(arg)
+                if title:
+                    print(f"=== {title} ===\n")
+                    print(fetch_article_content(title))
+                else:
+                    print("Could not parse Wikipedia URL")
+            else:
+                # Treat as article title
+                print(f"=== {arg} ===\n")
+                print(fetch_article_content(arg))
     else:
         list_unusual_articles()
