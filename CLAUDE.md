@@ -42,7 +42,7 @@ Do NOT use Wikipedia's general random article feature. Only articles listed on t
 1. Run `python3 /Users/mark/Desktop/boing-boing-tools/random_wiki.py` to fetch and display 20 random unusual articles
    - Numbered list (1-20)
    - Article title
-   - One-sentence description of what makes it unusual/interesting
+   - At least one full sentence describing what makes the article unusual/interesting (not a fragment)
    - URL
 2. User selects which articles they want posts about (e.g., "3, 7, 12")
 3. For each selected article, fetch the full content and generate a ~250 word blog post
@@ -53,11 +53,11 @@ Do NOT use Wikipedia's general random article feature. Only articles listed on t
 UNUSUAL WIKIPEDIA ARTICLES
 ──────────────────────────
 1. Tarrare
-   French showman who could eat enormous quantities of meat, including live animals.
+   Tarrare was an 18th-century French showman with an insatiable appetite who could eat enormous quantities of meat, corks, stones, and live animals.
    https://en.wikipedia.org/wiki/Tarrare
 
 2. Euthanasia Coaster
-   Hypothetical roller coaster designed to kill its passengers humanely.
+   A Lithuanian engineer designed a hypothetical roller coaster intended to kill its passengers through prolonged cerebral hypoxia caused by extreme g-forces.
    https://en.wikipedia.org/wiki/Euthanasia_Coaster
 
 [...continues to 20]
@@ -78,22 +78,20 @@ Write in the style of Boing Boing - conversational, witty, slightly irreverent, 
 Each post should:
 - Be approximately 250 words
 - Credit the original source naturally within the text (e.g., "As reported in the New York Times, ..." or "According to Politico, ...")
-- Include a hyperlink to the original article
 - Have a catchy headline
 - Get to the interesting/important point quickly
+- NO inline hyperlinks in the post body—the editor will add links manually
 
 ## Example Attribution Styles
 
-The publication name should be plain text. The hyperlink goes on a descriptive phrase about the story:
+Mention the publication by name in plain text. Do NOT include markdown links in the post body:
 
-- "As reported by The Washington Post, [the agency plans to cut 500 jobs](url) by March..."
-- "According to Axios, [lawmakers are preparing a new bill](url) that would..."
-- "The Guardian reports that [climate scientists have discovered](url) a troubling trend..."
-- "Over at Politico, they're reporting [the senator will not seek reelection](url)..."
+- "As reported by The Washington Post, the agency plans to cut 500 jobs by March..."
+- "According to Axios, lawmakers are preparing a new bill that would..."
+- "The Guardian reports that climate scientists have discovered a troubling trend..."
+- "A Reuters investigation reveals the company knowingly chose revenue over users..."
 
-## Wikipedia Attribution
-
-For posts based on Wikipedia articles (from random-wiki), do NOT include inline links in the post body. Write naturally without attribution phrases like "According to Wikipedia." Just include the URL in the Source section at the bottom—the editor will add the link manually where appropriate.
+The URL goes only in the Source section at the bottom. The editor will add the hyperlink where appropriate.
 
 ## Avoiding AI-Sounding Writing
 
@@ -144,15 +142,15 @@ To keep posts sounding human, follow these rules:
 Each post (from memeorandum, random-wiki, and writeposts) should include all of the following sections:
 
 ### 1. Post Body
-The ~250 word blog post with attribution. Publication name is plain text; link goes on a descriptive phrase:
-- CORRECT: `according to HuffPost, [the company filed for bankruptcy](url) on Tuesday`
-- WRONG: `according to [HuffPost](url), the company filed for bankruptcy`
+The ~250 word blog post with attribution. Mention the publication by name in plain text. Do NOT include any markdown links—the editor adds links manually.
 
 ### 2. Source
 `Source: [full URL]`
 
 ### 3. Headlines (70 characters max)
-Provide 5 headline options, each 70 characters or fewer.
+Provide 5 headline options, each 70 characters or fewer. Use sentence case, NOT title case.
+- CORRECT: "Scientists discover new way to predict earthquakes"
+- WRONG: "Scientists Discover New Way To Predict Earthquakes"
 
 ### 4. Category Tags
 3-5 tags separated by commas (not bullet points), ordered broadest to most specific:
@@ -163,7 +161,7 @@ Provide 5 headline options, each 70 characters or fewer.
 5. Key people mentioned
 
 ### 5. Meta Headlines (60 characters max)
-Provide 5 meta headline options, each 60 characters or fewer.
+Provide 5 meta headline options, each 60 characters or fewer. Use sentence case, NOT title case (same rule as headlines).
 
 ### 6. Meta Descriptions (120 characters max)
 Provide 5 meta description options, each 120 characters or fewer.
@@ -173,7 +171,7 @@ Provide 5 meta description options, each 120 characters or fewer.
 ```
 ## [Headline]
 
-[Post body with attribution like "according to Publication Name, [key detail](url)"]
+[Post body with attribution like "according to Publication Name, the key detail..." - no inline links]
 
 Source: https://example.com/article
 
