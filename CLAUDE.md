@@ -129,6 +129,14 @@ To keep posts sounding human, follow these rules:
 - Trust the reader to understand significance without being told
 - State facts directly instead of attributing to vague "experts"
 
+### Avoiding "Smooth but Empty" Writing
+Avoid lines that sound good but lack substance, specificity, or verifiable content. This prevents "drift"—places where writing becomes vague or platitudinous.
+
+- Every sentence should contain specific, checkable information or a genuine insight
+- If a sentence doesn't add concrete facts, cut it
+- No filler phrases that pad word count without adding information
+- When in doubt, ask: "What specific claim is this sentence making?"
+
 ### Sentence Rhythm and Flow
 - Avoid too many short, punchy sentences in a row—it becomes exhausting to read
 - Mix sentence lengths: follow a short sentence with a longer one that breathes
