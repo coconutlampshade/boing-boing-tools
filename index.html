@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boing Boing Posts</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #222;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .post-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .post-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            gap: 12px;
+        }
+        .post-item:last-child {
+            border-bottom: none;
+        }
+        .post-item a {
+            flex: 1;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .post-item a:hover {
+            text-decoration: underline;
+        }
+        .delete-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .delete-btn:hover {
+            background: #cc0000;
+        }
+        .empty-state {
+            color: #666;
+            font-style: italic;
+            padding: 20px 0;
+        }
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .show-deleted {
+            font-size: 13px;
+            color: #666;
+            cursor: pointer;
+            user-select: none;
+        }
+        .show-deleted input {
+            margin-right: 4px;
+        }
+        .deleted {
+            display: none;
+        }
+        .show-all .deleted {
+            display: flex;
+            opacity: 0.5;
+        }
+        .show-all .deleted a {
+            text-decoration: line-through;
+        }
+        .restore-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .restore-btn:hover {
+            background: #45a049;
+        }
+        .count {
+            font-size: 13px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    Boing Boing Posts
+    <span class="count" id="count">0</span>
+</h1>
+<p class="subtitle">Click to preview, delete when posted</p>
+
+<div class="controls">
+    <label class="show-deleted">
+        <input type="checkbox" id="showDeleted" onchange="toggleShowDeleted()">
+        Show posted articles
+    </label>
+</div>
+
+<ul class="post-list" id="postList">
+    <!-- Posts will be inserted here by JavaScript -->
+</ul>
+
+<script>
+// List of all post files - update this when adding new posts
+const posts = [
+    { file: 'post-montague-bridge.html', title: 'Melbourne\'s truck-eating bridge remains undefeated' },
+    { file: 'post-bendy-banana.html', title: 'The EU\'s infamous "bendy banana law"' },
+    { file: 'post-wedding-cake-rock.html', title: 'Instagram made this Australian rock formation famous' },
+    { file: 'post-swearing-pain.html', title: 'Science confirms swearing really does reduce pain' },
+    { file: 'post-miller-greenland.html', title: 'Stephen Miller says "nobody" would stop U.S. from seizing Greenland' },
+    { file: 'post-trump-impeachment.html', title: 'Trump warns Republicans he\'ll be impeached if they lose midterms' },
+    { file: 'post-1-trump-funding.html', title: 'Trump administration freezes $10 billion to five blue states' },
+    { file: 'post-4-grok-deepfakes.html', title: 'X faces global investigations as Grok generates deepfakes' },
+    { file: 'post-preview.html', title: 'Justice Department has released less than 1% of Epstein files' },
+];
+
+function getDeletedPosts() {
+    return JSON.parse(localStorage.getItem('deletedPosts') || '[]');
+}
+
+function saveDeletedPosts(deleted) {
+    localStorage.setItem('deletedPosts', JSON.stringify(deleted));
+}
+
+function deletePost(file) {
+    if (confirm('Mark as posted and remove from list?')) {
+        const deleted = getDeletedPosts();
+        if (!deleted.includes(file)) {
+            deleted.push(file);
+            saveDeletedPosts(deleted);
+        }
+        renderPosts();
+    }
+}
+
+function restorePost(file) {
+    const deleted = getDeletedPosts();
+    const index = deleted.indexOf(file);
+    if (index > -1) {
+        deleted.splice(index, 1);
+        saveDeletedPosts(deleted);
+    }
+    renderPosts();
+}
+
+function toggleShowDeleted() {
+    const list = document.getElementById('postList');
+    const checkbox = document.getElementById('showDeleted');
+    if (checkbox.checked) {
+        list.classList.add('show-all');
+    } else {
+        list.classList.remove('show-all');
+    }
+}
+
+function renderPosts() {
+    const list = document.getElementById('postList');
+    const deleted = getDeletedPosts();
+
+    const activeCount = posts.filter(p => !deleted.includes(p.file)).length;
+    document.getElementById('count').textContent = activeCount;
+
+    if (posts.length === 0) {
+        list.innerHTML = '<li class="empty-state">No posts yet</li>';
+        return;
+    }
+
+    list.innerHTML = posts.map(post => {
+        const isDeleted = deleted.includes(post.file);
+        return `
+            <li class="post-item ${isDeleted ? 'deleted' : ''}">
+                <a href="${post.file}">${post.title}</a>
+                ${isDeleted
+                    ? `<button class="restore-btn" onclick="restorePost('${post.file}')">restore</button>`
+                    : `<button class="delete-btn" onclick="deletePost('${post.file}')">posted</button>`
+                }
+            </li>
+        `;
+    }).join('');
+}
+
+renderPosts();
+</script>
+
+</body>
+</html>

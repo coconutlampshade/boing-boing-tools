@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The EU's infamous "bendy banana law" is both real and completely misunderstood</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Commission Regulation (EC) No. 2257/94 — the infamous "bendy banana law" — really does exist. According to <a href="https://en.wikipedia.org/wiki/Commission_Regulation_(EC)_No._2257/94">Wikipedia</a>, the 1994 European Union regulation specified that bananas must be "free from malformation or abnormal curvature." British tabloids had a field day. The EU became synonymous with banana-straightening bureaucrats.</p>
+
+<p>The actual regulation is more boring than the legend. It applies only to unripened green bananas sold by growers and wholesalers, not to retailers or consumers. "Extra class" bananas must meet the shape requirements, but Class I bananas can have "slight defects of shape," and Class II bananas can have full-on "defects of shape." The minimum size is 14 centimetres long and 2.7 centimetres thick — roughly the dimensions of, well, a banana.</p>
+
+<p>The regulation never defined what "abnormal curvature" actually meant, which was the whole problem. Both Europhiles and Euroskeptics seized on it — one side calling it an apocryphal myth, the other an example of needless bureaucracy. Both were partially right. The Economist later documented "decades of flat-out lies about EU regulations" in British tabloids, noting that the EU's tepid fact-checking operation attracted about 1,000 visitors per article while the lies reached millions.</p>
+
+<p>In 2008, the European Commission voted to repeal regulations on fruit and vegetable shapes. The Agriculture Commissioner explained: "In this era of high prices and growing demand, it makes no sense to throw these products away or destroy them. It shouldn't be the EU's job to regulate these things."</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2009/12/11/just-look-at-this-aw-7.html">Just look at this awesome EU banana curvature regulation</a></li>
+<li><a href="https://boingboing.net/2016/10/26/eu-lies-and-the-british-tabloi.html">EU lies and the British tabloids who told them</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Commission_Regulation_(EC)_No._2257/94</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The EU's infamous "bendy banana law" is both real and misunderstood</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Yes, the EU really did regulate banana curvature (sort of)</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The "straight banana" myth that fueled decades of EU tabloid lies</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>What the EU's banana regulation actually said about "abnormal curvature"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>How a real EU banana law became decades of tabloid misinformation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">politics, European Union, regulation, misinformation, Brexit</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">EU bendy banana law</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>The EU's "bendy banana law" is real and misunderstood</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Yes, the EU really did regulate banana curvature</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The truth about the EU's infamous banana regulation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>What "abnormal curvature" meant for EU bananas</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>EU banana law: both real and wildly exaggerated</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The EU's 1994 banana regulation was real, but tabloid coverage turned it into decades of misinformation about "straight bananas."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Commission Regulation 2257/94 banned "abnormal curvature" but never defined it. Both sides of the debate got it wrong.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The infamous bendy banana law applied only to wholesale green bananas. Class II bananas could have "defects of shape."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>British tabloids published decades of lies about EU regulations. The EU's fact-checkers got 1,000 views per article.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The EU repealed its fruit shape regulations in 2008: "It shouldn't be the EU's job to regulate these things."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

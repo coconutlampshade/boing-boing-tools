@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Instagram made this Australian rock formation famous, then it started collapsing</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Wedding Cake Rock is a sandstone formation in Sydney's Royal National Park that looks exactly like a slice of wedding cake — white, layered, and improbably cuboid. It sits 25 metres above the Tasman Sea. According to <a href="https://en.wikipedia.org/wiki/Wedding_Cake_Rock">Wikipedia</a>, monthly visitors to the coastal trail jumped from 2,000 to over 10,000 in early 2015, driven almost entirely by Instagram users performing stunts on top of it for photos.</p>
+
+<p>The New South Wales National Parks and Wildlife Service got nervous. Regional manager Gary Dunnett wondered aloud "whether having 30 or 40 people standing on that area has the potential to tip it one way or the other." They closed the rock in May 2015. Then came the geotechnical survey, which delivered worse news than expected: the formation was "precariously balancing on the edge of the cliff, and severely undercut," held up by debris from a recent fracture. It would collapse into the sea within ten years.</p>
+
+<p>The closure did not stop people from jumping the safety fence to take photos on the unstable formation. Authorities instituted $300 fines. People kept jumping. Police began patrolling. By July 2018, only thirteen fines had been issued — the Instagram clout apparently worth the risk and the ticket.</p>
+
+<p>One death has already occurred at the site, though not from collapse: a 24-year-old French tourist tried to jump from the lower tier to grab the upper tier, slipped on impact, and fell more than 40 metres. The rock remains closed and will stay that way until it falls into the ocean.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2024/10/09/man-pops-cobra-in-his-mouth-after-dad-says-stunt-will-be-great-for-social-media-naturally-he-dies.html">Man pops cobra in his mouth after dad says stunt will be great for social media. Naturally, he dies</a></li>
+<li><a href="https://boingboing.net/2024/05/23/idiot-attempts-to-body-slam-endangered-killer-whale-video.html">Idiot attempts to "body slam" endangered killer whale</a></li>
+<li><a href="https://boingboing.net/2025/05/08/latest-idiotic-social-media-trend-has-kids-setting-their-laptops-on-fire.html">Latest idiotic social media trend has kids setting their laptops on fire</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Wedding_Cake_Rock</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Instagram made this Australian rock famous, then it started collapsing</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Wedding Cake Rock will fall into the sea. People still jump the fence.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This doomed rock formation became an Instagram hotspot. Then came fines.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Geologists say this rock will collapse. Instagram users don't care.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sydney's Wedding Cake Rock: closed, collapsing, still Instagrammed</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">social media, Australia, Instagram, nature, tourism, danger</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Wedding Cake Rock Instagram collapse</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Instagram made this Australian rock famous. Now it's dying.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Wedding Cake Rock will collapse. Tourists still climb it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This doomed rock is an Instagram hotspot anyway</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sydney's collapsing rock formation: $300 fines ignored</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Geologists: this rock will fall. Instagram users: worth it</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Wedding Cake Rock went from 2,000 visitors a month to 10,000 thanks to Instagram. Then geologists said it would collapse.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The formation is "precariously balancing" and will fall within ten years. People still jump the fence for photos.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Authorities closed the rock, added $300 fines, and brought in police. Thirteen fines issued. Instagram clout wins.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A French tourist died trying to jump between tiers for a photo. The rock remains an Instagram destination anyway.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Instagram virality drove 5x more visitors to this Australian rock. Geologists say it could collapse any day now.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

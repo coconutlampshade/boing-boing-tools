@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Science confirms what you suspected: swearing really does reduce pain</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Researchers at Keele University have proven what stubbed-toe sufferers have long known: swearing actually helps with pain. According to <a href="https://en.wikipedia.org/wiki/Hypoalgesic_effect_of_swearing">Wikipedia</a>, in a 2009 study published in NeuroReport, Richard Stephens and colleagues found that subjects could hold their hands in ice water for twice as long while swearing compared to using neutral words. They also reported feeling less pain. Stephens' professional advice: "I would advise people, if they hurt themselves, to swear."</p>
+
+<p>The effect appears to work through disinhibition. Swearing may activate the amygdala, triggering a fight-or-flight response and a surge of adrenaline — a natural painkiller. But there's a catch: people who swear regularly don't get the same benefit. A 2011 follow-up study showed that frequent swearers demonstrated little or no improvement in pain tolerance. The emotional charge matters. If you drop f-bombs every sentence, they lose their power when you need them most.</p>
+
+<p>Harvard psychologist Steven Pinker suggested in The Stuff of Thought that "humans are hardwired to swear cathartically... Swearing probably comes from a very primitive reflex that evolved in animals." The research has been replicated on MythBusters and in Stephen Fry's documentary Fry's Planet Word. Stephens and his team won the 2010 Ig Nobel Peace Prize for their work.</p>
+
+<p>Later research from Massey University found swearing reduces psychological pain too — people reported emotionally distressing memories as less painful after letting loose with profanity. The science is clear: save your swearing for when you really need it.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/12/19/researchers-discover-profanity-unlocks-temporary-superpowers.html">Researchers discover profanity unlocks temporary superpowers</a></li>
+<li><a href="https://boingboing.net/2024/12/31/swearing-improves-grip-strength-halloween-sees-a-spike-in-child-adhd-diagnoses-and-more-2024-learnings.html">Swearing improves grip strength, Halloween sees a spike in child ADHD diagnoses, and more 2024 learnings</a></li>
+<li><a href="https://boingboing.net/2018/02/01/why-swearing-can-be-a-good-fuc.html">Why swearing can be a good fucking way to sound convincing</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Hypoalgesic_effect_of_swearing</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Science confirms what you suspected: swearing really does reduce pain</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Swearing helps with pain — but only if you don't do it all the time</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Ig Nobel Prize-winning research: profanity is a natural painkiller</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why frequent swearers don't get the pain relief benefits of profanity</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Scientists prove swearing reduces pain, win Ig Nobel Prize for it</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">science, health, psychology, research, Ig Nobel Prize</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">swearing reduces pain science</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Science confirms swearing really does reduce pain</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Swearing helps pain — if you don't do it constantly</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Profanity as painkiller: the Ig Nobel winning research</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why swearing works for pain (and why it might not)</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The science of swearing your pain away</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Keele University research: subjects held hands in ice water twice as long while swearing. The catch? Frequent swearers don't benefit.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Swearing triggers your amygdala, releases adrenaline, and reduces pain. But only if you save your profanity for emergencies.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Scientists won the Ig Nobel Prize for proving swearing reduces pain. Later research showed it helps emotional pain too.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Researcher's advice: "If they hurt themselves, to swear." But daily swearers don't get the same pain relief benefits.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Harvard psychologist: "Humans are hardwired to swear cathartically." The science backs up what we all already knew.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
