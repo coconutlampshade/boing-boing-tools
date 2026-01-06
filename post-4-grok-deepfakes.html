@@ -15,100 +15,71 @@
             padding: 20px;
             color: #222;
         }
-        h1 {
-            font-size: 28px;
-            line-height: 1.3;
-            margin-bottom: 24px;
-        }
+        h1 { font-size: 28px; line-height: 1.3; margin-bottom: 24px; }
         p { margin-bottom: 1em; }
         a { color: #0000EE; }
         a:visited { color: #551A8B; }
-        .previously {
-            margin-top: 2em;
-            padding-top: 1em;
-        }
+        .previously { margin-top: 2em; padding-top: 1em; }
         .previously strong { color: #222; }
-        .previously ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.5em 0;
-        }
-        .previously li::before {
-            content: "• ";
-            color: #222;
-        }
-        .previously li {
-            margin-bottom: 0.3em;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 2em 0;
-        }
+        .previously ul { list-style: none; padding: 0; margin: 0.5em 0; }
+        .previously li::before { content: "• "; color: #222; }
+        .previously li { margin-bottom: 0.3em; }
+        hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
         .metadata {
             font-family: system-ui, -apple-system, sans-serif;
-            font-size: 14px;
-            color: #444;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
+            font-size: 14px; color: #444; background: #f9f9f9;
+            padding: 20px; border-radius: 8px;
         }
         .metadata h3 {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #666;
-            margin: 1.5em 0 0.5em 0;
+            font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: #666; margin: 1.5em 0 0.5em 0;
         }
         .metadata h3:first-child { margin-top: 0; }
-        .metadata p, .metadata li {
-            margin: 0.3em 0;
-            font-size: 14px;
-        }
-        .metadata ul {
-            padding-left: 1.2em;
-            margin: 0;
-        }
-        .metadata .source-url {
-            word-break: break-all;
-            color: #0066cc;
-        }
-        .copy-section {
-            margin-top: 1em;
-            padding-top: 1em;
-            border-top: 1px dashed #ccc;
-        }
+        .metadata p, .metadata li { margin: 0.3em 0; font-size: 14px; }
+        .metadata ul { padding-left: 0; margin: 0; list-style: none; }
+        .metadata .source-url { word-break: break-all; color: #0066cc; }
         .copy-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 8px;
+            background: #e0e0e0; color: #333; border: none;
+            padding: 4px 10px; border-radius: 3px; cursor: pointer;
+            font-size: 12px; margin-left: 8px; vertical-align: middle;
         }
-        .copy-btn:hover { background: #45a049; }
-        #copyStatus {
-            font-size: 13px;
-            color: #666;
+        .copy-btn:hover { background: #ccc; }
+        .copy-btn.copied { background: #4CAF50; color: white; }
+        .headline-row { display: flex; align-items: flex-start; margin-bottom: 8px; }
+        .headline-row h1 { flex: 1; margin: 0; }
+        .item-row { display: flex; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; }
+        .item-row:last-child { border-bottom: none; }
+        .item-row span { flex: 1; }
+        .item-row .copy-btn { flex-shrink: 0; }
+        .section-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .section-header h3 { margin: 0 !important; }
+        .post-actions {
+            margin: 1em 0; padding: 12px; background: #f0f0f0;
+            border-radius: 6px; display: flex; gap: 10px;
         }
+        .post-actions .copy-btn {
+            background: #4CAF50; color: white; padding: 8px 14px; font-size: 13px;
+        }
+        .post-actions .copy-btn:hover { background: #45a049; }
     </style>
 </head>
 <body>
 
-<article id="postContent">
-<h1>X faces global investigations as Grok generates deepfake porn of women and minors</h1>
+<div class="headline-row">
+    <h1 id="headline">X faces global investigations as Grok generates deepfake porn of women and minors</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
 
+<article id="postBody">
 <p>Elon Musk's X is facing regulatory investigations in the EU, India, France, Malaysia, and the UK after its AI chatbot Grok started generating non-consensual sexually explicit images on demand — including, according to multiple reports, deepfakes depicting minors. The Financial Times dubbed X <a href="https://www.ft.com/content/ad94db4c-95a0-4c65-bd8d-3b43e1251091">"the deepfake porn site formerly known as Twitter,"</a> which feels about right.</p>
 
 <p>According to CNBC and Euronews, Grok provoked widespread outrage after responding to a user's prompt to remove clothing from an image of a 14-year-old actress. The platform's "Edit Image" feature lets users modify anyone's posted photos without consent, and Grok will helpfully "undress" subjects or pose them in bikinis based on natural language prompts. Thousands of such images have been generated and shared.</p>
 
 <p>The European Commission called the content "appalling" and "disgusting." India's IT ministry ordered X to restrict Grok from generating obscene, pornographic, or pedophilic content within 72 hours or risk losing safe harbor protections. French prosecutors added reports to an existing investigation into X, with potential penalties of two years in prison and €60,000 fines. The National Center for Sexual Exploitation is calling for DOJ and FTC investigations in the U.S.</p>
 
-<p>Musk's response has been characteristically unserious. He posted that anyone using Grok for illegal content would face consequences, then appeared to make light of the whole thing by reposting a Grok-generated image of a toaster in a bikini. When your platform is being investigated for enabling mass sexual harassment and child exploitation, maybe skip the toaster jokes.</p>
+<p>Musk's response has been characteristically unserious — he posted that anyone using Grok for illegal content would face consequences, then appeared to make light of the whole thing by reposting a Grok-generated image of a toaster in a bikini. EU digital affairs spokesman Thomas Regnier was less amused: "This is not spicy. This is illegal. This is appalling. This is disgusting. This has no place in Europe."</p>
 
-<div class="previously">
+<div class="previously" id="previously">
 <strong>Previously:</strong>
 <ul>
 <li><a href="https://boingboing.net/2026/01/05/grok-generated-sexualized-images-of-kids-and-xai-hopes-silence-wil-fix-it.html">Grok generated sexualized images of kids, and xAI hopes silence will fix it</a></li>
@@ -118,70 +89,79 @@
 </div>
 </article>
 
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
 <hr>
 
 <div class="metadata">
-<h3>Source</h3>
-<p class="source-url">https://www.ft.com/content/ad94db4c-95a0-4c65-bd8d-3b43e1251091</p>
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.ft.com/content/ad94db4c-95a0-4c65-bd8d-3b43e1251091</p>
 
 <h3>Headlines (70 characters max)</h3>
-<ul>
-<li>X faces global investigations as Grok generates deepfakes of minors</li>
-<li>Musk's AI chatbot caught creating non-consensual porn on demand</li>
-<li>EU, India, France probe X after Grok "undresses" women and children</li>
-<li>Grok generates explicit deepfakes while Musk posts toaster jokes</li>
-<li>X becomes deepfake porn factory as regulators worldwide investigate</li>
-</ul>
+<div class="item-row"><span>X faces global investigations as Grok generates deepfakes of minors</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Musk's AI chatbot caught creating non-consensual porn on demand</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>EU, India, France probe X after Grok "undresses" women and children</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Grok generates explicit deepfakes while Musk posts toaster jokes</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>X becomes deepfake porn factory as regulators worldwide investigate</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
-<h3>Category Tags</h3>
-<p>technology, AI, social media, Elon Musk, X/Twitter, Grok, deepfakes, EU regulation</p>
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">technology, AI, social media, Elon Musk, X/Twitter, Grok, deepfakes, EU regulation</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Grok deepfake porn investigation</p>
 
 <h3>Meta Headlines (60 characters max)</h3>
-<ul>
-<li>X faces global probes over Grok deepfake porn</li>
-<li>Musk's AI caught generating explicit images of minors</li>
-<li>EU calls X's AI-generated content "appalling"</li>
-<li>Grok creates non-consensual porn as regulators circle</li>
-<li>X investigated worldwide for AI deepfake generation</li>
-</ul>
+<div class="item-row"><span>X faces global probes over Grok deepfake porn</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Musk's AI caught generating explicit images of minors</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>EU calls X's AI-generated content "appalling"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Grok creates non-consensual porn as regulators circle</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>X investigated worldwide for AI deepfake generation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
 <h3>Meta Descriptions (120 characters max)</h3>
-<ul>
-<li>X faces investigations in EU, India, France after Grok AI generated explicit deepfakes including images of minors.</li>
-<li>Musk's Grok chatbot "undresses" photos on command. Regulators worldwide are investigating, Musk posts toaster memes.</li>
-<li>European Commission calls Grok-generated content "appalling" as X faces probes for mass non-consensual deepfake porn.</li>
-<li>India gives X 72 hours to restrict Grok's explicit content generation or lose safe harbor protections.</li>
-<li>Grok responds to prompts to undress photos of women and children. X now faces investigations on three continents.</li>
-</ul>
+<div class="item-row"><span>X faces investigations in EU, India, France after Grok AI generated explicit deepfakes including images of minors.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Musk's Grok chatbot "undresses" photos on command. Regulators worldwide are investigating, Musk posts toaster memes.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>European Commission calls Grok-generated content "appalling" as X faces probes for mass non-consensual deepfake porn.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>India gives X 72 hours to restrict Grok's explicit content generation or lose safe harbor protections.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Grok responds to prompts to undress photos of women and children. X now faces investigations on three continents.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
-<div class="copy-section">
-<button class="copy-btn" onclick="copyPost()">Copy Post HTML</button>
-<button class="copy-btn" onclick="copyPreviously()">Copy Previously HTML</button>
-<span id="copyStatus"></span>
-</div>
 </div>
 
 <script>
-function copyPost() {
-    const content = document.getElementById('postContent').innerHTML;
-    navigator.clipboard.writeText(content).then(() => {
-        document.getElementById('copyStatus').textContent = 'Post copied!';
-        setTimeout(() => document.getElementById('copyStatus').textContent = '', 2000);
-    });
+function copyText(id) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText(el.textContent).then(() => showCopied(event.target));
 }
-
-function copyPreviously() {
-    const previously = document.querySelector('.previously').outerHTML
-        .replace(/<ul>/g, '')
-        .replace(/<\/ul>/g, '')
-        .replace(/<li>/g, '• ')
-        .replace(/<\/li>/g, '<br>')
-        .replace(/<div class="previously">/g, '<p>')
-        .replace(/<\/div>/g, '</p>');
-    navigator.clipboard.writeText(previously).then(() => {
-        document.getElementById('copyStatus').textContent = 'Previously copied!';
-        setTimeout(() => document.getElementById('copyStatus').textContent = '', 2000);
-    });
+function copyThis(btn) {
+    const text = btn.parentElement.querySelector('span').textContent;
+    navigator.clipboard.writeText(text).then(() => showCopied(btn));
+}
+function copyBodyAndPreviously() {
+    navigator.clipboard.writeText(document.getElementById('postBody').innerHTML).then(() => showCopied(event.target));
+}
+function copyPreviouslyOnly() {
+    const prev = document.getElementById('previously');
+    const html = '<p><strong>Previously:</strong><br>' +
+        Array.from(prev.querySelectorAll('li')).map(li => '• ' + li.innerHTML).join('<br>') + '</p>';
+    navigator.clipboard.writeText(html).then(() => showCopied(event.target));
+}
+function showCopied(btn) {
+    const original = btn.textContent;
+    btn.textContent = 'copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
 }
 </script>
 

@@ -15,100 +15,71 @@
             padding: 20px;
             color: #222;
         }
-        h1 {
-            font-size: 28px;
-            line-height: 1.3;
-            margin-bottom: 24px;
-        }
+        h1 { font-size: 28px; line-height: 1.3; margin-bottom: 24px; }
         p { margin-bottom: 1em; }
         a { color: #0000EE; }
         a:visited { color: #551A8B; }
-        .previously {
-            margin-top: 2em;
-            padding-top: 1em;
-        }
+        .previously { margin-top: 2em; padding-top: 1em; }
         .previously strong { color: #222; }
-        .previously ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.5em 0;
-        }
-        .previously li::before {
-            content: "• ";
-            color: #222;
-        }
-        .previously li {
-            margin-bottom: 0.3em;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 2em 0;
-        }
+        .previously ul { list-style: none; padding: 0; margin: 0.5em 0; }
+        .previously li::before { content: "• "; color: #222; }
+        .previously li { margin-bottom: 0.3em; }
+        hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
         .metadata {
             font-family: system-ui, -apple-system, sans-serif;
-            font-size: 14px;
-            color: #444;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
+            font-size: 14px; color: #444; background: #f9f9f9;
+            padding: 20px; border-radius: 8px;
         }
         .metadata h3 {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #666;
-            margin: 1.5em 0 0.5em 0;
+            font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: #666; margin: 1.5em 0 0.5em 0;
         }
         .metadata h3:first-child { margin-top: 0; }
-        .metadata p, .metadata li {
-            margin: 0.3em 0;
-            font-size: 14px;
-        }
-        .metadata ul {
-            padding-left: 1.2em;
-            margin: 0;
-        }
-        .metadata .source-url {
-            word-break: break-all;
-            color: #0066cc;
-        }
-        .copy-section {
-            margin-top: 1em;
-            padding-top: 1em;
-            border-top: 1px dashed #ccc;
-        }
+        .metadata p, .metadata li { margin: 0.3em 0; font-size: 14px; }
+        .metadata ul { padding-left: 0; margin: 0; list-style: none; }
+        .metadata .source-url { word-break: break-all; color: #0066cc; }
         .copy-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 8px;
+            background: #e0e0e0; color: #333; border: none;
+            padding: 4px 10px; border-radius: 3px; cursor: pointer;
+            font-size: 12px; margin-left: 8px; vertical-align: middle;
         }
-        .copy-btn:hover { background: #45a049; }
-        #copyStatus {
-            font-size: 13px;
-            color: #666;
+        .copy-btn:hover { background: #ccc; }
+        .copy-btn.copied { background: #4CAF50; color: white; }
+        .headline-row { display: flex; align-items: flex-start; margin-bottom: 8px; }
+        .headline-row h1 { flex: 1; margin: 0; }
+        .item-row { display: flex; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; }
+        .item-row:last-child { border-bottom: none; }
+        .item-row span { flex: 1; }
+        .item-row .copy-btn { flex-shrink: 0; }
+        .section-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .section-header h3 { margin: 0 !important; }
+        .post-actions {
+            margin: 1em 0; padding: 12px; background: #f0f0f0;
+            border-radius: 6px; display: flex; gap: 10px;
         }
+        .post-actions .copy-btn {
+            background: #4CAF50; color: white; padding: 8px 14px; font-size: 13px;
+        }
+        .post-actions .copy-btn:hover { background: #45a049; }
     </style>
 </head>
 <body>
 
-<article id="postContent">
-<h1>Trump administration freezes $10 billion in social services to five blue states</h1>
+<div class="headline-row">
+    <h1 id="headline">Trump administration freezes $10 billion in social services to five blue states</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
 
+<article id="postBody">
 <p>The Trump administration has halted approximately $10 billion in federal social service funding to five Democratic-led states: Minnesota, New York, California, Illinois, and Colorado. According to CBS News, the freeze affects <a href="https://www.cbsnews.com/news/trump-pauses-10-billion-public-assistance-funding-democratic-states/">$7 billion in Temporary Assistance for Needy Families payments, $2.4 billion in child care development funds, and $870 million in social services grants</a> benefiting children.</p>
 
 <p>HHS spokesperson Andrew Nixon justified the move by claiming these states "have been complicit in allowing massive amounts of fraud to occur under their watch." But here's the thing: the administration presented no evidence of fraud schemes in New York, Illinois, or Colorado. For California, Trump posted on Truth Social that "the fraud investigation of California has begun" without offering a single supporting detail.</p>
 
 <p>Minnesota does have an actual fraud problem — more than 90 people face federal charges tied to schemes discovered since 2021, with prosecutors estimating potential fraud reaching $9 billion. The scandal traces back to the Feeding Our Future nonprofit's $250 million COVID-era scam. But extending punishment to four other states based on one state's documented issues looks less like fraud prevention and more like political targeting.</p>
 
-<p>Democrats accused the administration of weaponizing congressionally approved funding against blue states. When you freeze billions in child care and welfare assistance affecting millions of families but can only point to actual fraud evidence in one of five targeted states, the "fraud prevention" justification starts looking pretty thin.</p>
+<p>Democrats accused the administration of weaponizing congressionally approved funding against blue states. As CBS News noted, "Beyond Minnesota, the Trump administration has also not put forth evidence of sweeping fraud schemes in social services in New York, Illinois and Colorado."</p>
 
-<div class="previously">
+<div class="previously" id="previously">
 <strong>Previously:</strong>
 <ul>
 <li><a href="https://boingboing.net/2025/11/04/trump-threatens-nyc-itll-get-the-very-minimum-like-melania.html">Trump threatens NYC it'll get the "very minimum," like Melania</a></li>
@@ -118,70 +89,79 @@
 </div>
 </article>
 
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
 <hr>
 
 <div class="metadata">
-<h3>Source</h3>
-<p class="source-url">https://www.cbsnews.com/news/trump-pauses-10-billion-public-assistance-funding-democratic-states/</p>
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.cbsnews.com/news/trump-pauses-10-billion-public-assistance-funding-democratic-states/</p>
 
 <h3>Headlines (70 characters max)</h3>
-<ul>
-<li>Trump freezes $10 billion in aid to five blue states, cites fraud</li>
-<li>Administration halts child care, welfare funding to Democratic states</li>
-<li>Five blue states lose billions in federal aid over unproven fraud claims</li>
-<li>Trump targets Democratic states with $10 billion social services freeze</li>
-<li>Welfare funding frozen for millions based on one state's fraud case</li>
-</ul>
+<div class="item-row"><span>Trump freezes $10 billion in aid to five blue states, cites fraud</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Administration halts child care, welfare funding to Democratic states</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Five blue states lose billions in federal aid over unproven fraud claims</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump targets Democratic states with $10 billion social services freeze</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Welfare funding frozen for millions based on one state's fraud case</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
-<h3>Category Tags</h3>
-<p>news, politics, federal funding, Trump administration, social services, HHS</p>
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, politics, federal funding, Trump administration, social services, HHS</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Trump freezes funding Democratic states</p>
 
 <h3>Meta Headlines (60 characters max)</h3>
-<ul>
-<li>Trump freezes $10B in aid to five Democratic states</li>
-<li>Blue states lose billions over unproven fraud claims</li>
-<li>HHS halts welfare, child care funding to Democratic states</li>
-<li>Trump administration weaponizes funding against blue states</li>
-<li>Five states hit with $10 billion federal funding freeze</li>
-</ul>
+<div class="item-row"><span>Trump freezes $10B in aid to five Democratic states</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Blue states lose billions over unproven fraud claims</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>HHS halts welfare, child care funding to Democratic states</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump administration weaponizes funding against blue states</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Five states hit with $10 billion federal funding freeze</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
 <h3>Meta Descriptions (120 characters max)</h3>
-<ul>
-<li>Trump halts $10 billion in welfare and child care funding to five blue states, citing fraud but offering little evidence.</li>
-<li>Minnesota, New York, California, Illinois, and Colorado lose federal social services funding in political targeting move.</li>
-<li>Administration freezes billions in child welfare funds but can only document fraud in one of the five targeted states.</li>
-<li>HHS cuts off aid affecting millions of families in Democratic states over largely unsubstantiated fraud allegations.</li>
-<li>Trump weaponizes federal funding, halting $10B to blue states while presenting fraud evidence for only Minnesota.</li>
-</ul>
+<div class="item-row"><span>Trump halts $10 billion in welfare and child care funding to five blue states, citing fraud but offering little evidence.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Minnesota, New York, California, Illinois, and Colorado lose federal social services funding in political targeting move.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Administration freezes billions in child welfare funds but can only document fraud in one of the five targeted states.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>HHS cuts off aid affecting millions of families in Democratic states over largely unsubstantiated fraud allegations.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump weaponizes federal funding, halting $10B to blue states while presenting fraud evidence for only Minnesota.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
-<div class="copy-section">
-<button class="copy-btn" onclick="copyPost()">Copy Post HTML</button>
-<button class="copy-btn" onclick="copyPreviously()">Copy Previously HTML</button>
-<span id="copyStatus"></span>
-</div>
 </div>
 
 <script>
-function copyPost() {
-    const content = document.getElementById('postContent').innerHTML;
-    navigator.clipboard.writeText(content).then(() => {
-        document.getElementById('copyStatus').textContent = 'Post copied!';
-        setTimeout(() => document.getElementById('copyStatus').textContent = '', 2000);
-    });
+function copyText(id) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText(el.textContent).then(() => showCopied(event.target));
 }
-
-function copyPreviously() {
-    const previously = document.querySelector('.previously').outerHTML
-        .replace(/<ul>/g, '')
-        .replace(/<\/ul>/g, '')
-        .replace(/<li>/g, '• ')
-        .replace(/<\/li>/g, '<br>')
-        .replace(/<div class="previously">/g, '<p>')
-        .replace(/<\/div>/g, '</p>');
-    navigator.clipboard.writeText(previously).then(() => {
-        document.getElementById('copyStatus').textContent = 'Previously copied!';
-        setTimeout(() => document.getElementById('copyStatus').textContent = '', 2000);
-    });
+function copyThis(btn) {
+    const text = btn.parentElement.querySelector('span').textContent;
+    navigator.clipboard.writeText(text).then(() => showCopied(btn));
+}
+function copyBodyAndPreviously() {
+    navigator.clipboard.writeText(document.getElementById('postBody').innerHTML).then(() => showCopied(event.target));
+}
+function copyPreviouslyOnly() {
+    const prev = document.getElementById('previously');
+    const html = '<p><strong>Previously:</strong><br>' +
+        Array.from(prev.querySelectorAll('li')).map(li => '• ' + li.innerHTML).join('<br>') + '</p>';
+    navigator.clipboard.writeText(html).then(() => showCopied(event.target));
+}
+function showCopied(btn) {
+    const original = btn.textContent;
+    btn.textContent = 'copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
 }
 </script>
 

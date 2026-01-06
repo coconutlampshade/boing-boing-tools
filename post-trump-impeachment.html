@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+            font-size: 18px;
+            max-width: 680px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #222;
+        }
+        h1 { font-size: 28px; line-height: 1.3; margin-bottom: 24px; }
+        p { margin-bottom: 1em; }
+        a { color: #0000EE; }
+        a:visited { color: #551A8B; }
+        .previously { margin-top: 2em; padding-top: 1em; }
+        .previously strong { color: #222; }
+        .previously ul { list-style: none; padding: 0; margin: 0.5em 0; }
+        .previously li::before { content: "• "; color: #222; }
+        .previously li { margin-bottom: 0.3em; }
+        hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+        .metadata {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 14px; color: #444; background: #f9f9f9;
+            padding: 20px; border-radius: 8px;
+        }
+        .metadata h3 {
+            font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: #666; margin: 1.5em 0 0.5em 0;
+        }
+        .metadata h3:first-child { margin-top: 0; }
+        .metadata p, .metadata li { margin: 0.3em 0; font-size: 14px; }
+        .metadata ul { padding-left: 0; margin: 0; list-style: none; }
+        .metadata .source-url { word-break: break-all; color: #0066cc; }
+        .copy-btn {
+            background: #e0e0e0; color: #333; border: none;
+            padding: 4px 10px; border-radius: 3px; cursor: pointer;
+            font-size: 12px; margin-left: 8px; vertical-align: middle;
+        }
+        .copy-btn:hover { background: #ccc; }
+        .copy-btn.copied { background: #4CAF50; color: white; }
+        .headline-row { display: flex; align-items: flex-start; margin-bottom: 8px; }
+        .headline-row h1 { flex: 1; margin: 0; }
+        .item-row { display: flex; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; }
+        .item-row:last-child { border-bottom: none; }
+        .item-row span { flex: 1; }
+        .item-row .copy-btn { flex-shrink: 0; }
+        .section-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .section-header h3 { margin: 0 !important; }
+        .post-actions {
+            margin: 1em 0; padding: 12px; background: #f0f0f0;
+            border-radius: 6px; display: flex; gap: 10px;
+        }
+        .post-actions .copy-btn {
+            background: #4CAF50; color: white; padding: 8px 14px; font-size: 13px;
+        }
+        .post-actions .copy-btn:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Trump warns Republicans he'll be impeached if they lose midterms</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>President Trump addressed House Republicans at their annual retreat on Monday — held at the Kennedy Center, recently renamed the Trump-Kennedy Center by its Trump-appointed board — with a warning: win the midterms or watch him get impeached for a third time. According to <a href="https://www.bloomberg.com/news/articles/2026-01-06/trump-warns-he-ll-be-impeached-if-republicans-don-t-win-midterms">Bloomberg</a>, Trump told the assembled lawmakers, "You got to win the midterms, because if we don't win the midterms, it's just going to be — I mean, they'll find a reason to impeach me."</p>
+
+<p>The timing was notable: Trump delivered these remarks on the fifth anniversary of January 6, just days after U.S. forces captured Venezuelan President Nicolás Maduro. Speaker Mike Johnson has been pushing the same message, telling supporters at Turning Point USA's America Fest last month that if Republicans lose the House, "the radical left is going to impeach President Trump. They're going to create absolute chaos."</p>
+
+<p>Trump remains the only president in U.S. history to be impeached twice — first for abuse of power involving Ukraine, then for his role in the January 6 Capitol riot. The Republican-controlled Senate acquitted him both times. Current Polymarket odds put the chances of a third impeachment by end of 2026 at 12 percent, up from 5 percent after last month's Epstein document release. The president's party almost always loses seats in midterm elections — a historical pattern that clearly weighs on the administration.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2019/12/18/us-house-votes-to-impeach-trum.html">TRUMP IMPEACHED — ABUSE OF POWER & OBSTRUCTION OF CONGRESS</a></li>
+<li><a href="https://boingboing.net/2021/02/09/watch-live-trump-impeachment-trial.html">Watch live: Trump impeachment trial</a></li>
+<li><a href="https://boingboing.net/2021/01/29/gop-leaders-grovel-to-trump-as-impeachment-hopes-fade.html">GOP leaders grovel to Trump as impeachment hopes fade</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.bloomberg.com/news/articles/2026-01-06/trump-warns-he-ll-be-impeached-if-republicans-don-t-win-midterms</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Trump warns Republicans he'll be impeached if they lose midterms</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump to GOP: win midterms or watch me get impeached a third time</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>On January 6 anniversary, Trump warns of third impeachment</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump tells House Republicans: "They'll find a reason to impeach me"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Twice-impeached Trump fears third time if Democrats take House</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, politics, Trump, impeachment, midterms, Republicans, January 6</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Trump impeachment midterms warning</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Trump warns he'll be impeached if GOP loses midterms</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump fears third impeachment if Democrats win House</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>On Jan. 6 anniversary, Trump warns of impeachment</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump to Republicans: win or I get impeached again</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump tells GOP midterm loss means third impeachment</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Trump warned House Republicans that if they lose the midterms, Democrats will impeach him for a third time.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>On the fifth anniversary of January 6, Trump told GOP lawmakers: "They'll find a reason to impeach me."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The only twice-impeached president warned Republicans that a midterm loss would lead to his third impeachment.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump addressed House Republicans at the Trump-Kennedy Center with a warning: win the midterms or face impeachment.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Polymarket odds of Trump impeachment rose to 12% after Epstein docs. Trump says Democrats will "find a reason."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script>
+function copyText(id) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText(el.textContent).then(() => showCopied(event.target));
+}
+function copyThis(btn) {
+    const text = btn.parentElement.querySelector('span').textContent;
+    navigator.clipboard.writeText(text).then(() => showCopied(btn));
+}
+function copyBodyAndPreviously() {
+    navigator.clipboard.writeText(document.getElementById('postBody').innerHTML).then(() => showCopied(event.target));
+}
+function copyPreviouslyOnly() {
+    const prev = document.getElementById('previously');
+    const html = '<p><strong>Previously:</strong><br>' +
+        Array.from(prev.querySelectorAll('li')).map(li => '• ' + li.innerHTML).join('<br>') + '</p>';
+    navigator.clipboard.writeText(html).then(() => showCopied(event.target));
+}
+function showCopied(btn) {
+    const original = btn.textContent;
+    btn.textContent = 'copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+            font-size: 18px;
+            max-width: 680px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #222;
+        }
+        h1 { font-size: 28px; line-height: 1.3; margin-bottom: 24px; }
+        p { margin-bottom: 1em; }
+        a { color: #0000EE; }
+        a:visited { color: #551A8B; }
+        .previously { margin-top: 2em; padding-top: 1em; }
+        .previously strong { color: #222; }
+        .previously ul { list-style: none; padding: 0; margin: 0.5em 0; }
+        .previously li::before { content: "• "; color: #222; }
+        .previously li { margin-bottom: 0.3em; }
+        hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+        .metadata {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 14px; color: #444; background: #f9f9f9;
+            padding: 20px; border-radius: 8px;
+        }
+        .metadata h3 {
+            font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: #666; margin: 1.5em 0 0.5em 0;
+        }
+        .metadata h3:first-child { margin-top: 0; }
+        .metadata p, .metadata li { margin: 0.3em 0; font-size: 14px; }
+        .metadata ul { padding-left: 0; margin: 0; list-style: none; }
+        .metadata .source-url { word-break: break-all; color: #0066cc; }
+        .copy-btn {
+            background: #e0e0e0; color: #333; border: none;
+            padding: 4px 10px; border-radius: 3px; cursor: pointer;
+            font-size: 12px; margin-left: 8px; vertical-align: middle;
+        }
+        .copy-btn:hover { background: #ccc; }
+        .copy-btn.copied { background: #4CAF50; color: white; }
+        .headline-row { display: flex; align-items: flex-start; margin-bottom: 8px; }
+        .headline-row h1 { flex: 1; margin: 0; }
+        .item-row { display: flex; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; }
+        .item-row:last-child { border-bottom: none; }
+        .item-row span { flex: 1; }
+        .item-row .copy-btn { flex-shrink: 0; }
+        .section-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .section-header h3 { margin: 0 !important; }
+        .post-actions {
+            margin: 1em 0; padding: 12px; background: #f0f0f0;
+            border-radius: 6px; display: flex; gap: 10px;
+        }
+        .post-actions .copy-btn {
+            background: #4CAF50; color: white; padding: 8px 14px; font-size: 13px;
+        }
+        .post-actions .copy-btn:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Stephen Miller says "nobody" would stop U.S. from seizing Greenland</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>White House Deputy Chief of Staff Stephen Miller appeared on CNN Monday and repeatedly refused to rule out military action against Greenland. According to <a href="https://www.axios.com/2026/01/06/stephen-miller-greenland-europe-nato">Axios</a>, when pressed by Jake Tapper, Miller declared: "Nobody is going to fight the United States militarily over the future of Greenland."</p>
+
+<p>Seizing Greenland by force would be the first time a NATO member directly attacked another member's territory since the alliance was created in 1949. That historical footnote doesn't seem to trouble the administration. Fears of U.S. action spiked after Katie Miller — Stephen Miller's wife and a former Trump official — posted an image of Greenland covered with an American flag on Saturday, captioned "SOON," just hours after U.S. forces captured Venezuelan President Nicolás Maduro.</p>
+
+<p>European leaders responded with a joint statement defending "the principles of the UN Charter, including sovereignty, territorial integrity and the inviolability of borders." Greenland's prime minister, Jens-Frederik Nielsen, has issued repeated statements condemning the rhetoric from Washington and requesting respectful dialogue. Polling shows only 6 percent of Greenlanders want to join the U.S., with 86 percent opposed. Danish Prime Minister Mette Frederiksen was blunt: the United States has "no right to annex any of the three countries in the Danish kingdom."</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2026/01/05/thats-enough-now-no-more-fantasies-greenlands-prime-minister-responds-to-trump.html">"That's enough now... no more fantasies": Greenland's prime minister responds to Trump</a></li>
+<li><a href="https://boingboing.net/2026/01/05/suddenly-the-no-war-president-wants-to-attack-everyone.html">Suddenly, the "no war" president wants to attack everyone</a></li>
+<li><a href="https://boingboing.net/2025/01/29/only-6-of-greenlanders-want-to-join-the-u-s.html">Only 6% of Greenlanders want to join the U.S.</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.axios.com/2026/01/06/stephen-miller-greenland-europe-nato</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Stephen Miller says "nobody" would stop U.S. from seizing Greenland</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Miller refuses to rule out military action against NATO ally Greenland</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>White House: no one would fight U.S. militarily over Greenland</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Miller taunts NATO allies: nobody will stop us from taking Greenland</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>European leaders defend Greenland sovereignty after Miller's threat</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, politics, Greenland, Stephen Miller, NATO, Denmark, territorial expansion</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Stephen Miller Greenland military</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Miller: nobody would stop U.S. from seizing Greenland</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>White House won't rule out military action on Greenland</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Miller taunts NATO over Greenland seizure threats</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>European leaders condemn U.S. Greenland threats</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Only 6% of Greenlanders want U.S. annexation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Stephen Miller told CNN "nobody" would fight the U.S. over Greenland. He refused to rule out military action.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Miller's wife posted an image of Greenland with an American flag captioned "SOON" after the Venezuela operation.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Seizing Greenland would be the first time a NATO member attacked another member's territory since 1949.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>European leaders issued a joint statement defending Greenland's sovereignty after Miller's refusal to rule out force.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Only 6% of Greenlanders want to join the U.S. Stephen Miller says nobody would stop America from taking it anyway.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script>
+function copyText(id) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText(el.textContent).then(() => showCopied(event.target));
+}
+function copyThis(btn) {
+    const text = btn.parentElement.querySelector('span').textContent;
+    navigator.clipboard.writeText(text).then(() => showCopied(btn));
+}
+function copyBodyAndPreviously() {
+    navigator.clipboard.writeText(document.getElementById('postBody').innerHTML).then(() => showCopied(event.target));
+}
+function copyPreviouslyOnly() {
+    const prev = document.getElementById('previously');
+    const html = '<p><strong>Previously:</strong><br>' +
+        Array.from(prev.querySelectorAll('li')).map(li => '• ' + li.innerHTML).join('<br>') + '</p>';
+    navigator.clipboard.writeText(html).then(() => showCopied(event.target));
+}
+function showCopied(btn) {
+    const original = btn.textContent;
+    btn.textContent = 'copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+}
+</script>
+
+</body>
+</html>

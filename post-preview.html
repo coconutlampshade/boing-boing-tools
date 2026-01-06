@@ -66,64 +66,106 @@
             font-size: 14px;
         }
         .metadata ul {
-            padding-left: 1.2em;
+            padding-left: 0;
             margin: 0;
+            list-style: none;
         }
         .metadata .source-url {
             word-break: break-all;
             color: #0066cc;
         }
-        .metadata .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            padding: 0;
-            list-style: none;
-        }
-        .metadata .tags li {
-            background: #e0e0e0;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 13px;
-        }
-        .copy-section {
-            margin-top: 1em;
-            padding-top: 1em;
-            border-top: 1px dashed #ccc;
-        }
         .copy-btn {
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .copy-btn:hover { background: #ccc; }
+        .copy-btn.copied {
             background: #4CAF50;
             color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 8px;
         }
-        .copy-btn:hover { background: #45a049; }
-        #copyStatus {
+        .headline-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .headline-row h1 {
+            flex: 1;
+            margin: 0;
+        }
+        .item-row {
+            display: flex;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .item-row:last-child {
+            border-bottom: none;
+        }
+        .item-row span {
+            flex: 1;
+        }
+        .item-row .copy-btn {
+            flex-shrink: 0;
+        }
+        .tags-row {
+            display: flex;
+            align-items: center;
+        }
+        .tags-row p {
+            flex: 1;
+            margin: 0;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .section-header h3 {
+            margin: 0 !important;
+        }
+        .post-actions {
+            margin: 1em 0;
+            padding: 12px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            display: flex;
+            gap: 10px;
+        }
+        .post-actions .copy-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 8px 14px;
             font-size: 13px;
-            color: #666;
+        }
+        .post-actions .copy-btn:hover {
+            background: #45a049;
         }
     </style>
 </head>
 <body>
 
-<article id="postContent">
-<h1>Justice Department has released less than 1% of Epstein files</h1>
+<div class="headline-row">
+    <h1 id="headline">Justice Department has released less than 1% of Epstein files</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
 
+<article id="postBody">
 <p>The Justice Department told a federal judge this week that it has released approximately 12,285 documents — about 125,575 pages — from its Jeffrey Epstein files. That sounds like a lot until you learn there are more than 2 million documents still "in various phases of review." According to CBS News, the department has processed <a href="https://www.cbsnews.com/news/epstein-files-doj-says-it-has-reviewed-less-than-1-percent-so-far/">less than 1% of its total Epstein records</a>.</p>
 
 <p>The legal deadline to release these files was December 12. The Epstein Files Transparency Act, passed in mid-November, gave DOJ 30 days to publish a wide range of documents, including decades-old records from the earliest federal investigations, files from the 2019 and 2020 sex trafficking cases against Epstein and Ghislaine Maxwell, and materials from the department's review of Epstein's death in custody. They blew right past it.</p>
 
 <p>The department argues the volume is simply too massive — they need to find, upload, review, and redact millions of pages before publication. More than 400 DOJ lawyers are currently working on the effort. But at this pace, assuming everything eventually gets released, the entire process would take over eight years to complete. That timeline would extend well past any Trump administration.</p>
 
-<p>Senate Minority Leader Chuck Schumer has accused the department of a cover-up. Epstein survivors and congressional Democrats have criticized both the pace and the missed deadline.</p>
+<p>Senate Minority Leader Chuck Schumer has accused the department of a cover-up. Epstein survivors and congressional Democrats have criticized both the pace and the missed deadline. As Schumer put it: "The law Congress passed is crystal clear: release the Epstein files in full so Americans can see the truth."</p>
 
-<p>When you promise transparency on one of the most notorious sex trafficking cases in American history and then announce it'll take nearly a decade to deliver, people start asking uncomfortable questions.</p>
-
-<div class="previously">
+<div class="previously" id="previously">
 <strong>Previously:</strong>
 <ul>
 <li><a href="https://boingboing.net/2025/12/31/doj-tracked-journalist-who-exposed-epstein.html">DOJ tracked journalist who exposed Epstein</a></li>
@@ -133,70 +175,98 @@
 </div>
 </article>
 
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
 <hr>
 
 <div class="metadata">
-<h3>Source</h3>
-<p class="source-url">https://www.cbsnews.com/news/epstein-files-doj-says-it-has-reviewed-less-than-1-percent-so-far/</p>
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.cbsnews.com/news/epstein-files-doj-says-it-has-reviewed-less-than-1-percent-so-far/</p>
 
 <h3>Headlines (70 characters max)</h3>
-<ul>
-<li>DOJ has released less than 1% of Epstein files, missed deadline by weeks</li>
-<li>Justice Department says full Epstein file release could take 8+ years</li>
-<li>Over 2 million Epstein documents still under review as deadline passes</li>
-<li>Epstein transparency law ignored as DOJ processes files at glacial pace</li>
-<li>Schumer accuses DOJ of cover-up over slow Epstein document release</li>
-</ul>
+<div class="item-row"><span>DOJ has released less than 1% of Epstein files, missed deadline by weeks</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Justice Department says full Epstein file release could take 8+ years</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Over 2 million Epstein documents still under review as deadline passes</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Epstein transparency law ignored as DOJ processes files at glacial pace</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Schumer accuses DOJ of cover-up over slow Epstein document release</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
-<h3>Category Tags</h3>
-<p>news, politics, Justice Department, Jeffrey Epstein, Ghislaine Maxwell, Chuck Schumer</p>
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, politics, Justice Department, Jeffrey Epstein, Ghislaine Maxwell, Chuck Schumer</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Epstein files DOJ release</p>
 
 <h3>Meta Headlines (60 characters max)</h3>
-<ul>
-<li>DOJ has released less than 1% of Epstein files</li>
-<li>Full Epstein file release could take over 8 years</li>
-<li>Justice Department blows past Epstein disclosure deadline</li>
-<li>2 million Epstein documents still awaiting review</li>
-<li>Schumer calls DOJ's slow Epstein release a cover-up</li>
-</ul>
+<div class="item-row"><span>DOJ has released less than 1% of Epstein files</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Full Epstein file release could take over 8 years</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Justice Department blows past Epstein disclosure deadline</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>2 million Epstein documents still awaiting review</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Schumer calls DOJ's slow Epstein release a cover-up</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
 <h3>Meta Descriptions (120 characters max)</h3>
-<ul>
-<li>Justice Department has released under 1% of Epstein files. At current pace, full disclosure would take over eight years.</li>
-<li>DOJ told a judge it's reviewed 12,285 of 2+ million Epstein documents. The legal deadline passed weeks ago.</li>
-<li>The Epstein Files Transparency Act gave DOJ 30 days to release records. They've processed less than 1% so far.</li>
-<li>With 400 lawyers working on Epstein files, DOJ has released 1% of records. Full release could extend past 2034.</li>
-<li>Chuck Schumer accuses DOJ of cover-up as Epstein file release crawls along at less than 1% complete.</li>
-</ul>
+<div class="item-row"><span>Justice Department has released under 1% of Epstein files. At current pace, full disclosure would take over eight years.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DOJ told a judge it's reviewed 12,285 of 2+ million Epstein documents. The legal deadline passed weeks ago.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Epstein Files Transparency Act gave DOJ 30 days to release records. They've processed less than 1% so far.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>With 400 lawyers working on Epstein files, DOJ has released 1% of records. Full release could extend past 2034.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Chuck Schumer accuses DOJ of cover-up as Epstein file release crawls along at less than 1% complete.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
 
-<div class="copy-section">
-<button class="copy-btn" onclick="copyPost()">Copy Post HTML</button>
-<button class="copy-btn" onclick="copyPreviously()">Copy Previously HTML</button>
-<span id="copyStatus"></span>
-</div>
 </div>
 
 <script>
-function copyPost() {
-    const content = document.getElementById('postContent').innerHTML;
-    navigator.clipboard.writeText(content).then(() => {
-        document.getElementById('copyStatus').textContent = 'Post copied!';
-        setTimeout(() => document.getElementById('copyStatus').textContent = '', 2000);
+function copyText(id) {
+    const el = document.getElementById(id);
+    const text = el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        showCopied(event.target);
     });
 }
 
-function copyPreviously() {
-    const previously = document.querySelector('.previously').outerHTML
-        .replace(/<ul>/g, '')
-        .replace(/<\/ul>/g, '')
-        .replace(/<li>/g, '• ')
-        .replace(/<\/li>/g, '<br>')
-        .replace(/<div class="previously">/g, '<p>')
-        .replace(/<\/div>/g, '</p>');
-    navigator.clipboard.writeText(previously).then(() => {
-        document.getElementById('copyStatus').textContent = 'Previously copied!';
-        setTimeout(() => document.getElementById('copyStatus').textContent = '', 2000);
+function copyThis(btn) {
+    const text = btn.parentElement.querySelector('span').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        showCopied(btn);
     });
+}
+
+function copyBodyAndPreviously() {
+    const body = document.getElementById('postBody').innerHTML;
+    navigator.clipboard.writeText(body).then(() => {
+        showCopied(event.target);
+    });
+}
+
+function copyPreviouslyOnly() {
+    const prev = document.getElementById('previously');
+    const html = '<p><strong>Previously:</strong><br>' +
+        Array.from(prev.querySelectorAll('li')).map(li =>
+            '• ' + li.innerHTML
+        ).join('<br>') + '</p>';
+    navigator.clipboard.writeText(html).then(() => {
+        showCopied(event.target);
+    });
+}
+
+function showCopied(btn) {
+    const original = btn.textContent;
+    btn.textContent = 'copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+    }, 1500);
 }
 </script>
 
