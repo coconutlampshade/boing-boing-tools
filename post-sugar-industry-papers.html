@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The sugar industry paid Harvard scientists to blame fat for heart disease</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>In the 1960s, the sugar industry paid Harvard researchers the equivalent of $50,000 to publish a literature review that downplayed sugar's role in heart disease and pointed the finger at fat and cholesterol instead. According to <a href="https://www.ucsf.edu/news/2016/09/404081/sugar-papers-reveal-industry-role-shifting-national-heart-disease-focus">UCSF researchers</a> who discovered internal industry documents in public archives, the funding and the industry's involvement were never disclosed in the published paper.</p>
+
+<p>The 1967 study appeared in the New England Journal of Medicine and concluded that reducing dietary cholesterol and increasing polyunsaturated fats were the only necessary steps to prevent heart disease. Sugar got a pass. The paper shaped both public opinion and scientific consensus for decades, influencing dietary guidelines that steered Americans away from fat and toward carbohydrates.</p>
+
+<p>Internal documents show the sugar trade organization knew as early as 1954 that if Americans adopted low-fat diets, per-capita sugar consumption would increase by more than a third. When media coverage of the sugar-heart disease connection spiked in 1965, the industry launched "Project 226" — the Harvard literature review designed to shift the narrative.</p>
+
+<p>UCSF's Stanton Glantz, who has spent decades studying tobacco industry tactics, noted the parallels: "There are all kinds of ways that you can subtly manipulate the outcome of a study, which industry is very well practiced at." The sugar industry borrowed from the tobacco playbook — fund friendly research, bury inconvenient findings, manufacture doubt. It worked for 50 years.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2017/11/22/expensive-profitable-doubt.html">For more than half a century, the sugar industry has used Big Tobacco tactics to suppress sugar/cancer link</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.ucsf.edu/news/2016/09/404081/sugar-papers-reveal-industry-role-shifting-national-heart-disease-focus</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The sugar industry paid Harvard scientists to blame fat for heart disease</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Exposed: sugar industry funded research to shift blame to dietary fat</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>How Big Sugar bought decades of favorable science</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>1960s sugar industry documents reveal Big Tobacco-style manipulation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sugar lobby paid $50K to blame heart disease on fat, not sugar</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">health, science, sugar industry, nutrition, corporate manipulation, UCSF</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">sugar industry paid Harvard scientists</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Sugar industry paid Harvard to blame fat for heart disease</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Big Sugar funded 1960s research to shift blame to fat</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>How the sugar industry bought favorable science</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sugar lobby paid $50K to exonerate sugar in 1967</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Internal docs reveal sugar industry manipulation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The sugar industry paid Harvard scientists $50,000 in the 1960s to publish a study blaming fat, not sugar, for heart disease.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Internal documents show the sugar lobby funded research that shaped dietary guidelines for 50 years. The funding was never disclosed.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>UCSF researchers found industry documents showing Big Sugar used Big Tobacco tactics to manufacture doubt about sugar and heart disease.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>In 1967, Harvard published a sugar-industry-funded study in NEJM. It blamed fat for heart disease and gave sugar a pass.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The sugar industry knew low-fat diets would boost sugar sales. They paid scientists to make it happen. It worked for decades.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

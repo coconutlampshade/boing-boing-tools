@@ -19,5 +19,5 @@ function showCopied(btn) {
     const original = btn.textContent;
     btn.textContent = 'copied!';
     btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
 }

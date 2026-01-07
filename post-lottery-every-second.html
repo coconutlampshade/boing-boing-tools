@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">This site plays the lottery every second so you can watch yourself never win</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p><a href="https://lotteryeverysecond.lffl.me/">Lottery Every Second</a> is a web tool that does exactly what it promises: it simulates Powerball and EuroJackpot draws continuously, once per second, forever. The tagline sets the tone: "Why wait a week for disappointment when you can have it every second?"</p>
+
+<p>The odds of winning Powerball are 1 in 292 million. That's roughly equivalent to flipping a coin and getting heads 28 times in a row. Or picking one specific second out of the last nine years and asking someone to guess which one. The numbers are so large they become meaningless — your brain can't really process "292 million" as anything other than "very big number."</p>
+
+<p>That's what makes this visualization useful. You can watch the simulated draws roll by, second after second, minute after minute, and the numbers never match. You can leave it running in a tab while you work. Check back in an hour. Still losing. Check back tomorrow. Still losing. The site transforms an abstract statistic into something visceral: the relentless, grinding reality of near-zero odds playing out in real time.</p>
+
+<p>There's something almost meditative about watching guaranteed failure tick by at one-second intervals. It won't stop anyone from buying tickets — a $2 lottery ticket is still cheaper than a cappuccino and buys you a few minutes of daydreaming about quitting your job. But at least now you can daydream with your eyes open.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2020/12/07/how-a-convience-store-owner-hacked-the-lottery-odds-and-won-27-million.html">How a convenience store owner hacked the lottery odds and won $27 million</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://lotteryeverysecond.lffl.me/</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>This site plays the lottery every second so you can watch yourself lose</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Watch the lottery fail in real time, once per second, forever</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A visualization of lottery odds that runs until you give up watching</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why wait a week for lottery disappointment when you can have it now?</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Lottery Every Second makes 1-in-292-million odds feel real</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">internet, probability, visualization, lottery, mathematics</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">lottery odds visualization simulator</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>This site plays the lottery every second. You never win.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Watch lottery odds fail in real time, forever</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Lottery Every Second visualizes your losing streak</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A real-time simulation of never winning the lottery</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why wait for lottery disappointment? Have it now.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Lottery Every Second simulates Powerball draws once per second. Watch the numbers roll and never match, forever.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The odds of winning Powerball are 1 in 292 million. This site lets you watch those odds fail in real time.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Why wait a week for disappointment when you can have it every second?" A lottery simulator that never wins.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Leave it running while you work. Check back in an hour. Still losing. Check back tomorrow. Still losing.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This visualization turns abstract lottery odds into something visceral: guaranteed failure, one second at a time.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

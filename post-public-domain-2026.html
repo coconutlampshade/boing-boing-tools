@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The Maltese Falcon, As I Lay Dying, and Miss Marple are now free to read</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>On January 1, everything published in 1930 entered the U.S. public domain. According to <a href="https://standardebooks.org/blog/public-domain-day-2026">Standard Ebooks</a>, the volunteer-run project prepared 20 new free ebooks to celebrate, including some major titles: Dashiell Hammett's The Maltese Falcon, William Faulkner's As I Lay Dying, Franz Kafka's The Castle, and Agatha Christie's The Murder at the Vicarage — the first full-length Miss Marple novel.</p>
+
+<p>Other highlights: Langston Hughes' semi-autobiographical Not Without Laughter from the Harlem Renaissance. Evelyn Waugh's satirical Vile Bodies. Dorothy L. Sayers' Strong Poison from the Lord Peter Wimsey series. Arthur Ransome's children's adventure Swallows and Amazons. And the original 1930 Nancy Drew mysteries, before decades of revisions sanitized them.</p>
+
+<p>The Kafka entry is particularly significant. The 1930 English translation of The Castle introduced Kafka to English-speaking audiences — his work had been largely unknown outside German until then. That translation is now free to read, share, and build upon.</p>
+
+<p>Under the original 1790 copyright law, works received 28 years of protection. These books would have entered the public domain in 1958. Instead, after multiple extensions — most notoriously the 1998 Sonny Bono Act, pushed by Disney to protect Mickey Mouse — they waited 95 years. Standard Ebooks and similar projects exist because public domain books cost less, appear in more formats, and stay in print longer than copyrighted works. The 95-year wait is finally over for 1930.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/12/27/works-entering-the-u-s-public-domain-in-2026.html">Works entering the U.S. public domain in 2026</a></li>
+<li><a href="https://boingboing.net/2024/12/02/films-books-and-artwork-entering-the-public-domain-in-2025.html">Films, books and artwork entering the public domain in 2025</a></li>
+<li><a href="https://boingboing.net/2018/12/31/thanks-justin.html">Happy Public Domain day: for real, for the first time in 20 years!</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://standardebooks.org/blog/public-domain-day-2026</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The Maltese Falcon, As I Lay Dying, and Miss Marple are now free</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Public Domain Day 2026: Hammett, Faulkner, Christie, Kafka now free</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Standard Ebooks celebrates 1930 works entering public domain</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>After 95 years, The Maltese Falcon belongs to everyone</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>20 new free ebooks as 1930 classics enter public domain</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">books, public domain, copyright, literature, Standard Ebooks</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">public domain 2026 books</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>The Maltese Falcon and Miss Marple are now free</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Public Domain Day 2026: major 1930 works now free</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Hammett, Faulkner, Christie enter public domain</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>20 free ebooks celebrate Public Domain Day 2026</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>After 95 years, 1930 classics are finally free</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The Maltese Falcon, As I Lay Dying, The Castle, and the first Miss Marple novel entered the public domain on January 1.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Standard Ebooks prepared 20 free editions of 1930 classics including Hammett, Faulkner, Christie, and Kafka.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Works from 1930 waited 95 years to enter public domain. Under the original law, they'd have been free in 1958.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Public Domain Day 2026 brings free access to The Maltese Falcon, As I Lay Dying, and original Nancy Drew mysteries.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Kafka's The Castle, the translation that introduced him to English readers, is now free to read and share.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

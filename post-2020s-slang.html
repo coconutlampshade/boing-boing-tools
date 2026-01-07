@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Wikipedia's attempt to document "skibidi," "rizz," and "brainrot" for posterity</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p><a href="https://en.wikipedia.org/wiki/Glossary_of_2020s_slang">Wikipedia maintains a glossary of 2020s slang</a>, a living document attempting to catalog terms like "rizz" (charisma, especially romantic), "skibidi" (nonsense filler from a viral video series), "no cap" (no lie), and "brainrot" (the state of losing touch with reality from consuming too much online content, often diagnosed by excessive use of terms like "skibidi").</p>
+
+<p>The page notes that much of what's considered Gen Z slang actually originated in African-American Vernacular English and ball culture before going mainstream through TikTok and other platforms. The Washington Post has described this era as producing "an unprecedented variety of linguistic variation," which is one way to describe watching teenagers call AI chatbots "clankers."</p>
+
+<p>Some highlights: "aura" now means your overall vibe, and cultivating it is called "aura farming." To "cook" is to perform well, but to be "cooked" means you're in trouble. "Bffr" is an acronym for "be fucking for real." If someone is "caught in 4K," they've been indisputably recorded doing something wrong. A "beige flag" is a personality trait that's neither good nor bad.</p>
+
+<p>Self-deprecating irony runs through much of it. The glossary will presumably baffle future generations, assuming they can find it between the digital ruins of platforms that no longer exist. It's a snapshot of how a generation communicated during the specific years when algorithms shaped language faster than any previous technology. Future linguists will have their work cut out for them.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2024/06/27/an-old-persons-guide-to-skibidi-and-other-gen-z-slang.html">An old person's guide to "skibidi" and other Gen Z slang</a></li>
+<li><a href="https://boingboing.net/2019/03/27/brief-guide-to-gen-z-lingo.html">Brief guide to Gen Z lingo</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Glossary_of_2020s_slang</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Wikipedia's glossary of "skibidi," "rizz," and "brainrot"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A guide to 2020s slang for the deeply confused</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>What "cooked," "aura farming," and "bffr" mean, per Wikipedia</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The encyclopedia's attempt to document Gen Z language</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>From "no cap" to "clanker": Wikipedia catalogs 2020s slang</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">language, culture, Gen Z, internet culture, slang, Wikipedia</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">2020s slang glossary Wikipedia</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Wikipedia explains "rizz" and "brainrot"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The encyclopedia of 2020s slang terms</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A glossary for the terminally online era</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>What "skibidi" and "cooked" actually mean</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Gen Z slang, documented for posterity</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Wikipedia maintains a glossary of 2020s slang including "rizz," "brainrot," and "skibidi." Future generations will be lost.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Aura farming," "bffr," and "caught in 4K"—Wikipedia is documenting Gen Z language in real time.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 2020s slang glossary covers terms from TikTok and AAVE that went mainstream. Most originated elsewhere.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Wikipedia's slang page explains what it means to be "cooked" vs. to "cook" and why "clanker" is a slur for AI.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A living document of 2020s language: "rizz" means charisma, "brainrot" means you're too online.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

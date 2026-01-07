@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The anatomical term for those lower back dimples, named after the goddess of beauty</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Those two small indentations some people have on their lower back, just above the buttocks, have a proper anatomical name: the dimples of Venus, after the Roman goddess of beauty. In Latin, they're called fossae lumbales laterales, or "lateral lumbar indentations." When the same feature appears on men, they're technically called "dimples of Apollo," though almost nobody uses that term.</p>
+
+<p>According to <a href="https://en.wikipedia.org/wiki/Dimples_of_Venus">Wikipedia</a>, the dimples mark the sacroiliac joints, where your spine connects to your pelvis. They're created by a short ligament stretching between bone and skin, and they're largely genetic — you either have them or you don't, though body fat percentage affects how visible they are. Research suggests they're most prominent at around 22 percent body fat in women and 32 percent in men.</p>
+
+<p>Surgeons actually use these dimples as landmarks when placing screws during spine surgery, so they have genuine medical utility beyond aesthetics. Studies have looked for connections between the dimples and lower back pain but found no statistically significant correlation.</p>
+
+<p>The name has been accepted within the medical profession for so long that nobody knows who first made the connection to Venus. Presumably someone thought they were attractive enough to warrant a divine association. In the 2010s, the dimples became a popular spot for transdermal piercings — small jewelry embedded in the skin. The goddess of beauty probably didn't see that coming, but beauty standards have always been weird.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2014/09/15/the-best-atlas-of-human-anatom.html">The best atlas of human anatomy there is</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Dimples_of_Venus</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The anatomical term for those lower back dimples</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why those indentations above your butt are named after Venus</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Dimples of Venus: the real name for lower back dimples</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Your lower back dimples have a goddess's name</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The anatomy behind those little dents above the buttocks</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">anatomy, body, beauty standards, medicine, etymology</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">dimples of Venus lower back</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Why back dimples are named after Venus</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The anatomical name for lower back dimples</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Dimples of Venus: what they are and why</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Those back dents have a goddess's name</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The science of lower back dimples</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The dimples of Venus are lower back indentations named after the Roman goddess. Men's version: dimples of Apollo.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Those dents above your butt are called dimples of Venus. They mark where your spine meets your pelvis.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Lower back dimples have a formal anatomical name and surgeons use them as landmarks. They're also mostly genetic.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The dimples of Venus are genetic, named after a goddess, and useful in spine surgery. Body fat affects visibility.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Those two indentations on the lower back are called dimples of Venus. In men, they're technically Apollo's.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

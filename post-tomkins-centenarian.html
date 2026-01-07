@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">A New Yorker writer kept a journal of his 100th year</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Calvin Tomkins was born on December 17, 1925 — the same year The New Yorker began publishing. He's been a staff writer there since 1960, profiling artists like Robert Rauschenberg, Georgia O'Keeffe, and Marcel Duchamp. As he approached his centennial, he decided to keep a journal of his 100th year. The New Yorker published the result, a clear-eyed account of what it actually feels like to become very old.</p>
+
+<p>According to The New Yorker, Tomkins writes about the accumulating losses with remarkable candor: macular degeneration that makes reading difficult, memory lapses that frustrate him, the constant awareness that time is running short. "I sometimes think that the main thing I do these days is look for things," he writes. His wife Dodie, 93, helps him navigate the practical challenges — she reads to him, handles correspondence, keeps track of the details that slip away.</p>
+
+<p>The journal captures both the indignities and the unexpected pleasures of extreme age. Tomkins still swims, still attends gallery openings, still cares deeply about art. He recalls his decades of work with genuine satisfaction rather than nostalgia. When young people ask about his career, he tells them he's had "an absurdly good time."</p>
+
+<p>On Thanksgiving 2025, Tomkins suffered a stroke. The journal doesn't end there — it continues through his recovery, documenting what remains and what doesn't. "I'm not afraid of dying," he writes at one point. "I just don't want to miss anything."</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2020/07/23/wisdom-and-advice-from-100-yea.html">Wisdom and advice from 100-year-olds</a></li>
+<li><a href="https://boingboing.net/2015/06/20/115-year-old-woman-tells-us-ho.html">115-year-old woman shares her secrets to longevity</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.newyorker.com/culture/personal-history/becoming-a-centenarian</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>A New Yorker writer kept a journal of his 100th year</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Calvin Tomkins documents what it feels like to turn 100</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The art critic who's been writing for The New Yorker since 1960</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>At 100, a legendary journalist reflects on aging and art</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"I just don't want to miss anything": a centenarian's journal</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">culture, aging, journalism, The New Yorker, Calvin Tomkins</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Calvin Tomkins centenarian journal</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>A New Yorker writer's journal of his 100th year</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Calvin Tomkins on what it feels like to turn 100</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The art critic documenting his own centenarian year</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>At 100, still writing for The New Yorker</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"I just don't want to miss anything"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Calvin Tomkins, born the same year as The New Yorker, kept a journal of his 100th year. It's a clear-eyed look at aging.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The legendary art critic has profiled Rauschenberg, O'Keeffe, and Duchamp. Now he's documenting his own centenarian year.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Memory lapses, macular degeneration, a Thanksgiving stroke — and the unexpected pleasures of becoming very old.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"I'm not afraid of dying. I just don't want to miss anything." A 100-year-old writer reflects on his craft and his life.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Calvin Tomkins has written for The New Yorker since 1960. At 100, he's still swimming, still caring deeply about art.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

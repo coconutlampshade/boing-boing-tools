@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Professor fired for sharing Charlie Kirk headline gets $500,000 and his job back</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Darren Michael, an associate professor at Austin Peay State University, has been reinstated and will receive $500,000 after the school fired him for sharing a news headline about Charlie Kirk. According to <a href="https://www.mediaite.com/media/news/professor-fired-for-charlie-kirk-post-gets-500000-from-school-is-reinstated/">Mediaite</a>, Michael shared an article headlined "Charlie Kirk says gun deaths are 'unfortunately' worth it to keep 2nd Amendment" — without adding any commentary of his own.</p>
+
+<p>Two days after Kirk's assassination in September 2025, APSU terminated Michael, with President Mike Licari citing "insensitive comments" that "do not align with Austin Peay's commitment to mutual respect and human dignity." Senator Marsha Blackburn amplified the post on social media, including Michael's photo and biography, drawing public attention to his account.</p>
+
+<p>The problem: APSU didn't follow its own tenure termination process. The settlement includes the $500,000 payment, reimbursement for therapeutic counseling, and reinstatement effective December 2025. The university issued a statement acknowledging it "did not follow the required termination process in this matter" and expressing "deep regret" for "the impact this has had on Professor Michael."</p>
+
+<p>Michael shared a factual headline from a news outlet. He didn't celebrate anything or add commentary. The university fired him anyway, apparently responding to political pressure rather than any policy violation, then had to pay half a million dollars when it turned out that tenured professors have contractual rights that don't disappear because a senator got mad online.</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2024/06/12/the-weirdest-inventions-you-didnt-know-existed.html">The weirdest inventions you didn't know existed</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.mediaite.com/media/news/professor-fired-for-charlie-kirk-post-gets-500000-from-school-is-reinstated/</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Professor fired for sharing Charlie Kirk headline gets $500K settlement</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>University pays $500,000 after firing professor for sharing news headline</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>APSU fired a professor for a headline. It cost them half a million.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Professor who shared Kirk headline without comment gets job back, $500K</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>University ignored tenure rules to fire professor, now pays $500,000</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, education, free speech, social media, Charlie Kirk, Tennessee</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">professor fired Charlie Kirk settlement</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Professor fired for Kirk headline gets $500K back</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>University pays $500K for wrongful professor firing</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>APSU settles with professor it fired over headline</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sharing a headline cost this university $500,000</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Professor reinstated after politically motivated firing</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Darren Michael shared a headline about Charlie Kirk without comment. APSU fired him. Now they're paying $500,000.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Austin Peay State University fired a professor for sharing a news headline, ignored tenure rules, and paid half a million.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A senator amplified a professor's post. The university fired him. Tenure rules exist for a reason: $500,000.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>APSU admits it "did not follow the required termination process." Professor gets $500K and his job back.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Professor shared factual headline, added no commentary, got fired anyway. University now pays $500,000 settlement.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
