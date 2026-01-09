@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">NASA to medically evacuate astronaut from the International Space Station</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>NASA has announced that the four members of SpaceX Crew 11 will return early from the International Space Station, due to a medical issue affecting one of the astronauts.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>NASA astronauts Zena Cardman and Michael Fincke, JAXA astronaut Kimiya Yui, and Russian Cosmonaut Oleg Platonov have been aboard the ISS since August 2nd and were due to return in mid-February. A planned spacewalk was scrapped at the last minute on Wednesday, and public feeds were cut off due to a "medical concern."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Associate NASA Administrator Amit Rhea announced in a <a href="https://youtu.be/ffcV3jCwwPk">press conference</a> on Thursday that, for the first time in the history of the ISS, an astronaut would be brought home early for medical reasons. He stressed that this was not an emergency evacuation but rather an "expedited return." The crew member's identity was not disclosed, nor were any details of the medical condition discussed, to protect the astronaut's privacy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Chief Health and Medical Officer Dr. James D. Polk emphasized that the crew member is currently stable. Proper diagnosis or treatment under the challenging conditions of microgravity would be difficult, however, so the decision was made to bring the astronaut home early.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>NASA Administrator Jared Isaacman said that the details of the return trip would be worked out in the next couple of days. A single NASA astronaut remains on board to maintain the American side of the station, and the launch of the Crew 12 mission to ISS will be moved up. Isaacman indicated that the Artemis II mission to the moon, currently scheduled for February, remains on schedule.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/11/24/moss-survived-283-days-on-the-outside-of-the-international-space-station.html">Moss survived 283 days on the outside of the International Space Station</a></li>
+<li><a href="https://boingboing.net/2021/01/22/international-space-station-has-insignificant-crack-in-hull.html">International Space Station has 'insignificant' crack in hull</a></li>
+<li><a href="https://boingboing.net/2024/11/23/international-space-station-evades-space-junk.html">International Space Station evades space junk</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://youtu.be/ffcV3jCwwPk</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>NASA to medically evacuate astronaut from the International Space Station</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>First-ever medical evacuation from ISS announced by NASA</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>SpaceX Crew 11 returning early due to astronaut medical issue</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>NASA announces "expedited return" for ISS crew member</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Astronaut to be brought home early from ISS for medical reasons</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">science, space, NASA, International Space Station, SpaceX</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">NASA ISS medical evacuation</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>NASA to medically evacuate astronaut from ISS</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>First-ever medical evacuation from ISS announced</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>SpaceX Crew 11 returning early for medical issue</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>NASA announces "expedited return" for astronaut</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Astronaut coming home early from space station</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>For the first time in ISS history, NASA is bringing an astronaut home early for medical reasons.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>SpaceX Crew 11 will return early from the ISS due to a medical issue. NASA calls it an "expedited return."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>NASA won't say which astronaut or what the condition is, but the crew member is stable. Returning home early.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A planned spacewalk was scrapped and feeds cut off. Now NASA announces first-ever ISS medical evacuation.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Proper diagnosis in microgravity is difficult, so NASA decided to bring the astronaut home early.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Gail Sherman</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+- No edits needed (clean copy)
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
