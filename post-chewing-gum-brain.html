@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Scientists still can't explain why chewing gum helps you focus</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>"I guess people chew harder when they are sad," William Wrigley Jr. said during the Great Depression, as his gum empire kept making money while tens of thousands of businesses went bankrupt. A 1918 Wrigley ad promised gum "steadies nerves." Now, with gum sales down by almost a third since the pandemic and classics like Fruit Stripe discontinued, companies are reviving that pitch — telling people to "chew through" their problems.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The strange thing is, it might actually work. According to National Geographic, studies consistently show chewing gum increases alertness and sustained attention by around 10 percent, and reduces stress in lab settings. People who chewed gum before giving a five-minute presentation and taking a math test had lower stress levels. Women who chewed before elective surgery had lower anxiety. But scientists still can't explain the mechanism. "How do you go from muscle tension to nerve stimulation to the changes that occur in the brain?" asked one researcher. "That hasn't been figured out."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The theories are all over the place: maybe chewing increases blood flow to the brain, or facial muscle activation is involved, or the act of chewing distracts from stressors. One evolutionary biomechanic suggested humans might just like repetitive motions — tapping toes, clicking pens, fidgeting. Chewing gum could be fidgeting confined to the mouth. The word "ruminate" means both to chew and to think something over.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Humans have chewed gum for at least 8,000 years. The oldest piece ever found, from Scandinavia, was birch bark pitch with tooth marks from children as young as five — probably chewing for fun, not to make tools. "From a purely physiological perspective, chewing something without swallowing is pointless," wrote Karl Ove Knausgaard. But then he admitted he can't write without his Juicy Fruit.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2019/12/18/sequencing-an-ancient-girls.html">Sequencing an ancient girl's genome from 5,700-year-old chewing gum</a></li>
+<li><a href="https://boingboing.net/2025/04/11/a-strange-trick-to-stop-that-song-from-playing-in-your-head-over-and-over.html">A strange trick to silence an earworm</a></li>
+<li><a href="https://boingboing.net/2017/07/05/make-nearly-any-flavor-of-chew.html">Make nearly any flavor of chewing gum, in your microwave</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.nationalgeographic.com/premium/article/chewing-gum-brain-stress-attention</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Scientists still can't explain why chewing gum helps you focus</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Chewing gum boosts attention by 10 percent. Nobody knows why.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The mysterious cognitive effects of chewing gum</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"I guess people chew harder when they are sad"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Gum companies are pitching stress relief again. Science says maybe.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">science, psychology, chewing gum, brain, stress, attention</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">chewing gum brain focus</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Scientists can't explain why chewing gum helps you focus</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Chewing gum boosts attention 10%. Nobody knows why.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The mysterious cognitive effects of chewing gum</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"People chew harder when they are sad"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Gum might actually help with stress. Science says maybe.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Chewing gum boosts alertness by 10% and reduces stress. Scientists still can't explain the mechanism.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"I guess people chew harder when they are sad," Wrigley said during the Depression. Turns out he was onto something.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>With gum sales down a third since the pandemic, companies are pitching stress relief again. The science is mixed.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Humans have chewed gum for 8,000 years. We still don't know why it helps us think.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Chewing gum might just be fidgeting confined to the mouth. "Ruminate" means both to chew and to think.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
