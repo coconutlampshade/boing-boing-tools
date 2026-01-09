@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Razer's AI headphones will tell you what's in the book you're already reading</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Every tech company in the world is hard at work making even more ridiculous versions of Google Glass, <a href="https://boingboing.net/2025/12/31/get-ready-for-the-5090-5090-gpu-prices-expected-to-soar-next-year.html" target="_blank" rel="noreferrer noopener">eating all the RAM to do it</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Razer in particular seems to have pivoted from making mice and keyboards that work to crowbarring LLMs into every aspect of gaming and, indeed, life itself. Their latest announcement comes hot on the heels of unveiling <a href="https://boingboing.net/2026/01/07/razer-announces-ai-companion-for-your-real-world-desktop.html" target="_blank" rel="noreferrer noopener">their very own holographic anime girl</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Project AVA has an obvious problem, though, doesn't it? The poor girl is deskbound. How is she going to properly harvest your personal data with only a single camera angle? The answer, it seems, is <a href="https://www.youtube.com/watch?v=afNHg4UY7aA" target="_blank" rel="noreferrer noopener">Razer's new Project Motoko</a> — a pair of wireless gaming headphones with (you guessed it) an AI assistant built in.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/watch?v=afNHg4UY7aA","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=afNHg4UY7aA
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:paragraph -->
+<p>The promo shows off some truly ridiculous use cases, like asking for a summary of a book you're already looking at, or asking what you should cook when you've already gotten out and measured your ingredients. Who has time to think anymore?</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2026/01/07/razer-announces-ai-companion-for-your-real-world-desktop.html">Razer announces AI companion for your real-world desktop</a></li>
+<li><a href="https://boingboing.net/2025/09/22/zuckerbergs-meta-ai-glasses-repeatedly-fail-live-demo-embarrass-him-onstage.html">Zuckerberg's Meta AI glasses repeatedly fail live demo</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyBodyAndPreviously()">Copy post + previously</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously only</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.youtube.com/watch?v=afNHg4UY7aA</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Razer's AI headphones will tell you what's in the book you're reading</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Razer crams an AI assistant into gaming headphones</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Project Motoko: Razer's answer to thinking for yourself</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Razer's new headphones have AI to help you not think</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>After the holographic anime girl, Razer announces AI headphones</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">technology, AI, gaming, Razer, wearables</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Razer Project Motoko AI headphones</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Razer's AI headphones summarize books you're reading</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Razer crams AI into gaming headphones</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Project Motoko: AI headphones from Razer</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>After the anime girl, Razer announces AI headphones</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Razer wants AI to do your thinking for you</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Razer's Project Motoko headphones have a built-in AI assistant. The promo shows it summarizing a book you're holding.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Fresh off announcing a holographic anime girl, Razer unveils AI-powered gaming headphones. Who has time to think anymore?</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Razer keeps crowbarring LLMs into everything. Now it's wireless gaming headphones with a built-in AI assistant.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Project Motoko: Razer's new headphones will tell you what to cook when you've already measured the ingredients.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Razer pivots from mice and keyboards that work to cramming AI into every aspect of gaming and life itself.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Grant St. Clair</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

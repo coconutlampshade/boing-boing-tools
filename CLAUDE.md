@@ -10,7 +10,8 @@ BOING BOING TOOLS
 1. memeorandum   — Fetch 20 headlines from memeorandum.com, select articles for posts
 2. random-wiki   — Show 20 random articles from Wikipedia's Unusual Articles, select for posts
 3. writepost     — Write a post from a URL or topic the user provides
-4. author-stats  — Run author performance report (posts, views, evergreen metrics)
+4. copyedit      — Copy edit a contributor post (paste HTML), generate metadata, add to index
+5. author-stats  — Run author performance report (posts, views, evergreen metrics)
 ```
 
 ---
@@ -62,6 +63,69 @@ UNUSUAL WIKIPEDIA ARTICLES
 
 [...continues to 20]
 ```
+
+---
+
+# Copy Edit Tool
+
+This tool processes contributor posts — copy editing for clarity and correctness while preserving the author's voice, then generating all required metadata.
+
+## Workflow
+
+1. User types `copyedit` and pastes the contributor's rendered HTML (with images, hyperlinks, formatting)
+2. Copy edit the post:
+   - Fix grammar, spelling, punctuation
+   - Improve clarity and flow
+   - Tighten wordy passages
+   - Preserve the author's voice and style
+   - Keep all images, hyperlinks, and formatting intact
+   - Apply the "Avoiding AI-Sounding Writing" rules to edits
+3. Show the edited post to the user for approval
+4. Once approved, ask for:
+   - Source URL (if not already in the post)
+   - Author name (for the filename)
+5. Generate all metadata (headlines, tags, meta descriptions, etc.)
+6. Create the HTML post file and add to the index
+
+## Copy Editing Guidelines
+
+When editing contributor posts:
+
+### DO:
+- Fix objective errors (typos, grammar, punctuation)
+- Tighten verbose passages
+- Clarify confusing sentences
+- Improve sentence rhythm and flow
+- Remove filler phrases and empty words
+- Ensure facts are stated clearly
+
+### DON'T:
+- Change the author's opinions or positions
+- Alter their distinctive voice or style
+- Remove personality or humor
+- Add your own commentary
+- Over-polish into generic prose
+- Remove quirks that make the writing distinctive
+
+### Preserve:
+- All hyperlinks (keep href attributes intact)
+- All images (keep src, alt, and any captions)
+- Formatting (bold, italic, lists, blockquotes)
+- Embedded media (YouTube, tweets, etc.)
+- The author's word choices when they're intentional
+- Regional spelling variations (British vs American)
+
+## Output Format
+
+The HTML post file should include:
+- The edited post body with all original formatting, links, and images preserved
+- Previously section (search Boing Boing for related articles)
+- Source URL
+- 5 headline options (70 chars max, sentence case)
+- Category tags
+- Yoast focus keyphrase
+- 5 meta headlines (60 chars max)
+- 5 meta descriptions (120 chars max)
 
 ---
 
