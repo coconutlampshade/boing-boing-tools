@@ -204,12 +204,15 @@ Each post should:
 
 ## Example Attribution Styles
 
-Mention the publication by name in plain text. Do NOT include markdown links in the post body:
+Lead with the interesting information, put attribution at the end. Do NOT include markdown links in the post body:
 
-- "As reported by The Washington Post, the agency plans to cut 500 jobs by March..."
-- "According to Axios, lawmakers are preparing a new bill that would..."
-- "The Guardian reports that climate scientists have discovered a troubling trend..."
-- "A Reuters investigation reveals the company knowingly chose revenue over users..."
+- "The agency plans to cut 500 jobs by March, according to The Washington Post..."
+- "Lawmakers are preparing a new bill that would..., Axios reports."
+- "Climate scientists have discovered a troubling trend, according to The Guardian..."
+- "The company knowingly chose revenue over users, a Reuters investigation reveals."
+
+DON'T write: "According to CNN, prosecutors say Cole placed the bombs..."
+DO write: "Cole placed the bombs on the night of January 5, say prosecutors, according to CNN."
 
 The URL goes only in the Source section at the bottom. The editor will add the hyperlink where appropriate.
 
