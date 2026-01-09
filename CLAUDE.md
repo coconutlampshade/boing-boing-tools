@@ -120,7 +120,7 @@ When editing contributor posts:
 
 The HTML post file should include:
 - The edited post body with all original formatting, links, and images preserved
-- Previously section (MUST search site:boingboing.net for real related articles — never fabricate URLs)
+- Previously section (MUST search site:boingboing.net for real related articles — broaden search terms until you find matches, never fabricate URLs)
 - Source URL
 - 5 headline options (70 chars max, sentence case)
 - Category tags
