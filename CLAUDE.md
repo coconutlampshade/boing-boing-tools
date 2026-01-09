@@ -235,22 +235,23 @@ To keep posts sounding human, follow these rules:
 - "What's particularly interesting"
 
 ### Structural Rules
+- Em dashes must have a space before and after ( — not —)
 - Don't overuse em dashes for artificial drama
 - Vary paragraph lengths (some short, some longer)
-- Don't always use three examples—two or four is fine
+- Don't always use three examples — two or four is fine
 - Avoid "not only X but also Y" constructions
 - Don't hedge everything with "it can be argued" or "one might say"
-- Skip significance inflation—don't tell readers how important something is, just show them
+- Skip significance inflation — don't tell readers how important something is, just show them
 
 ### What TO Do
 - Use concrete, specific details (dates, names, numbers)
 - Take actual positions rather than hedging
-- Let prose have texture—short sentences, longer ones, fragments
+- Let prose have texture — short sentences, longer ones, fragments
 - Trust the reader to understand significance without being told
 - State facts directly instead of attributing to vague "experts"
 
 ### Avoiding "Smooth but Empty" Writing
-Avoid lines that sound good but lack substance, specificity, or verifiable content. This prevents "drift"—places where writing becomes vague or platitudinous.
+Avoid lines that sound good but lack substance, specificity, or verifiable content. This prevents "drift" — places where writing becomes vague or platitudinous.
 
 - Every sentence should contain specific, checkable information or a genuine insight
 - If a sentence doesn't add concrete facts, cut it
@@ -258,10 +259,10 @@ Avoid lines that sound good but lack substance, specificity, or verifiable conte
 - When in doubt, ask: "What specific claim is this sentence making?"
 
 ### Sentence Rhythm and Flow
-- Avoid too many short, punchy sentences in a row—it becomes exhausting to read
+- Avoid too many short, punchy sentences in a row — it becomes exhausting to read
 - Mix sentence lengths: follow a short sentence with a longer one that breathes
 - Use conjunctions (and, but, so, because) to connect ideas rather than always starting new sentences
-- Let some paragraphs unspool a bit—not everything needs to be staccato
+- Let some paragraphs unspool a bit — not everything needs to be staccato
 - Occasional longer sentences with clauses and asides create a more natural, conversational rhythm
 - Read it back: if it sounds like a series of punches, smooth it out
 
