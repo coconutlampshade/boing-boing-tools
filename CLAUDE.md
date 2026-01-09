@@ -11,7 +11,8 @@ BOING BOING TOOLS
 2. random-wiki   — Show 20 random articles from Wikipedia's Unusual Articles, select for posts
 3. writepost     — Write a post from a URL or topic the user provides
 4. copyedit      — Copy edit a contributor post (paste HTML), generate metadata, add to index
-5. author-stats  — Run author performance report (posts, views, evergreen metrics)
+5. pending       — Review and copy edit all pending posts from WordPress
+6. author-stats  — Run author performance report (posts, views, evergreen metrics)
 ```
 
 ---
@@ -126,6 +127,61 @@ The HTML post file should include:
 - Yoast focus keyphrase
 - 5 meta headlines (60 chars max)
 - 5 meta descriptions (120 chars max)
+
+---
+
+# Pending Posts Review
+
+This tool fetches all pending posts from WordPress and provides copy edit suggestions for each.
+
+## Setup (One-Time)
+
+An application password has been created for API access. The user fetches pending posts via browser console.
+
+## Workflow
+
+1. User types `pending`
+2. Display these instructions:
+
+```
+To fetch pending posts, run this in your browser console while logged into WP admin:
+
+fetch('/wp-json/wp/v2/posts?status=pending&per_page=20', {
+  headers: { 'X-WP-Nonce': wpApiSettings.nonce }
+})
+.then(r => r.json())
+.then(posts => {
+  const data = posts.map(p => ({
+    title: p.title.rendered,
+    content: p.content.rendered,
+    author: p.yoast_head_json?.author || 'Unknown'
+  }));
+  copy(JSON.stringify(data, null, 2));
+  console.log('Copied ' + posts.length + ' posts to clipboard!');
+});
+
+Then paste the JSON here.
+```
+
+3. User pastes the JSON with all pending posts
+4. For each post, review and provide copy edit suggestions:
+   - Fix typos, grammar, punctuation
+   - Note any missing tags
+   - Flag posts that are too long
+   - Identify any factual issues or unclear passages
+   - Preserve author voice — don't over-edit
+5. Present a summary table showing each post's status and any action needed
+
+## Output Format
+
+For each post, show:
+- Title and author
+- Issues found (or "Clean" if none)
+- Specific fixes needed (with before/after text)
+- Whether tags are missing
+- Overall status: Ready / Needs fixes / Optional trim
+
+End with a summary table of all posts.
 
 ---
 
