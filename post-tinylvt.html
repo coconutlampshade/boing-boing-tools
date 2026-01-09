@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">This tool lets communities auction shared resources and split the proceeds</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>TinyLVT is a web app that applies a 19th-century economic idea to modern resource-sharing problems. The concept comes from Henry George, whose "single tax" philosophy argued that the value of land belongs to everyone, not just whoever happens to occupy it. TinyLVT shrinks this down to practical scale: auction desks in a shared workspace, rooms in a co-living house, or stalls in a market, then distribute the auction proceeds equally to everyone in the community.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The site walks through a scenario involving grad students competing for desks in an economics department. Fourteen desks across five locations get auctioned quarterly. Students bid what they're actually willing to pay, desks go to whoever values them most, and those who don't win still get an equal share of the auction revenue. The student who really wants the window-facing desk can have it — but they compensate everyone else for taking it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It's a clever solution to a problem anyone who's shared space knows well: resources either get captured by whoever showed up first, or they're assigned by lottery to people who don't really want them. A desk sits empty because its "owner" works from coffee shops, while someone who'd actually use it goes without. The auction ensures desks go to people who'll use them, and the redistribution ensures everyone benefits from the space's value.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The platform handles the complexity — proxy bidding, climbing prices, automatic redistribution. You just set your values and let it run. It's Georgism as a service.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2019/01/28/what-was-old-is-new-again.html">Georgism: a 139-year-old ideology with a very modern application</a></li>
+<li><a href="https://boingboing.net/2018/02/06/as-old-as-hills.html">Land Value Tax: could an old idea solve the housing crisis?</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://tinylvt.com/</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>This tool lets communities auction shared resources and split the proceeds</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>TinyLVT brings 19th-century land economics to your coworking space</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Auction your shared desks, redistribute the money to everyone</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A Georgist solution to the "someone's hogging the good desk" problem</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Finally, a fair way to share scarce space</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">technology, economics, Georgism, resource sharing, land value tax</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">TinyLVT resource sharing auction</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Auction shared resources, split the proceeds equally</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>TinyLVT brings Georgism to your coworking space</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A fair way to share scarce space in communities</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Auction desks, redistribute the money to everyone</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Georgism as a service for shared spaces</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>TinyLVT auctions shared resources and redistributes proceeds equally. Desks go to whoever values them most.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Auction the desks in your shared space. Redistribute the money to everyone. Repeat quarterly. Georgism as a service.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Resources get captured by whoever showed up first. TinyLVT fixes that with auctions and equal redistribution.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A web app that applies Henry George's land value tax to shared workspaces, co-living houses, and markets.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The student who wants the window desk can have it — but they compensate everyone else for taking it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
