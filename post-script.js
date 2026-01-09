@@ -6,8 +6,11 @@ function copyThis(btn) {
     const text = btn.parentElement.querySelector('span').textContent;
     navigator.clipboard.writeText(text).then(() => showCopied(btn));
 }
-function copyBodyAndPreviously() {
-    navigator.clipboard.writeText(document.getElementById('postBody').innerHTML).then(() => showCopied(event.target));
+function copyPostOnly() {
+    const body = document.getElementById('postBody').cloneNode(true);
+    const prev = body.querySelector('.previously');
+    if (prev) prev.remove();
+    navigator.clipboard.writeText(body.innerHTML).then(() => showCopied(event.target));
 }
 function copyPreviouslyOnly() {
     const prev = document.getElementById('previously');

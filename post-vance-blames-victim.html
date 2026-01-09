@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">JD Vance calls Minneapolis woman's death by ICE agent "a tragedy of her own making"</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>Vice President JD Vance responded to the fatal shooting of 37-year-old Renee Nicole Good by an ICE agent in Minneapolis by blaming her for her own death. According to Newsweek, Vance posted on social media: "You can accept that this woman's death is a tragedy while acknowledging it's a tragedy of her own making. Don't illegally interfere in federal law enforcement operations and try to run over our officers with your car. It's really that simple."</p>
+
+<p>In a press conference, Vance doubled down. He said the ICE agent who shot Good was doing an "important job for the United States of America" and noted that the agent had been dragged by a suspect's vehicle in a previous incident. "So you think maybe he's a little bit sensitive about somebody ramming him with an automobile?" Vance said.</p>
+
+<p>Good was a U.S. citizen, a widow, and the mother of three children. Local officials say she was acting as a legal observer during ICE's enforcement operation — what DHS called the largest immigration sweep ever conducted. Minneapolis Mayor Jacob Frey and Governor Tim Walz have both contradicted the federal account of events, with Frey calling DHS's characterization "bullshit" and Walz warning Minnesotans not to trust the "propaganda machine."</p>
+
+<p>DHS, meanwhile, labeled Good a "violent rioter" who committed "an act of domestic terrorism" by "weaponizing her vehicle."</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/10/09/doj-upset-as-ice-lies-fail-to-garner-indictments.html">DOJ upset as ICE lies fail to garner indictments</a></li>
+<li><a href="https://boingboing.net/2025/11/26/interview-with-racially-profiled-us-citizen-attacked-and-abused-by-ice.html">Interview with racially profiled US citizen attacked and abused by ICE</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.newsweek.com/jd-vance-issues-warning-minneapolis-ice-shooting-work-even-harder-trump-11322242</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>JD Vance calls woman's death by ICE agent "a tragedy of her own making"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vance blames US citizen killed by ICE for her own death</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vice President defends ICE agent who shot mother of three</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vance on Minneapolis shooting: "It's really that simple"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DHS calls slain US citizen a "domestic terrorist," Vance agrees</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, politics, JD Vance, ICE, Minneapolis, immigration</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">JD Vance ICE shooting Minneapolis</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Vance: Woman's death by ICE "a tragedy of her own making"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vance blames citizen killed by ICE for her own death</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vice President defends ICE agent who shot US citizen</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vance: "It's really that simple"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DHS calls slain woman "domestic terrorist"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>JD Vance called Renee Nicole Good's death "a tragedy of her own making." She was a US citizen, a widow, mother of three.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Don't illegally interfere in federal law enforcement operations." Vance blames woman killed by ICE for her own death.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DHS calls her a "violent rioter" and "domestic terrorist." Local officials call that "bullshit." Vance backs DHS.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Vice President defended the ICE agent who shot a mother of three, saying the agent was "sensitive" about cars.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Vance on the ICE shooting: "It's really that simple." Minneapolis officials say the federal account is propaganda.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

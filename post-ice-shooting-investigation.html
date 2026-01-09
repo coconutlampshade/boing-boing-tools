@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Minnesota officials say they're being blocked from investigating fatal ICE shooting</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<p>On January 7, an ICE agent in Minneapolis shot and killed 37-year-old Renee Nicole Good, a U.S. citizen and mother of three who local officials say was acting as a legal observer during an immigration enforcement operation. According to NBC News, Minnesota's Bureau of Criminal Apprehension has now been cut out of the investigation entirely — blocked from accessing the crime scene, video evidence, and witness interviews.</p>
+
+<p>Initially, the BCA was set to conduct a joint investigation with the FBI. That afternoon, the U.S. Attorney's Office reversed course: the FBI would lead the probe alone. Commissioner of Public Safety Bob Jacobson said state prosecutors now can't bring charges without access to the evidence. "To be able to file state charges, we would need a full investigation, which would include the opportunity to have been at the crime scene, to have had the opportunity to take a look at all the video and evidence that the FBI would have in their possession."</p>
+
+<p>Governor Tim Walz said he's pessimistic that a "fair outcome" will come from a federal-only investigation. DHS Secretary Kristi Noem claimed the BCA hasn't been "cut out" — they simply have "no jurisdiction."</p>
+
+<p>The federal and local accounts of the shooting diverge sharply. DHS called Good a "violent rioter" who "weaponized her vehicle" in "an act of domestic terrorism." Minneapolis Mayor Jacob Frey called that characterization "bullshit." Walz told Minnesotans not to believe what he described as a "propaganda machine."</p>
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/11/26/interview-with-racially-profiled-us-citizen-attacked-and-abused-by-ice.html">Interview with racially profiled US citizen attacked and abused by ICE</a></li>
+<li><a href="https://boingboing.net/2025/04/29/a-little-rough-ice-attacks-us-citizens-in-oklahoma-city.html">"A little rough": ICE attacks US citizens in Oklahoma City</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.nbcnews.com/news/us-news/live-blog/live-updates-woman-fatally-shot-ice-agent-identified-us-citizen-mother-rcna252927</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Minnesota blocked from investigating fatal ICE shooting of US citizen</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI cuts Minnesota out of ICE shooting probe, blocks access to evidence</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>State can't bring charges without evidence FBI is withholding</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Walz pessimistic about "fair outcome" after feds take over ICE probe</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DHS calls shooting victim a "terrorist," mayor calls that "bullshit"</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, immigration, ICE, Minnesota, Tim Walz, law enforcement</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Minnesota ICE shooting investigation</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Minnesota blocked from investigating ICE shooting</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI cuts state out of fatal ICE shooting probe</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>State can't charge ICE agent without evidence FBI holds</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Walz: No "fair outcome" from federal-only probe</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DHS and Minneapolis clash over ICE shooting account</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Minnesota officials say the FBI reversed course and blocked them from investigating the fatal ICE shooting of a US citizen.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The state can't bring charges without evidence the FBI is withholding. Governor Walz is pessimistic about a "fair outcome."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DHS called the victim a "violent rioter" and "domestic terrorist." Minneapolis mayor called that characterization "bullshit."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI cut Minnesota's BCA out of the ICE shooting investigation. No access to the crime scene, video, or witness interviews.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The federal and local accounts of the Minneapolis ICE shooting are wildly different. State officials can't investigate why.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
