@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Alien influencers produce pitch-perfect satire</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>The very best satire comes from holding up a mirror to your intended audience and going "isn't this weird?"</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Who better to do that to all of humanity than a pair of aliens? Grik and Carl are sketch comedians masquerading as "alien influencers" in a schtick so elegantly simple I can't believe no one else has thought of it before. They've been toiling away since March of last year, but have only recently broken into virality with their <a href="https://www.youtube.com/shorts/hGCy1UfqLYw">"human impressions"</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/shorts/hGCy1UfqLYw","type":"video","providerNameSlug":"youtube"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-9-16 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/shorts/hGCy1UfqLYw
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:paragraph -->
+<p>First off, hey, that's speciesist! Second off, I've never felt more seen, which feels odd to say about a pair of blue aliens. The rest of their content is in a similar vein, poking fun at humans and our many idiosyncrasies — and honestly, I think they deserve the viral success for suffering through those makeup jobs alone.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2021/11/30/someone-claiming-to-be-an-alien-hijacked-this-1997-live-bbc-broadcast.html">Someone claiming to be an alien hijacked this 1977 live TV broadcast</a></li>
+<li><a href="https://boingboing.net/2020/06/12/watch-this-ridiculous-and-wond.html">Watch this ridiculous and wonderful low-budget remake of Alien</a></li>
+<li><a href="https://boingboing.net/2025/09/22/comedian-poses-as-cracker-barrel-pr-rep.html">Comedian poses as Cracker Barrel PR rep</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.youtube.com/shorts/hGCy1UfqLYw</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Alien influencers produce pitch-perfect satire</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>These "alien influencers" do human impressions and I feel seen</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Grik and Carl are aliens doing impressions of us</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sketch comedians as alien influencers is pitch-perfect satire</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Blue aliens doing "human impressions" go viral</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">wonderful things, comedy, satire, YouTube, viral videos</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">alien influencers human impressions</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Alien influencers produce pitch-perfect satire</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Alien influencers" do human impressions, I feel seen</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Grik and Carl are aliens doing impressions of us</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Sketch comedians as alien influencers go viral</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Blue aliens doing "human impressions" is gold</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Grik and Carl are sketch comedians masquerading as aliens. Their "human impressions" are pitch-perfect satire.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>I've never felt more seen, which is odd to say about a pair of blue aliens doing human impressions.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>They deserve viral success for suffering through those makeup jobs alone.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The best satire holds up a mirror and asks "isn't this weird?" Who better than aliens?</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>First off, that's speciesist! Second, their human impressions are too accurate.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Grant St. Clair</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+- Removed embedded ad divs<br>
+- Clean post, minimal changes needed
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
