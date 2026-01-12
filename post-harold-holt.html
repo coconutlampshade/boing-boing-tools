@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Australia's Prime Minister went swimming in 1967 and was never seen again</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>On December 17, 1967, Australian Prime Minister Harold Holt went for a swim at Cheviot Beach in Victoria. He walked into the rough surf and disappeared. His body was never found.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Holt was 59 and an experienced swimmer who'd been swimming at that beach for years. The conditions that day were dangerous — heavy surf and a strong undertow — but Holt went in anyway while friends watched from shore. Within minutes he was gone. The search that followed was one of the largest in Australian history, involving helicopters, divers, and naval vessels. Nothing.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The most likely explanation is simply that the ocean killed him. But the absence of a body spawned decades of conspiracy theories. Some claimed he faked his death. Others insisted he was picked up by a Chinese submarine — Holt had been a vocal supporter of the Vietnam War and opponent of communism. A 2005 biography argued he committed suicide. The coroner's 2005 inquest concluded he drowned accidentally.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The most Australian detail of this whole saga: two years after his disappearance, the government opened the Harold Holt Memorial Swimming Centre in Melbourne. Naming a swimming pool after a man who drowned strikes many as darkly ironic, though supporters argue Holt loved swimming and would have appreciated the tribute. Either way, it's a very Australian way to remember a Prime Minister.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2016/05/05/the-10-most-unsolvable-unsolve.html">The 10 most unsolvable unsolved disappearances</a></li>
+<li><a href="https://boingboing.net/2022/01/05/its-possible-to-think-yourself-to-death.html">It's possible to "think" yourself to death</a></li>
+<li><a href="https://boingboing.net/2021/07/16/i-didnt-shit-my-pants-at-mcdonalds-25-years-ago-australian-prime-minister-insists.html">Australian Prime Minister insists he didn't shit his pants at McDonald's 25 years ago</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Harold_Holt</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Australia's Prime Minister went swimming in 1967 and was never seen again</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>They named a swimming pool after the PM who drowned</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Harold Holt walked into the ocean and disappeared forever</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Australian PM who vanished in the surf spawned decades of theories</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Australia's darkest swim: the PM who never came back</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">history, Australia, mysteries, Harold Holt, politics</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Harold Holt disappearance swimming</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Australia's PM went swimming in 1967, never seen again</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>They named a pool after the PM who drowned</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Harold Holt walked into the ocean and vanished</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The PM who vanished spawned decades of conspiracy</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Australia's darkest swim: the PM who never returned</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Harold Holt walked into the surf at Cheviot Beach in 1967. His body was never found. They named a pool after him.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Conspiracy theories ranged from faked death to Chinese submarines. The coroner said he simply drowned.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The search was one of Australia's largest. Helicopters, divers, naval vessels. Nothing.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Harold Holt Memorial Swimming Centre opened two years after he drowned. Very Australian.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He was 59, an experienced swimmer. The conditions were dangerous. He went in anyway.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

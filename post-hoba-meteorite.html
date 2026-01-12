@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The largest meteorite on Earth is still exactly where it landed</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>The Hoba meteorite weighs about 60 metric tons and has never been moved. It lies on a farm in Namibia, right where it fell roughly 80,000 years ago. It's the largest known intact meteorite on Earth, and it's still just sitting there because moving 60 tons of iron is really, really hard.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A farmer discovered it in 1920 when his plow struck something that shouldn't have been there. The object turned out to be a flat-topped chunk of iron and nickel about 2.7 meters across and one meter thick — roughly the size and shape of a small car crushed into a pancake. Scientists estimate it originally weighed around 66 tons before weathering and souvenir hunters chipped away at it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What's strange about Hoba is that there's no impact crater. Meteorites this size usually leave a mark. The leading theory is that Hoba's flat shape and the Earth's atmosphere conspired to slow it down significantly before impact — essentially a cosmic belly flop that distributed the force enough to avoid cratering. It may have also skipped across the atmosphere like a stone on water before finally touching down.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The site is now a national monument. Visitors can walk right up and touch a 60-ton chunk of space debris that's older than human civilization. The government built a small amphitheater around it. You can sit on stone benches and contemplate a rock that traveled through the void for billions of years only to end up as a tourist attraction on a Namibian farm.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2024/01/04/meteorite-ownership-are-space-rocks-in-your-yard-really-yours.html">Meteorite ownership: are space rocks in your yard really yours?</a></li>
+<li><a href="https://boingboing.net/2023/03/05/the-heart-of-space-meteorite-is-shaped-like-its-namesake.html">The "Heart of Space" meteorite is shaped like its namesake</a></li>
+<li><a href="https://boingboing.net/2022/12/09/try-this-fun-asteroid-impact-simulator-and-visualize-earths-annihilation.html">Try this fun asteroid impact simulator</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Hoba_meteorite</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The largest meteorite on Earth is still exactly where it landed</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This 60-ton space rock has never been moved from where it fell</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Hoba meteorite: too heavy to move, too old to comprehend</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A farmer discovered the world's largest meteorite when his plow struck it</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 60-ton meteorite with no impact crater</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">science, space, meteorites, Namibia, wonderful things</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Hoba meteorite largest</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>The largest meteorite on Earth is still where it landed</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This 60-ton space rock has never been moved</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Hoba meteorite: too heavy to move, too old to grasp</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A farmer's plow struck the world's largest meteorite</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 60-ton meteorite with no crater</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The Hoba meteorite weighs 60 tons and has never been moved. It's still on the Namibian farm where it fell 80,000 years ago.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A farmer found it in 1920 when his plow struck something that shouldn't have been there.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>There's no impact crater. Its flat shape may have caused a cosmic belly flop that avoided cratering.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>You can walk up and touch 60 tons of space debris older than human civilization. It's now a national monument.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>It traveled billions of years through the void to become a tourist attraction on a Namibian farm.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
