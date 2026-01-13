@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">AI agents have made self-hosting your own cloud actually fun</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Running your own home server used to mean spending hours fighting with Docker configs, memorizing arcane Linux commands, and debugging networking issues at 2am. Developer Jordan Fulghum <a href="https://fulghum.io/self-hosting">argues that 2026 is the inflection point</a> where that changed — and the reason is CLI agents like Claude Code.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The pitch: a $379 Beelink mini PC, an 8TB NVMe drive, and an AI assistant that actually knows how to configure things. Fulghum now runs 14 containerized services — Vaultwarden for passwords, Immich as a Google Photos replacement, Plex, Home Assistant, and more — all while his tiny server idles at under 10% CPU. Total hardware cost: around $700.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The real innovation isn't the hardware, which has been cheap for years. It's that you no longer need to become a sysadmin to make it work. When Fulghum needs to set up a reverse proxy or configure automatic backups to AWS Glacier, he just asks Claude Code to handle it. The agent reads documentation, writes configs, and troubleshoots errors — all the tedious parts that used to make self-hosting a chore.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Daily backups go to an external USB drive; weekly backups upload to Glacier for about 20 cents a month. The whole system runs through Tailscale for secure remote access without opening ports to the internet. For anyone comfortable with a terminal but tired of paying for a dozen SaaS subscriptions, this might be the moment self-hosting finally makes sense.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2024/10/22/watch-claude-ai-take-control-of-a-computer-and-build-its-own-website-from-scratch.html">Watch Claude AI take control of a computer and build its own website from scratch</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://fulghum.io/self-hosting</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>AI agents have made self-hosting your own cloud actually fun</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>CLI agents like Claude Code make running a home server easy</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A $700 home server that replaces a dozen SaaS subscriptions</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Self-hosting finally makes sense now that AI handles the tedious parts</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>How AI agents turned self-hosting from chore to hobby</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">technology, self-hosting, AI, Claude Code, home server</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">self-hosting AI agents</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>AI agents make self-hosting your own cloud fun</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Claude Code makes running a home server easy</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A $700 server replacing a dozen subscriptions</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Self-hosting makes sense when AI does the work</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>AI turned self-hosting from chore to hobby</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>A $379 mini PC, 8TB storage, and Claude Code. That's all you need to replace Google Photos, LastPass, and more.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>CLI agents handle the tedious parts — configs, networking, backups. You just tell them what you want.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>14 services running on a tiny server that idles at 10% CPU. Total cost: $700. Monthly backup storage: 20 cents.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>You no longer need to become a sysadmin to run your own cloud. AI agents read the docs so you don't have to.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Self-hosting used to mean debugging at 2am. Now it means asking Claude Code to handle it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

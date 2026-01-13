@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Why mail a postcard when you can Prime someone a lime?</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>A U.S. postage stamp costs 78 cents. A lime on Amazon Prime costs 25 cents and arrives in two days with free shipping. Developer Ryan Walz noticed this <a href="https://walzr.com/postal-arbitrage">pricing inefficiency</a> and turned it into what he calls "postal arbitrage" — sending physical gifts through Amazon instead of traditional mail.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The trick is finding Prime-eligible items under the cost of a stamp. Walz compiled a list: Kool-Aid packets for 42 cents, pasta for 50 cents, hurricane tie hardware for 51 cents, potatoes for 56 cents, tomato sauce for 70 cents. You add a gift note with your message and Amazon handles the rest.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It started in 2023 when Walz sent $1 cans of beans to extended family. The move sparked weeks of sustained group chat engagement. Then things escalated. Family members started sending each other random items — an asbestos warning label, cookies, a tin of sardines, and for reasons left unexplained, a pregnancy test.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The economics only work because Amazon has built a logistics network so efficient that delivering a single lime to someone's door costs them less than what the USPS charges to move a half-ounce piece of paper. That's either impressive or dystopian, depending on your feelings about warehouse working conditions. But Walz's argument is hard to dispute: "You're not only saving money. It's about sending something real." Your aunt might throw away a postcard. She'll probably eat the potato.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2012/11/29/the-heaviest-item-to-qualify-f.html">The heaviest item to qualify for free Amazon Prime shipping weighs 1,672 lbs</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://walzr.com/postal-arbitrage</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Why mail a postcard when you can Prime someone a lime?</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Postal arbitrage: sending gifts through Amazon for less than a stamp</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Amazon Prime delivers a lime cheaper than USPS delivers a letter</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 25-cent lime that costs less to ship than a postcard</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Forget stamps — send your family a potato through Amazon Prime</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">wonderful things, Amazon, shipping, lifehacks, USPS</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">postal arbitrage Amazon Prime</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Why mail a postcard when you can Prime a lime?</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Postal arbitrage: Amazon gifts cheaper than stamps</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Amazon delivers a lime cheaper than USPS a letter</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 25-cent lime that ships free via Prime</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Send your family a potato instead of a postcard</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>A stamp costs 78 cents. A lime on Prime costs 25 cents with free shipping. Developer finds the loophole, chaos ensues.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He sent $1 cans of beans to family. They responded with asbestos warning labels, sardines, and a pregnancy test.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Your aunt might throw away a postcard. She'll probably eat the potato.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Amazon's logistics network delivers a lime to your door for less than USPS charges for a half-ounce of paper.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Kool-Aid: 42 cents. Pasta: 50 cents. Hurricane tie hardware: 51 cents. All cheaper than a stamp.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
