@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boing Boing Tools</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #222;
+            background: #f8f8f8;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .tabs {
+            display: flex;
+            gap: 4px;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            border: none;
+            background: #e0e0e0;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 8px 8px 0 0;
+            transition: background 0.2s;
+        }
+        .tab:hover { background: #d0d0d0; }
+        .tab.active {
+            background: white;
+            font-weight: 600;
+        }
+        .panel {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 0 8px 8px 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .panel.active { display: block; }
+        .headline-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .headline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .headline-item:last-child { border-bottom: none; }
+        .headline-item input[type="checkbox"] {
+            margin-top: 4px;
+        }
+        .headline-info { flex: 1; }
+        .headline-title {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .headline-source {
+            font-size: 12px;
+            color: #666;
+        }
+        .btn {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover { background: #0055aa; }
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: #666;
+        }
+        .btn-secondary:hover { background: #555; }
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+        }
+        .url-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .loading {
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+        .error {
+            color: #cc0000;
+            padding: 12px;
+            background: #ffe0e0;
+            border-radius: 6px;
+            margin: 12px 0;
+        }
+        .success {
+            color: #006600;
+            padding: 12px;
+            background: #e0ffe0;
+            border-radius: 6px;
+            margin: 12px 0;
+        }
+        .post-preview {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        .post-preview h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .post-preview .post-body {
+            font-family: Georgia, serif;
+            line-height: 1.8;
+        }
+        .post-preview .metadata {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 13px;
+        }
+        .meta-section {
+            margin-bottom: 12px;
+        }
+        .meta-section h4 {
+            margin: 0 0 4px 0;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .queue-list {
+            margin-top: 20px;
+        }
+        .queue-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        .queue-item.processing {
+            background: #fff3cd;
+        }
+        .queue-item.done {
+            background: #d4edda;
+        }
+        .queue-item.error {
+            background: #f8d7da;
+        }
+        .queue-status {
+            font-size: 12px;
+            color: #666;
+        }
+        .header-links {
+            margin-left: auto;
+            font-size: 14px;
+        }
+        .header-links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    Boing Boing Tools
+    <span class="header-links">
+        <a href="/posts">View Posts</a>
+    </span>
+</h1>
+
+<div class="tabs">
+    <button class="tab active" data-panel="memeorandum">Memeorandum</button>
+    <button class="tab" data-panel="random-wiki">Random Wiki</button>
+    <button class="tab" data-panel="writepost">Write Post</button>
+</div>
+
+<!-- Memeorandum Panel -->
+<div id="memeorandum" class="panel active">
+    <p>Fetch the latest headlines from memeorandum.com and select articles to write posts about.</p>
+    <button class="btn" onclick="fetchMemeorandum()">Fetch Headlines</button>
+
+    <div id="memo-loading" class="loading" style="display:none;">Fetching headlines...</div>
+    <div id="memo-error" class="error" style="display:none;"></div>
+
+    <ul id="memo-list" class="headline-list"></ul>
+
+    <div id="memo-actions" class="actions" style="display:none;">
+        <button class="btn" onclick="generateMemoPosts()">Generate Posts</button>
+        <button class="btn btn-secondary" onclick="clearMemoSelection()">Clear Selection</button>
+    </div>
+
+    <div id="memo-queue" class="queue-list"></div>
+</div>
+
+<!-- Random Wiki Panel -->
+<div id="random-wiki" class="panel">
+    <p>Get 20 random articles from Wikipedia's Unusual Articles list.</p>
+    <button class="btn" onclick="fetchRandomWiki()">Get Random Articles</button>
+
+    <div id="wiki-loading" class="loading" style="display:none;">Fetching unusual articles...</div>
+    <div id="wiki-error" class="error" style="display:none;"></div>
+
+    <ul id="wiki-list" class="headline-list"></ul>
+
+    <div id="wiki-actions" class="actions" style="display:none;">
+        <button class="btn" onclick="generateWikiPosts()">Generate Posts</button>
+        <button class="btn btn-secondary" onclick="clearWikiSelection()">Clear Selection</button>
+    </div>
+
+    <div id="wiki-queue" class="queue-list"></div>
+</div>
+
+<!-- Write Post Panel -->
+<div id="writepost" class="panel">
+    <p>Enter a URL to generate a blog post.</p>
+    <input type="url" id="writepost-url" class="url-input" placeholder="https://example.com/article">
+    <button class="btn" onclick="generateWritepost()">Generate Post</button>
+
+    <div id="writepost-loading" class="loading" style="display:none;">Fetching article and generating post...</div>
+    <div id="writepost-error" class="error" style="display:none;"></div>
+    <div id="writepost-preview"></div>
+</div>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.panel).classList.add('active');
+    });
+});
+
+// Memeorandum
+let memoHeadlines = [];
+
+async function fetchMemeorandum() {
+    const loading = document.getElementById('memo-loading');
+    const error = document.getElementById('memo-error');
+    const list = document.getElementById('memo-list');
+    const actions = document.getElementById('memo-actions');
+
+    loading.style.display = 'block';
+    error.style.display = 'none';
+    list.innerHTML = '';
+    actions.style.display = 'none';
+
+    try {
+        const res = await fetch('/api/memeorandum');
+        const data = await res.json();
+
+        if (data.error) throw new Error(data.error);
+
+        memoHeadlines = data.headlines;
+        renderHeadlineList(list, memoHeadlines, 'memo');
+        actions.style.display = 'flex';
+    } catch (err) {
+        error.textContent = err.message;
+        error.style.display = 'block';
+    } finally {
+        loading.style.display = 'none';
+    }
+}
+
+function renderHeadlineList(container, items, prefix) {
+    container.innerHTML = items.map((item, i) => `
+        <li class="headline-item">
+            <input type="checkbox" id="${prefix}-${i}" data-index="${i}">
+            <div class="headline-info">
+                <div class="headline-title">${escapeHtml(item.title)}</div>
+                <div class="headline-source">${item.source || new URL(item.url).hostname}</div>
+            </div>
+        </li>
+    `).join('');
+}
+
+function getSelectedIndices(prefix) {
+    const checkboxes = document.querySelectorAll(`#${prefix}-list input:checked`);
+    return Array.from(checkboxes).map(cb => parseInt(cb.dataset.index));
+}
+
+async function generateMemoPosts() {
+    const indices = getSelectedIndices('memo');
+    if (indices.length === 0) {
+        alert('Please select at least one headline');
+        return;
+    }
+
+    const queue = document.getElementById('memo-queue');
+    queue.innerHTML = '';
+
+    for (const i of indices) {
+        const item = memoHeadlines[i];
+        const queueItem = document.createElement('div');
+        queueItem.className = 'queue-item processing';
+        queueItem.innerHTML = `
+            <span>${escapeHtml(item.title)}</span>
+            <span class="queue-status">Processing...</span>
+        `;
+        queue.appendChild(queueItem);
+
+        try {
+            const res = await fetch('/api/memeorandum/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: item.url, title: item.title })
+            });
+            const data = await res.json();
+
+            if (data.error) throw new Error(data.error);
+
+            // Save the post
+            const filename = slugify(data.post.headline);
+            await savePost(data.post, filename);
+
+            queueItem.className = 'queue-item done';
+            queueItem.querySelector('.queue-status').textContent = 'Saved!';
+        } catch (err) {
+            queueItem.className = 'queue-item error';
+            queueItem.querySelector('.queue-status').textContent = err.message;
+        }
+    }
+}
+
+function clearMemoSelection() {
+    document.querySelectorAll('#memo-list input').forEach(cb => cb.checked = false);
+}
+
+// Random Wiki
+let wikiArticles = [];
+
+async function fetchRandomWiki() {
+    const loading = document.getElementById('wiki-loading');
+    const error = document.getElementById('wiki-error');
+    const list = document.getElementById('wiki-list');
+    const actions = document.getElementById('wiki-actions');
+
+    loading.style.display = 'block';
+    error.style.display = 'none';
+    list.innerHTML = '';
+    actions.style.display = 'none';
+
+    try {
+        const res = await fetch('/api/random-wiki');
+        const data = await res.json();
+
+        if (data.error) throw new Error(data.error);
+
+        wikiArticles = data.articles;
+        list.innerHTML = wikiArticles.map((item, i) => `
+            <li class="headline-item">
+                <input type="checkbox" id="wiki-${i}" data-index="${i}">
+                <div class="headline-info">
+                    <div class="headline-title">${escapeHtml(item.title)}</div>
+                    <div class="headline-source">${escapeHtml(item.description?.substring(0, 150) || '')}...</div>
+                </div>
+            </li>
+        `).join('');
+        actions.style.display = 'flex';
+    } catch (err) {
+        error.textContent = err.message;
+        error.style.display = 'block';
+    } finally {
+        loading.style.display = 'none';
+    }
+}
+
+async function generateWikiPosts() {
+    const indices = getSelectedIndices('wiki');
+    if (indices.length === 0) {
+        alert('Please select at least one article');
+        return;
+    }
+
+    const queue = document.getElementById('wiki-queue');
+    queue.innerHTML = '';
+
+    for (const i of indices) {
+        const item = wikiArticles[i];
+        const queueItem = document.createElement('div');
+        queueItem.className = 'queue-item processing';
+        queueItem.innerHTML = `
+            <span>${escapeHtml(item.title)}</span>
+            <span class="queue-status">Processing...</span>
+        `;
+        queue.appendChild(queueItem);
+
+        try {
+            const res = await fetch('/api/random-wiki/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: item.url, title: item.title })
+            });
+            const data = await res.json();
+
+            if (data.error) throw new Error(data.error);
+
+            // Save the post
+            const filename = slugify(data.post.headline);
+            await savePost(data.post, filename);
+
+            queueItem.className = 'queue-item done';
+            queueItem.querySelector('.queue-status').textContent = 'Saved!';
+        } catch (err) {
+            queueItem.className = 'queue-item error';
+            queueItem.querySelector('.queue-status').textContent = err.message;
+        }
+    }
+}
+
+function clearWikiSelection() {
+    document.querySelectorAll('#wiki-list input').forEach(cb => cb.checked = false);
+}
+
+// Write Post
+async function generateWritepost() {
+    const url = document.getElementById('writepost-url').value.trim();
+    if (!url) {
+        alert('Please enter a URL');
+        return;
+    }
+
+    const loading = document.getElementById('writepost-loading');
+    const error = document.getElementById('writepost-error');
+    const preview = document.getElementById('writepost-preview');
+
+    loading.style.display = 'block';
+    error.style.display = 'none';
+    preview.innerHTML = '';
+
+    try {
+        const res = await fetch('/api/writepost', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url })
+        });
+        const data = await res.json();
+
+        if (data.error) throw new Error(data.error);
+
+        // Show preview
+        preview.innerHTML = renderPostPreview(data.post);
+    } catch (err) {
+        error.textContent = err.message;
+        error.style.display = 'block';
+    } finally {
+        loading.style.display = 'none';
+    }
+}
+
+function renderPostPreview(post) {
+    return `
+        <div class="post-preview">
+            <h2>${escapeHtml(post.headline)}</h2>
+            <div class="post-body">${post.post}</div>
+            <div class="metadata">
+                <div class="meta-section">
+                    <h4>Source</h4>
+                    <a href="${post.sourceUrl}" target="_blank">${post.sourceUrl}</a>
+                </div>
+                <div class="meta-section">
+                    <h4>Tags</h4>
+                    ${escapeHtml(post.tags)}
+                </div>
+                <div class="meta-section">
+                    <h4>Headlines</h4>
+                    ${post.headlines.map(h => `<div>${escapeHtml(h)}</div>`).join('')}
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn" onclick="saveCurrentPost()">Save Post</button>
+            </div>
+        </div>
+    `;
+}
+
+let currentPost = null;
+
+async function saveCurrentPost() {
+    const preview = document.getElementById('writepost-preview');
+    // Get post data from the last generateWritepost call
+    const url = document.getElementById('writepost-url').value.trim();
+
+    const res = await fetch('/api/writepost', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url })
+    });
+    const data = await res.json();
+
+    if (data.post) {
+        const filename = slugify(data.post.headline);
+        await savePost(data.post, filename);
+        preview.innerHTML = '<div class="success">Post saved successfully! <a href="/posts">View all posts</a></div>';
+    }
+}
+
+// Utility functions
+async function savePost(post, filename) {
+    const res = await fetch('/api/posts/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ post, filename })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    return data;
+}
+
+function slugify(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')
+        .substring(0, 50);
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+</script>
+
+</body>
+</html>
