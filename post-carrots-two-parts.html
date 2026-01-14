@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Today I learned carrots have two parts, and you can separate them</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Today I learned that <a href="https://youtube.com/shorts/vSY36a2iwc0?si=L7CNYwAUVvt9I2J9">carrots have two parts</a>. The inner core (xylem) is vascular tissue that conducts water and nutrients from the soil to the rest of the plant. The outer cortex (phloem) is the pulpy part responsible for transporting sugars produced during photosynthesis.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In this video, a guy separates the two parts in a way that looks surprisingly easy. He vigorously rolls the carrot on the counter, then essentially "de-bones" it. The way the inner part slides out of the outer part is deeply satisfying to watch.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/embed/vSY36a2iwc0","type":"video","providerNameSlug":"youtube"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-9-16 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/embed/vSY36a2iwc0
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:paragraph -->
+<p>I need to go buy a carrot and try this immediately. I feel like carrots have been keeping this secret from me my entire life. Now that I know, I'm going to want to disassemble every carrot I eat, just for fun.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2022/07/22/why-carrots-braid-themselves.html">Why carrots braid themselves</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://youtube.com/shorts/vSY36a2iwc0</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Today I learned carrots have two parts, and you can separate them</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>You can "de-bone" a carrot and it's deeply satisfying to watch</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Carrots have an inner core and outer cortex you can pull apart</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This carrot disassembly hack has been kept from me my whole life</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Roll a carrot on the counter and the core slides right out</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">wonderful things, food, science, vegetables, viral videos</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">carrot two parts xylem phloem</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Carrots have two parts you can separate</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>You can "de-bone" a carrot and it's satisfying</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Carrots have an inner core you can pull out</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This carrot hack has been kept from me forever</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Roll a carrot and the core slides right out</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The inner core (xylem) conducts water. The outer cortex (phloem) transports sugars. You can separate them by rolling.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Roll the carrot vigorously on the counter, then pull. The core slides right out. Deeply satisfying.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>I feel like carrots have been keeping this secret from me my entire life.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Now that I know carrots can be disassembled, I'm going to do it to every one I eat.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The way the inner part slides out of the outer part is deeply satisfying to watch.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Popkin</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+- Capitalized "Xylem" and "Phloem" → lowercase (not proper nouns)<br>
+- Changed "so satisfying" → "deeply satisfying"<br>
+- Tightened slightly<br>
+- Removed ad divs<br>
+- Preserved author's "See also" as Previously
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">He spent 40 years perfecting a cigarette made of lettuce</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>In 1959, a colleague challenged New Jersey pharmacist Puzant Torigian to make a nicotine-free cigarette. He became obsessed. Over the following years, he tested over 200 plants — kale, grape leaves, cabbage, spinach, carrot tops, peanut plants, rhubarb, sunflower, even tomato leaves — before settling on the winner: lettuce. When properly cured, it burned like tobacco but contained no nicotine and produced lower tar, <a href="https://www.atlasobscura.com/articles/smoking-cessation-history">reports Atlas Obscura</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By 1965, Torigian was producing 90,000 packs a month of "Bravo Smokes" from a factory in Hereford, Texas. The lettuce — both romaine and iceberg — was cured with natural enzymes, pressed into sheets, shredded, and rolled just like regular cigarettes. But Torigian wasn't trying to give people a safer way to smoke forever. He'd become convinced that inhaling any burning plant was dangerous. Bravo was designed as a cessation tool: you'd smoke lettuce instead of tobacco until you didn't need either.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The name came from his wife Joanne. When he told her about the project, she exclaimed "Bravo, bravo!" in her Italian way, and he said, "That's what I'll call it." They'd both been smokers. She quit cold turkey after he sent her to see a chronic smoker's lung at a hospital. He needed more help — and Bravo worked for him.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The company folded in 1972 due to a falling out among investors, not lack of demand. Torigian relaunched it in the late 1990s, still chasing the dream. He died in late 2021 at 99, having spent more than four decades trying to help people quit smoking by smoking vegetables.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2024/12/27/this-tv-commercial-overtly-attempts-to-hypnotize-you-into-buying-spud-cigarettes.html">This TV commercial overtly attempts to hypnotize you into buying Spud cigarettes</a></li>
+<li><a href="https://boingboing.net/2017/05/17/gentleman-smokes-75-year-old-c.html">Gentleman smokes 75-year-old cigarette from military rations</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.atlasobscura.com/articles/smoking-cessation-history</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>He spent 40 years perfecting a cigarette made of lettuce</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The man who tested 200 plants to create the perfect fake cigarette</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bravo Smokes: the lettuce cigarette designed to help you quit</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A pharmacist's 40-year quest to make cigarettes out of vegetables</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He tried kale, spinach, and rhubarb before settling on lettuce</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">wonderful things, history, smoking, inventions, health</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">lettuce cigarette Bravo Smokes</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>He spent 40 years perfecting a lettuce cigarette</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The man who tested 200 plants for the perfect smoke</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bravo Smokes: the lettuce cigarette to help you quit</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A 40-year quest to make cigarettes out of vegetables</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He tried kale and rhubarb before settling on lettuce</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Puzant Torigian tested 200 plants — kale, spinach, rhubarb, tomato leaves — before deciding lettuce made the best smoke.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>By 1965 he was producing 90,000 packs a month of lettuce cigarettes from a Texas factory. The goal: help people quit.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>His wife said "Bravo, bravo!" when he told her about it. He said, "That's what I'll call it."</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He died at 99, having spent four decades trying to help people quit smoking by smoking vegetables.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The lettuce was cured, pressed into sheets, shredded, and rolled just like regular cigarettes.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

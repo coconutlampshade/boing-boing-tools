@@ -130,58 +130,71 @@ The HTML post file should include:
 
 ---
 
-# Pending Posts Review
+# Pending Posts Processor
 
-This tool fetches all pending posts from WordPress and provides copy edit suggestions for each.
+Automated tool to fetch pending posts from WordPress, copy edit with Claude, and generate HTML files.
 
 ## Setup (One-Time)
 
-An application password has been created for API access. The user fetches pending posts via browser console.
+1. Generate a WordPress Application Password:
+   - WordPress Admin → Users → Profile → Application Passwords
+   - Enter name: "Boing Boing Tools"
+   - Click "Add New Application Password"
+   - Copy the password (shown only once)
 
-## Workflow
+2. Set environment variables:
+   ```bash
+   export WP_USERNAME="your-wordpress-username"
+   export WP_APP_PASSWORD="xxxx xxxx xxxx xxxx xxxx xxxx"
+   export ANTHROPIC_API_KEY="sk-ant-..."
+   ```
 
-1. User types `pending`
-2. Display these instructions:
+## Usage
 
+```bash
+# List all pending posts
+python3 pending.py
+
+# Process specific posts (creates HTML files + updates index)
+python3 pending.py --process 1,3,5
+
+# Process all pending posts
+python3 pending.py --process all
+
+# Preview without creating files
+python3 pending.py --dry-run --process all
 ```
-To fetch pending posts, run this in your browser console while logged into WP admin:
 
-fetch('/wp-json/wp/v2/posts?status=pending&per_page=20', {
-  headers: { 'X-WP-Nonce': wpApiSettings.nonce }
-})
-.then(r => r.json())
-.then(posts => {
-  const data = posts.map(p => ({
-    title: p.title.rendered,
-    content: p.content.rendered,
-    author: p.yoast_head_json?.author || 'Unknown'
-  }));
-  copy(JSON.stringify(data, null, 2));
-  console.log('Copied ' + posts.length + ' posts to clipboard!');
+## What It Does
+
+1. Fetches all pending posts from WordPress REST API
+2. Displays numbered list with title, author, word count
+3. For selected posts:
+   - Sends to Claude for copy editing
+   - Generates SEO metadata (headlines, tags, descriptions)
+   - Creates HTML file with copy buttons
+   - Adds entry to index.html
+
+## Manual Fallback
+
+If API access fails, use browser console script:
+
+```javascript
+const posts = [];
+document.querySelectorAll('tr.iedit').forEach(row => {
+  const titleLink = row.querySelector('.row-title');
+  const authorEl = row.querySelector('.author a');
+  if (titleLink) {
+    posts.push({
+      title: titleLink.textContent.trim(),
+      author: authorEl ? authorEl.textContent.trim() : 'Unknown'
+    });
+  }
 });
-
-Then paste the JSON here.
+console.log(JSON.stringify(posts, null, 2));
 ```
 
-3. User pastes the JSON with all pending posts
-4. For each post, review and provide copy edit suggestions:
-   - Fix typos, grammar, punctuation
-   - Note any missing tags
-   - Flag posts that are too long
-   - Identify any factual issues or unclear passages
-   - Preserve author voice — don't over-edit
-5. Present a summary table showing each post's status and any action needed
-
-## Output Format
-
-For each post, show:
-- Title and author
-- Issues found (or "Clean" if none)
-- Specific fixes needed (with before/after text)
-- Whether tags are missing
-- Overall status: Ready / Needs fixes / Optional trim
-
-End with a summary table of all posts.
+Then manually copy content from each post's edit page.
 
 ---
 

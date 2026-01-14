@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">In 1932, Australia went to war against emus. The emus won.</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>In late 1932, approximately 20,000 emus descended on the wheat farms of Western Australia's Campion district, destroying crops and punching holes in fences that let rabbits through. The farmers, many of them WWI veterans, knew exactly what to ask for: machine guns. Defense Minister Sir George Pearce agreed, and the Royal Australian Artillery deployed with two Lewis guns and 10,000 rounds of ammunition.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It did not go well. On November 2, soldiers attempted to ambush 50 emus, but the birds scattered into small groups and ran in unpredictable patterns. A dozen were killed. Two days later, over 1,000 emus approached a dam where Major G.P.W. Meredith had set up an ambush. The gunners waited until the birds were close, opened fire — and the gun jammed after 12 kills. The emus fled in all directions. By mid-November, the military had used 2,500 rounds and claimed just 200 confirmed kills.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The press had a field day. One ornithologist noted that each emu seemed to have "weights and measures" knowledge, staying just out of effective range. A local newspaper observed that the birds had adopted guerrilla tactics, breaking into small units that made mass killing impossible. In parliament, Senator James Dunn mockingly referred to Pearce as the "Minister of the Emu War."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>After a month of operations, the final tally: 986 emus confirmed killed out of an estimated 20,000. The birds continued destroying crops. The military withdrew. Australia would later switch to a bounty system, which proved far more effective — but considerably less entertaining to read about.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2022/07/28/area-emu-stops-drunk-driver-from-fleeing-the-scene-of-a-crash.html">Area emu stops drunk driver from fleeing the scene of a crash</a></li>
+<li><a href="https://boingboing.net/2018/10/19/emu-is-in-love-enjoys-skritch.html">Emu is in love, enjoys skritches</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Emu_War</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>In 1932, Australia went to war against emus. The emus won.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Australia deployed machine guns against emus and lost</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Great Emu War: 10,000 rounds, 986 dead birds, total defeat</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>When the Australian military was humiliated by flightless birds</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 1932 war where emus used "guerrilla tactics" against soldiers</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">history, Australia, animals, weird history, emus</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Emu War Australia 1932</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>In 1932, Australia went to war against emus and lost</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Australia deployed machine guns against emus. It failed.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Great Emu War: 10,000 rounds, total defeat</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>When the Australian military lost to flightless birds</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Emus used "guerrilla tactics" against soldiers in 1932</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>20,000 emus vs. the Royal Australian Artillery with Lewis guns. Final score: Emus 1, Australia 0.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The gun jammed after 12 kills. The emus fled in all directions. The military withdrew after a month.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>An ornithologist noted each emu seemed to know "weights and measures," staying just out of range.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Senator James Dunn mockingly called the Defense Minister the "Minister of the Emu War" in parliament.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>They used 2,500 rounds and got 200 kills. The birds adopted guerrilla tactics and won.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
