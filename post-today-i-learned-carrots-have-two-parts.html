@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Today I learned carrots have two parts</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Today I learned that <a href="https://youtube.com/shorts/vSY36a2iwc0?si=L7CNYwAUVvt9I2J9">carrots have two parts.</a> There's the inner core (xylem), which is the vascular tissue that conducts water and nutrients from the soil to the rest of the plant. Then there's the outer cortex (phloem), the pulpy outer part responsible for transporting sugars produced during photosynthesis.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In this video, a guy separates the two parts in a way that looks surprisingly easy. He vigorously rolls the carrot on the counter, then essentially "de-bones" it. The way the inner part seamlessly slides out of the outer part is so satisfying to watch.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I need to go buy a carrot and try this ASAP. I feel like carrots have been keeping this secret from me my entire life. Now that I know, I'm going to want to disassemble every carrot I eat, just for fun.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://youtube.com/shorts/vSY36a2iwc0?si=L7CNYwAUVvt9I2J9","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-9-16 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-9-16 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://youtube.com/shorts/vSY36a2iwc0?si=L7CNYwAUVvt9I2J9
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:paragraph -->
+<p>See also: <a href="https://boingboing.net/2022/07/22/why-carrots-braid-themselves.html">Why carrots braid themselves</a></p>
+<!-- /wp:paragraph -->
+
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Today I learned carrots have two parts</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This carrot trick will blow your mind</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>You can separate a carrot into two parts</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Carrots have been hiding this secret from us</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Watch someone 'de-bone' a carrot</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">food, vegetables, carrots, cooking tips, plant biology</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">carrot two parts</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Today I learned carrots have two parts</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This carrot trick will blow your mind</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>You can separate a carrot into two parts</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Carrots have been hiding this secret</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Watch someone 'de-bone' a carrot</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Watch someone separate a carrot into its inner core and outer cortex with this surprisingly simple technique.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This video shows how to 'de-bone' a carrot by separating its xylem and phloem parts. Mind-blowing carrot anatomy!</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Today I learned carrots have two parts that can be separated. This satisfying video shows exactly how to do it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Carrots have been keeping this secret: they have two parts you can separate. Watch this oddly satisfying technique.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Learn about carrot anatomy and watch someone easily separate the inner core from the outer cortex in this video.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Popkin</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Changed 'There is' to 'There's' and 'Then, there is' to 'Then there's' for conversational flow", "- Lowercased 'Xylem' and 'Phloem' as they're common nouns in this context", "- Removed '(food)' in parentheses as redundant with 'sugars'", "- Changed 'and then essentially' to 'then essentially' to avoid repetition", '- Removed unnecessary &nbsp; character', "- Changed 'asap' to 'ASAP' for proper capitalization", "- Removed 'for' in 'for my entire life' for tighter prose"]
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

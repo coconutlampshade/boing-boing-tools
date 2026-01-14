@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Apple unveils video and audio editing software subscripton</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>One of the best things about getting your first <a href="https://boingboing.net/2020/02/28/apple-deleted-files-that-i-own.html">Apple</a> computer is that it comes with all the productivity and creativity software most people need. Not having to spend extra cash for decent photo editing software, a Microsoft 365 subscription, or even audio loops to start creating your own music is part of what you get for paying the Apple Tax. Outside of the basic software every Mac owner enjoys, the company has offered premium, pro-level content creation apps for years. I still miss their pro photo suite, Aperture. And Final Cut Pro and Motion have been part of my workflow for years. I love that you can buy this software and own it outright, with no need to pay monthly like you do with Adobe's competing products. But not everyone can afford to fork over hundreds of bucks for software, especially after spending a bunch of dough on a new laptop. Apple has figured this out and, as it continues to elbow its way into relying on subscription-based services as a major part of its revenue stream, it's done something about it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>At the end of this month, Apple will introduce a new service called Apple Creator Studio. By forking over $13 a month or $129 a year, subscribers will gain bundled access to 'premium content' for Keynote, Pages, and Freeform as well as licenses to use Pixelmator Pro, Final Cut Pro, Logic Pro, MainStage, Motion, and Compressor. According to multiple outlets, you'll still be able to buy the software in the bundle, and Apple's productivity apps will remain free to use, offering the basic functionality we're accustomed to. I hope that Apple bringing Creator Studio to market may force Adobe to shake up its pricing and subscription structure. Any change on that front will be good for creatives who rely on their software to do their jobs: less expensive subscription options, more flexibility in subscription cancellation or suspension. Adobe might make great software, but if they're no longer the only pay-as-you-go option out there, they'll have to move to stay competitive.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For a young creator fresh out of university or a filmmaker creating a documentary while working two jobs, a reasonably priced subscription to the tools they need could be a serious game changer. Not everyone has $500 to drop on a suite of editing software. Provided Apple doesn't take features away from users who previously purchased the software in the bundle (like me), I think this could be a win-win for the company and its customers. I'll always favor owning the software I use. But when affordability allows creativity to flourish, I'm all for it.</p>
+<!-- /wp:paragraph -->
+
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Apple unveils video and audio editing software subscription</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple Creator Studio bundles pro apps for $13 monthly</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple launches subscription service for creative software</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>New Apple subscription challenges Adobe's pricing model</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple Creator Studio makes pro editing tools affordable</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">Technology, Apple, Software, Creative Tools, Subscriptions</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Apple Creator Studio</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Apple Creator Studio subscription launches for $13/month</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple unveils video editing software subscription service</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>New Apple subscription bundles Final Cut Pro, Logic Pro</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple Creator Studio challenges Adobe with $13 pricing</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple launches affordable creative software subscription</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Apple introduces Creator Studio, a $13/month subscription bundling Final Cut Pro, Logic Pro, and more creative apps.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>New Apple Creator Studio subscription offers pro editing tools for $13 monthly, challenging Adobe's pricing model.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple's Creator Studio bundles premium creative software including Final Cut Pro and Logic Pro for affordable pricing.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>For $13/month, Apple Creator Studio gives access to Final Cut Pro, Logic Pro, Motion, and other professional tools.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Apple launches Creator Studio subscription service, making professional video and audio editing software more affordable.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Séamus Bellamy</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Fixed typo in title: 'subscripton' → 'subscription'", "- Fixed grammar: 'the fact comes' → 'that it comes'", "- Added comma after 'Freeform' for proper series punctuation", "- Fixed typo: 'Adopbe' → 'Adobe'", "- Changed 'a number of outlets' to 'multiple outlets' for clarity", "- Removed unnecessary comma: 'fresh out of university or, a filmmaker'", "- Changed 'while they work' to 'while working' for conciseness", "- Streamlined 'be in favor of owning' to 'favor owning'", '- Minor punctuation and flow improvements throughout']
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

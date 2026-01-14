@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Perfectly recreating Coca-Cola with nothing but a chemistry set and a dream</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>The secret formula for Coca-Cola is supposedly one of the best-kept secrets in the industry, although we do know it allegedly does <em>not</em> <a href="https://boingboing.net/2023/02/23/tucker-carlson-meet-coca-cola-the-ball-inflating-potion-that-will-return-your-manhood-video.html" target="_blank" rel="noreferrer noopener">contain cocaine</a> anymore. Try to get your hands on it, and you could very well have a corporate death squad kicking down your door (maybe).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One YouTuber, though, has allegedly <a href="https://www.youtube.com/watch?v=TDkH3EbWTYc" target="_blank" rel="noreferrer noopener">recreated it at home</a>, armed with only spite and a chemistry education. The reconstruction process is fascinating and seems to verify that, yes, Coca-Cola does not contain cocaine. Bummer. (Also, there's a mass spectrometer involved, which feels like overkill for a soft drink.)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/watch?v=TDkH3EbWTYc","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=TDkH3EbWTYc
+</div></figure>
+<!-- /wp:embed -->
+
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>YouTuber reverse engineers Coca-Cola using chemistry set</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Chemistry YouTuber cracks Coke's secret formula at home</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Mass spectrometer meets soda pop in Coca-Cola recreation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Spite and chemistry education lead to perfect Coke clone</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Home chemist allegedly recreates Coca-Cola from scratch</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">Science, Chemistry, Food and Drink, YouTube, Coca-Cola</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">recreating Coca-Cola chemistry</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>YouTuber recreates Coca-Cola using chemistry equipment</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Chemistry YouTuber cracks Coke's secret formula</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Mass spectrometer meets soda in Coca-Cola recreation</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Home chemist recreates perfect Coca-Cola clone</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>YouTuber reverse engineers Coke with chemistry set</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>YouTuber uses chemistry education and mass spectrometer to recreate Coca-Cola's secret formula at home. Spoiler: no cocaine.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Watch a chemistry YouTuber reverse engineer Coca-Cola's secret formula using only spite and scientific equipment.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Armed with chemistry knowledge and a mass spectrometer, one YouTuber allegedly cracked Coca-Cola's secret recipe at home.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>YouTuber's fascinating chemistry experiment recreates Coca-Cola from scratch, confirming it contains no cocaine.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Home chemistry meets corporate secrets as YouTuber successfully recreates Coca-Cola using scientific methods.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Grant St. Clair</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Removed redundant 'that it' in first sentence", "- Removed unnecessary comma after 'fascinating' in second paragraph", "- Changed 'indeed' to 'yes' for better flow"]
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

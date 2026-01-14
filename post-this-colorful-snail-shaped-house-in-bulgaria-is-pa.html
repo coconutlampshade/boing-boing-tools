@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">This colorful snail-shaped house in bulgaria is part home, part sculpture</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>This whimsical <a href="https://www.instagram.com/p/DTOICLhjYuy/">Snail House</a> (photo taken and shared by <a href="https://www.instagram.com/p/DTOICLhjYuy/">Stefano Perego</a> on Instagram) is as much sculpture as home. This delightful five-story house in Bulgaria was designed by architect Simeon Simeonov in 2008. The vibrantly colored, striped snail with its cartoon face reportedly has no right angles.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Snail House sits in a residential neighborhood and appeals to creative souls. Though it's not in a touristy area, people visit the Simeonovo neighborhood specifically to see this snail-shaped beauty. The entire house is made from eco-friendly materials, making it even cooler.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Living in the Snail House seems like a wonderful adventure. I want to watch a documentary about whoever lives inside it now and what their day-to-day life inside a giant snail is like. My favorite detail: air and gas vent out of the snail's eyeballs (zoom in and you'll notice the small red radiators coming down from the snail's eyelids).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>See also: <a href="https://boingboing.net/2011/06/27/snail-attack.html">Snail attack</a></p>
+<!-- /wp:paragraph -->
+
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>This colorful snail-shaped house in Bulgaria is part home, part art</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bulgarian snail house blends whimsical architecture with function</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Five-story snail house in Bulgaria has no right angles at all</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This cartoon snail house is a colorful architectural marvel</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bulgarian architect creates whimsical snail-shaped family home</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">architecture, design, unusual homes, Bulgaria, eco-friendly</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">snail shaped house</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Colorful snail house in Bulgaria is part home, part art</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bulgarian snail house blends architecture with whimsy</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Five-story snail house has no right angles at all</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This cartoon snail house is architectural marvel</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Architect creates whimsical snail-shaped family home</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>This whimsical five-story Snail House in Bulgaria was designed by Simeon Simeonov with no right angles and eco-friendly materials.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bulgarian architect Simeon Simeonov created this colorful snail-shaped house with cartoon features and environmentally friendly design.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The vibrant Snail House in Bulgaria's Simeonovo neighborhood is equal parts functional home and sculptural art with unique features.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Discover Bulgaria's amazing Snail House: a five-story eco-friendly home shaped like a cartoon snail with no right angles whatsoever.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This striped snail house in Bulgaria attracts visitors to its residential neighborhood with whimsical design and sustainable materials.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Popkin</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Capitalized 'Bulgaria' in title", "- Changed 'is a sculpture just as much as it is a home' to 'is as much sculpture as home' for flow", "- Changed 'lovely 5-story' to 'delightful five-story' (spelled out number)", "- Removed 'an architect named' for conciseness", "- Added comma after '2008'", "- Changed 'is said to have' to 'reportedly has'", "- Changed 'Although' to 'Though'", "- Changed 'material' to 'materials' (plural)", "- Removed redundant 'about' and restructured sentence for clarity", "- Changed 'whoever lives inside of it' to 'whoever lives inside it'", "- Added 'My favorite detail:' for better transition", "- Changed 'snails' eyeballs' to 'snail's eyeballs' (singular possessive)"]
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

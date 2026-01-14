@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Rainbow mountain in pitumarca is one of peru's most colorful natural wonders</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p><a href="https://www.atlasobscura.com/places/vinicunca-rainbow-mountain">Rainbow Mountain is a natural wonder in Pitumarca</a>, Peru. This unique mountain is striped in brilliant red, green, purple, and orange tones. It looks like sand art, but it's 100% naturally occurring. Rainbow Mountain gets its gorgeous colors from the sediment and atmosphere of the area, which sits high in the Andes near the ocean.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For climbers, reaching this stunning mountain isn't an easy journey. From <a href="https://www.atlasobscura.com/places/vinicunca-rainbow-mountain">Atlas Obscura</a>:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>"For all its striking colors, Rainbow Mountain was notoriously hard to find. It's located deep in the mountain range, and even the most adept travelers with highly experienced guides have reported difficulty locating it. In the past, it took about six days of hiking to reach its peak. Nowadays, there are plenty of bus tours departing from Cusco to the mountain.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Due to the increase in popularity of the mountain, it has very quickly become Peru's second most visited tourist site. During the peak season, it can see up to 4,000 people per day."</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Rainbow Mountain: Peru's stunning natural sand art masterpiece</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This colorful Peruvian peak looks like giant sand art</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Peru's Rainbow Mountain draws 4,000 visitors daily</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The naturally striped mountain that's hard to believe</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Rainbow Mountain's vivid stripes make Peru tourism history</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">travel, South America, Peru, mountains, natural wonders</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Rainbow Mountain Peru</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Rainbow Mountain: Peru's colorful natural wonder</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Peru's striped Rainbow Mountain draws huge crowds</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This Peruvian peak looks like natural sand art</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Rainbow Mountain becomes Peru's #2 tourist site</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The colorful mountain that's 100% natural</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Rainbow Mountain in Peru's Pitumarca region features natural red, green, purple & orange stripes that look like sand art.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Peru's Rainbow Mountain draws 4,000 daily visitors to see its naturally occurring colorful stripes in the Andes mountains.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This stunning Peruvian mountain's natural red, green & purple stripes make it the country's second most visited site.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Rainbow Mountain's gorgeous natural colors come from sediment and atmosphere, creating a sand art effect in Peru's Andes.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Once taking 6 days to reach, Peru's Rainbow Mountain now draws thousands daily to see its naturally striped peaks.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Popkin</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Capitalized 'Pitumarca' in title", "- Changed 'beautiful' to 'brilliant' for stronger description", "- Fixed capitalization: 'rainbow mountain' → 'Rainbow Mountain'", "- Changed 'look' to 'colors' for clarity", "- Clarified 'high up in altitude' to 'high in the Andes'", "- Changed 'getting to' to 'reaching' for better flow", "- Added comma in '4,000' for proper number formatting", '- Removed extra space before closing quote']
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

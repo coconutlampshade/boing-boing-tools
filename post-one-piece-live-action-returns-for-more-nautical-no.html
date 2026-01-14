@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">One Piece live-action returns for more nautical nonsense</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>I've never actually watched the fantastical pirate-themed anime <a href="https://boingboing.net/tag/one-piece" target="_blank" rel="noreferrer noopener"><em>One Piece</em></a>, largely due to its imposing length. (Pause to snicker.) I <em>am</em> a little bitter that Netflix actually seems to have hit the mark with its <a href="https://boingboing.net/2023/06/19/netflix-sets-sail-with-one-piece-in-a-new-trailer.html" target="_blank" rel="noreferrer noopener">live-action adaptation</a>, though—in stark contrast to its handling of classics like <em>Avatar: The Last Airbender</em> and <em>Cowboy Bebop</em>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When a second season was announced last year, fan response was massively positive, a sentiment that seems to have persisted through the recent release of <a href="https://www.youtube.com/watch?v=1S8YyU9IqkQ" target="_blank" rel="noreferrer noopener">an actual trailer</a>. It has everything you could want: swashbuckling, swordfighting, stretching, and a lot of <em>extremely</em> improbable wigs.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://www.youtube.com/watch?v=1S8YyU9IqkQ","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=1S8YyU9IqkQ
+</div></figure>
+<!-- /wp:embed -->
+
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>One Piece live-action returns for more nautical nonsense</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Netflix's One Piece season 2 trailer drops with epic wigs</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>One Piece live-action season 2 brings more pirate adventure</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Netflix proves live-action anime can work with One Piece return</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>New One Piece trailer delivers swashbuckling and stretching</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">Television, Anime, Netflix, One Piece, Live-action adaptation</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">One Piece live-action</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>One Piece live-action returns for more nautical nonsense</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Netflix's One Piece season 2 trailer drops with epic wigs</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>One Piece live-action season 2 brings more adventures</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Netflix proves anime adaptations can work with One Piece</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>New One Piece trailer delivers swashbuckling action</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Netflix's One Piece live-action adaptation returns for season 2 with swashbuckling, swordfighting, and improbable wigs.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The successful One Piece live-action series gets a new trailer for season 2, proving Netflix can adapt anime right.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>One Piece season 2 trailer shows more pirate adventure, stretching powers, and extremely improbable wigs from Netflix.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Netflix's rare successful anime adaptation One Piece returns with a new season 2 trailer full of nautical nonsense.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>After massive fan response, One Piece live-action season 2 delivers more swashbuckling adventure in new trailer.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Grant St. Clair</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Removed unnecessary 'in large part' → 'largely'", "- Changed comma to em dash for better flow before 'in stark contrast'", "- Restructured 'response from fans' → 'fan response'", "- Changed 'kept up' → 'persisted' for stronger verb choice", "- Removed redundant 'very recent' → 'recent'", "- Changed 'ever' to avoid hyperbole: 'could ever want' → 'could want'"]
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

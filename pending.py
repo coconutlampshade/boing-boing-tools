@@ -213,6 +213,21 @@ def generate_html(post, edit_result, source_url=""):
     if isinstance(copy_edits, str):
         copy_edits = copy_edits.replace("\n", "<br>\n")
 
+    # Check if content already has Previously or See also section
+    has_previously = 'Previously:' in content or 'See also:' in content or 'previously' in content.lower()
+
+    # Only add Previously section wrapper if content doesn't have one
+    if has_previously:
+        previously_html = ""
+    else:
+        previously_html = '''
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li>[Add related boingboing.net articles]</li>
+</ul>
+</div>'''
+
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,13 +245,7 @@ def generate_html(post, edit_result, source_url=""):
 
 <article id="postBody">
 {content}
-
-<div class="previously" id="previously">
-<strong>Previously:</strong>
-<ul>
-<li><a href="#">[Search site:boingboing.net for related articles]</a></li>
-</ul>
-</div>
+{previously_html}
 </article>
 
 <div class="post-actions">
