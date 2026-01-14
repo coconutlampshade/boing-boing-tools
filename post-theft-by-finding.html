@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">"Finders keepers" isn't actually legal, and you can be charged with theft</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>That wallet on the sidewalk, the phone left on a park bench, the bicycle seemingly abandoned in an alley — taking any of these could land you a criminal charge. It's called "theft by finding," and it exists in various forms across legal systems worldwide.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The crime occurs when someone finds an object that appears abandoned and takes it without making reasonable efforts to locate the owner. The key question is whether the item was truly abandoned or merely lost or unattended. An unlocked car isn't abandoned. Neither is a bag sitting outside a café. Even if no owner is in sight, you're generally required to attempt to find them or turn the item over to authorities.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Different jurisdictions call it different things — "larceny by finding" or "stealing by finding" — but the principle is consistent: the childhood rule of "finders keepers, losers weepers" doesn't hold up in court. The law generally presumes that lost items have owners who want them back.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Wikipedia's article on theft by finding explains the legal nuances across different countries. The short version: if you find something valuable, your safest move is to turn it in. Pocketing it is a gamble that the law says you'll probably lose.</p>
+<!-- /wp:paragraph -->
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Theft_by_finding</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>"Finders keepers" isn't actually legal, and you can be charged</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Theft by finding: when keeping what you found is a crime</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>That wallet you found? Taking it could be criminal theft</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The legal concept that makes "finders keepers" a crime</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why pocketing a lost phone can land you in court</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">law, crime, interesting, Wikipedia, property</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">theft by finding finders keepers law</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>"Finders keepers" isn't legal</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Theft by finding: a real crime</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why keeping found items is illegal</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Found a wallet? Taking it is theft</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The crime of keeping what you find</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Taking that wallet on the sidewalk without trying to find the owner? That's theft by finding, and it's a crime.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Finders keepers" doesn't hold up in court. The law presumes lost items have owners who want them back.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Lost vs. abandoned: the legal distinction that could land you a criminal charge. Wikipedia explains.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Different jurisdictions call it larceny by finding or stealing by finding. Either way, it's illegal.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Found something valuable? Your safest move is to turn it in. Pocketing it is a gamble you'll probably lose.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

@@ -151,6 +151,11 @@ const posts = [
     { file: 'post-hoba-meteorite.html', title: 'The largest meteorite on Earth is still exactly where it landed' },
     { file: 'post-witch-window.html', title: 'Vermont\'s tilted "witch windows" were supposedly designed to stop witches' },
     { file: 'post-scaphism.html', title: 'Scaphism: the ancient Persian execution where insects ate you alive' },
+    { file: 'post-operation-bernhard.html', title: 'The Nazi plan to destroy Britain\'s economy by dropping forged banknotes from planes' },
+    { file: 'post-elections-north-korea.html', title: 'How elections work in North Korea: one candidate, no privacy, 100% turnout' },
+    { file: 'post-common-misconceptions.html', title: 'Wikipedia\'s list of common misconceptions is a rabbit hole of shattered beliefs' },
+    { file: 'post-mpemba-effect.html', title: 'Hot water can freeze faster than cold water, and no one fully understands why' },
+    { file: 'post-theft-by-finding.html', title: '"Finders keepers" isn\'t actually legal, and you can be charged with theft' },
     // Contributor posts (copy edited)
     { file: 'post-protesters-interrupt-arizona-republicans-pro-ice-p.html', title: 'Protesters interrupt Arizona Republicans\' pro-ICE press conference with New Orleans-style jazz music' },
     { file: 'post-apple-unveils-video-and-audio-editing-software-sub.html', title: 'Apple unveils video and audio editing software subscripton' },
@@ -226,14 +231,12 @@ function saveDeletedPosts(deleted) {
 }
 
 function deletePost(file) {
-    if (confirm('Mark as posted and remove from list?')) {
-        const deleted = getDeletedPosts();
-        if (!deleted.includes(file)) {
-            deleted.push(file);
-            saveDeletedPosts(deleted);
-        }
-        renderPosts();
+    const deleted = getDeletedPosts();
+    if (!deleted.includes(file)) {
+        deleted.push(file);
+        saveDeletedPosts(deleted);
     }
+    renderPosts();
 }
 
 function restorePost(file) {

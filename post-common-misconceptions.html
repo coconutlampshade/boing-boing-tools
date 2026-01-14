@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Wikipedia's list of common misconceptions is a rabbit hole of shattered beliefs</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Wikipedia maintains a sprawling list of common misconceptions, and it's guaranteed to ruin at least one thing you thought you knew. The bald eagle's majestic scream in movies? That's actually a red-tailed hawk. Bald eagles make soft, chirpy sounds that apparently weren't dramatic enough for Hollywood.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Egyptian pyramids weren't built by slaves. Archaeological evidence shows the laborers were skilled workers and farmers in the off-season, paid with food and tax exemptions. George Washington's teeth weren't wooden — they were made of lead, gold, hippopotamus ivory, and teeth from horses and donkeys, which is somehow worse.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Medieval adults didn't die at 30. Low life expectancy figures are skewed by infant mortality; a 21-year-old man in medieval England could expect to live to 64. You don't swallow spiders in your sleep (sleeping humans make noises that scare them off). And that 1990s movie Shazaam starring Sinbad as a genie? Never existed. It's a collective false memory so widespread it has its own name: the Mandela effect.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The full Wikipedia list covers hundreds of these, organized by category. It's the perfect thing to browse when you want to feel simultaneously smarter and dumber.</p>
+<!-- /wp:paragraph -->
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/List_of_common_misconceptions</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Wikipedia's list of common misconceptions will ruin what you think you know</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>That bald eagle scream in movies? It's actually a red-tailed hawk</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The pyramids weren't built by slaves, and other shattered myths</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Medieval people didn't die at 30, and other common misconceptions</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Wikipedia's rabbit hole of things you thought were true but aren't</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">interesting, Wikipedia, myths, facts, history, science</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">common misconceptions Wikipedia list</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Wikipedia's list of common misconceptions</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>That bald eagle scream? It's a red-tailed hawk</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Things you thought were true but aren't</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The pyramids weren't built by slaves</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Medieval people didn't die at 30</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The bald eagle's movie scream is a red-tailed hawk. The pyramids weren't built by slaves. Wikipedia has hundreds more.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>George Washington's teeth were hippo ivory, horse teeth, and lead. Not wood. Wikipedia's misconceptions list delivers.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Medieval adults didn't die at 30 — that's infant mortality skewing the numbers. A 21-year-old could expect to reach 64.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Sinbad genie movie Shazaam never existed. It's a collective false memory called the Mandela effect.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Wikipedia's list of common misconceptions: guaranteed to ruin at least one thing you thought you knew.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

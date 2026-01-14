@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Hot water can freeze faster than cold water, and no one fully understands why</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>The Mpemba effect sounds like it should be easy to debunk: hot water freezing faster than cold water? That's backwards. But under certain conditions, it actually happens, and physicists have been arguing about why for decades.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The effect is named after Erasto Mpemba, a Tanzanian teenager who noticed it in the 1960s while making ice cream. His teacher dismissed him, but Mpemba persisted and eventually collaborated with physicist Denis Osborne to study it properly. Their 1969 paper confirmed the phenomenon was real, even if the mechanism remained unclear.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Proposed explanations include evaporation (hot water loses mass faster), dissolved gases (hot water holds less air), convection currents, supercooling effects, and differences in hydrogen bonding. None of these fully accounts for all observations. Some researchers question whether the effect is even consistently reproducible.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The whole situation is a humbling reminder that even basic physics can surprise us. We've mapped the human genome and detected gravitational waves, but we still can't fully explain why your hot tea might freeze before your cold water. Wikipedia dives deep into the competing theories.</p>
+<!-- /wp:paragraph -->
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Mpemba_effect</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Hot water can freeze faster than cold water, and no one knows why</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Mpemba effect: physics' most counterintuitive unsolved puzzle</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A Tanzanian teenager discovered hot water freezes faster than cold</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why does hot water sometimes freeze before cold? Scientists disagree</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 1960s ice cream observation that still baffles physicists</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">science, physics, mysteries, Wikipedia, water</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Mpemba effect hot water freezes faster</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Hot water freezes faster than cold — sometimes</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Mpemba effect baffles physicists</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Why hot water can freeze before cold water</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A teenager's ice cream observation stumped science</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Physics still can't explain this freezing mystery</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Under certain conditions, hot water freezes faster than cold. Physicists have argued about why since the 1960s.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Tanzanian teen Erasto Mpemba noticed it making ice cream. His teacher dismissed him. He was right.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>We've detected gravitational waves but can't fully explain why hot water sometimes freezes before cold water.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Evaporation? Dissolved gases? Hydrogen bonding? No theory fully explains the Mpemba effect.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Mpemba effect: a humbling reminder that even basic physics can surprise us. Wikipedia explains.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

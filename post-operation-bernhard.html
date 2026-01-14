@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The Nazi plan to destroy Britain's economy by dropping forged banknotes from planes</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>In 1940, the Nazis hatched a scheme so audacious it sounds like rejected Bond villain plotting: flood Britain with forged banknotes dropped from aircraft, triggering hyperinflation and economic collapse. The operation, codenamed Unternehmen Andreas (later Operation Bernhard), was run by the Sicherheitsdienst, the SS intelligence service.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The technical achievement was genuinely impressive. German forgers successfully duplicated the rag paper used in British currency, produced near-identical engraving blocks, and — here's the kicker — reverse-engineered the algorithm the Bank of England used to generate serial numbers. Each fake note had a unique, valid-looking serial code.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The initial air-drop plan was eventually abandoned, but the operation continued. Concentration camp prisoners with backgrounds in printing and banking were forced to produce the forgeries. By war's end, they'd manufactured around £132 million in fake notes — roughly £6 billion in today's money. Some of this funny money actually entered circulation, used to pay German agents and buy supplies.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The whole enterprise collapsed in early 1942 when its head, Alfred Naujocks, fell out of favor with Reinhard Heydrich. The Bank of England responded by withdrawing all notes over £5 from circulation, a policy that lasted until 1945. Wikipedia has the full story of this bonkers economic warfare attempt.</p>
+<!-- /wp:paragraph -->
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/Operation_Bernhard</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The Nazi plan to destroy Britain's economy with forged banknotes</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Operation Bernhard: when the Nazis tried to counterfeit their way to victory</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The WWII scheme to drop fake British pounds from planes over England</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>How Nazi forgers cracked the Bank of England's serial number algorithm</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The £132 million Nazi counterfeiting operation that nearly worked</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">history, World War II, economics, counterfeiting, espionage</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">Operation Bernhard Nazi counterfeiting</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>The Nazi plan to bomb Britain with fake money</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Operation Bernhard: WWII's wildest economic warfare</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>When Nazis forged £132 million in British pounds</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The counterfeiting scheme that nearly broke Britain</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Nazi forgers cracked the Bank of England's code</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Nazi Germany forged £132 million in British banknotes, cracking the Bank of England's serial number algorithm.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The plan was to drop fake pounds from planes over Britain and cause hyperinflation. It almost worked.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Operation Bernhard: the WWII counterfeiting scheme so good the Bank of England withdrew all notes over £5.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Concentration camp prisoners were forced to forge British currency. They produced £132 million in fake notes.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>German forgers duplicated rag paper, engraving blocks, and the algorithm for serial numbers. Wikipedia explains.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
