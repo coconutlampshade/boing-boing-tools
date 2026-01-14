@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">Stack Overflow questions collapsed 78% in one year as coders ask AI</h1>
+    <button class="copy-btn" onclick="copyText('headline', this)">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>For over a decade, Stack Overflow was the place where programmers went to find answers. If you Googled a coding error, you'd land on a Stack Overflow thread with a green checkmark next to the solution. Now that era is definitively over.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Monthly questions on the platform have cratered from over 200,000 in 2014 to just 3,862 in December 2025 — a 78 percent drop from the previous year alone, <a href="https://www.techzine.eu/news/devops/137686/stack-overflow-in-freefall-78-percent-drop-in-number-of-questions/">reports Techzine</a>. The culprit is obvious: 84 percent of developers now use AI coding assistants, and they don't need to wait for some stranger to tell them their question is a duplicate before closing the thread.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Reddit comments on this news are deliciously bitter. "GPT did a good job of summarizing Stack Overflow answers without the attitude," one user wrote. Another: "Died because the users are dicks. AI only helped locate the off ramp." The platform's notoriously hostile culture — where newbies were routinely humiliated for asking "basic" questions — may have sealed its fate long before ChatGPT arrived.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There's a dark irony here, though. AI systems learned to code by devouring Stack Overflow's archive of human-solved problems. Now that developers ask ChatGPT instead of posting publicly, solutions exist only in private chat histories. They're not indexed, not peer-reviewed, not available to the next person with the same bug. We're trading a searchable knowledge commons for ephemeral conversations with a language model.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Meanwhile, Stack Overflow the company is doing fine — <a href="https://sherwood.news/tech/stack-overflow-forum-dead-thanks-ai-but-companys-still-kicking-ai/">revenue hit $115 million last year</a>, up 17 percent. They're licensing that archive to the same AI companies killing their forum.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/06/02/how-stack-overflows-moderation-system-led-to-its-own-downfall.html">How Stack Overflow's moderation system led to its own downfall</a></li>
+<li><a href="https://boingboing.net/2025/01/16/stack-exchange-accused-of-violating-creative-commons-to-hide-luigi-mangiones-code-tips.html">Stack Exchange accused of violating Creative Commons to hide Luigi Mangione's posts</a></li>
+<li><a href="https://boingboing.net/2021/09/29/this-copy-paste-keyboard-started-as-an-april-fools-joke-now-you-can-buy-one.html">Stack Overflow's copy-paste keyboard started as an April Fool's joke</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly(this)">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly(this)">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl', this)">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.reddit.com/r/Damnthatsinteresting/comments/1qcu70r/as_of_2026_stackoverflow_is_officially_dead/</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>Stack Overflow questions collapsed 78% in one year as coders ask AI</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Stack Overflow is dead, and its toxic community helped kill it</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Developers abandoned Stack Overflow for AI that doesn't judge them</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The site that taught AI to code is dying because AI can code</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Stack Overflow's hostile culture made its AI-driven death inevitable</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags', this)">copy</button>
+</div>
+<p id="tags">technology, artificial intelligence, programming, Stack Overflow, developer tools</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase', this)">copy</button>
+</div>
+<p id="focusKeyphrase">Stack Overflow decline</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Stack Overflow questions plunged 78% as devs switch to AI</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Stack Overflow is dying but the company is doing fine</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>AI killed Stack Overflow, but toxic culture helped</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Developers fled Stack Overflow's hostility for ChatGPT</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The ironic death of the site that trained AI to code</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Stack Overflow questions dropped 78% in 2025. Developers prefer AI that answers without calling their questions stupid.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Monthly questions fell from 200,000 to under 4,000. AI and a hostile community killed the programmer's go-to resource.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Stack Overflow's toxic culture pushed devs toward AI assistants. Now the site that trained chatbots is being replaced by them.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Developers abandoned Stack Overflow for ChatGPT. The irony: AI learned to code by reading Stack Overflow answers.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Stack Overflow is dead as a forum but thriving as a business, licensing its archive to the AI companies killing it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

@@ -9,10 +9,11 @@ BOING BOING TOOLS
 ─────────────────
 1. memeorandum   — Fetch 20 headlines from memeorandum.com, select articles for posts
 2. random-wiki   — Show 20 random articles from Wikipedia's Unusual Articles, select for posts
-3. writepost     — Write a post from a URL or topic the user provides
-4. copyedit      — Copy edit a contributor post (paste HTML), generate metadata, add to index
-5. pending       — Review and copy edit all pending posts from WordPress
-6. author-stats  — Run author performance report (posts, views, evergreen metrics)
+3. weird         — Show 10 random dark/strange Wikipedia articles, select for posts
+4. writepost     — Write a post from a URL or topic the user provides
+5. copyedit      — Copy edit a contributor post (paste HTML), generate metadata, add to index
+6. pending       — Review and copy edit all pending posts from WordPress
+7. author-stats  — Run author performance report (posts, views, evergreen metrics)
 ```
 
 ---
@@ -67,6 +68,42 @@ UNUSUAL WIKIPEDIA ARTICLES
 
 ---
 
+# Weird Wiki Script
+
+This tool displays 10 random articles from weird.html — a curated collection of dark, strange, and macabre Wikipedia articles.
+
+## Source
+
+Articles are pulled from the local file `weird.html`, which contains ~500+ curated Wikipedia articles covering mysteries, disasters, crimes, oddities, and strange history.
+
+## Workflow
+
+1. Run `python3 weird_wiki.py` to fetch and display 10 random weird articles
+   - Numbered list (1-10)
+   - Article title
+   - Brief description
+   - URL
+2. User selects which articles they want posts about (e.g., "2, 5, 8")
+3. For each selected article, fetch the full content and generate a ~250 word blog post
+
+## Example Output Format
+
+```
+WEIRD WIKIPEDIA ARTICLES
+────────────────────────  (490 remaining)
+1. Batavia
+   One of the most insane stories of shipwreck and mutiny you'll ever read!
+   https://en.wikipedia.org/wiki/Batavia_(1628_ship)
+
+2. Carl Tanzler
+   Doctor who preserved and kept the corpse of a former patient.
+   https://en.wikipedia.org/wiki/Carl_Tanzler
+
+[...continues to 10]
+```
+
+---
+
 # Copy Edit Tool
 
 This tool processes contributor posts — copy editing for clarity and correctness while preserving the author's voice, then generating all required metadata.
@@ -94,15 +131,16 @@ When editing contributor posts:
 
 ### DO:
 - Fix objective errors (typos, grammar, punctuation)
-- Tighten verbose passages
+- Tighten verbose passages aggressively — concision takes priority over preserving exact phrasing
+- Restructure wordy sentences (e.g., "According to a blog post he published earlier this week, X plans on bringing..." → "X plans to bring..., he said in a recent blog post.")
 - Clarify confusing sentences
 - Improve sentence rhythm and flow
 - Remove filler phrases and empty words
 - Ensure facts are stated clearly
+- Remove gratuitous profanity
 
 ### DON'T:
 - Change the author's opinions or positions
-- Alter their distinctive voice or style
 - Remove personality or humor
 - Add your own commentary
 - Over-polish into generic prose
@@ -116,6 +154,9 @@ When editing contributor posts:
 - The author's word choices when they're intentional
 - Regional spelling variations (British vs American)
 
+### URL Conversions:
+- Always convert YouTube Shorts URLs to regular URLs: `https://www.youtube.com/shorts/VIDEO_ID` → `https://youtu.be/VIDEO_ID`
+
 ## Output Format
 
 The HTML post file should include:
@@ -126,7 +167,7 @@ The HTML post file should include:
 - Category tags
 - Yoast focus keyphrase
 - 5 meta headlines (60 chars max)
-- 5 meta descriptions (120 chars max)
+- 5 meta descriptions (at least 100 characters and 120 chars max)
 
 ---
 
@@ -190,11 +231,11 @@ Each post should:
 - Credit the original source naturally within the text (e.g., "As reported in the New York Times, ..." or "According to Politico, ...")
 - Have a catchy headline
 - Get to the interesting/important point quickly
-- NO inline hyperlinks in the post body—the editor will add links manually
+- Include a hyperlink to the source in the post body where the attribution appears
 
 ## Example Attribution Styles
 
-Lead with the interesting information, put attribution at the end. Do NOT include markdown links in the post body:
+**Most important information goes first.** Lead with the interesting content, put attribution at the end. Include a hyperlink to the source where the attribution appears:
 
 - "The agency plans to cut 500 jobs by March, according to The Washington Post..."
 - "Lawmakers are preparing a new bill that would..., Axios reports."
@@ -204,7 +245,10 @@ Lead with the interesting information, put attribution at the end. Do NOT includ
 DON'T write: "According to CNN, prosecutors say Cole placed the bombs..."
 DO write: "Cole placed the bombs on the night of January 5, say prosecutors, according to CNN."
 
-The URL goes only in the Source section at the bottom. The editor will add the hyperlink where appropriate.
+DON'T write: "According to The Conversation, natural fibers like cotton and linen contain millions of tiny cellulose molecules..."
+DO write: "Natural fibers like cotton and linen contain millions of tiny cellulose molecules that naturally exist in coiled, crinkled shapes, reports The Conversation."
+
+The URL also appears in the Source section at the bottom for easy copying.
 
 ## Avoiding AI-Sounding Writing
 
@@ -264,7 +308,7 @@ Avoid lines that sound good but lack substance, specificity, or verifiable conte
 Each post (from memeorandum, random-wiki, and writeposts) should include all of the following sections:
 
 ### 1. Post Body
-The ~250 word blog post with attribution. Mention the publication by name in plain text. Do NOT include any markdown links—the editor adds links manually.
+The ~250 word blog post with attribution. Include a hyperlink to the source where the attribution appears.
 
 ### 2. Source
 `Source: [full URL]`
@@ -293,7 +337,7 @@ Provide 5 meta description options, each 120 characters or fewer.
 ```
 ## [Headline]
 
-[Post body with attribution like "according to Publication Name, the key detail..." - no inline links]
+[Post body with attribution like "according to <a href="URL">Publication Name</a>, the key detail..."]
 
 Source: https://example.com/article
 
