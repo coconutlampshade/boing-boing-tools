@@ -132,27 +132,19 @@ The HTML post file should include:
 
 # Pending Posts Processor
 
-Automated tool to fetch pending posts from WordPress, copy edit with Claude, and generate HTML files.
+Automated tool to process pending posts from WordPress, copy edit with Claude, and generate HTML files.
 
-## Setup (One-Time)
+## Setup
 
-1. Generate a WordPress Application Password:
-   - WordPress Admin → Users → Profile → Application Passwords
-   - Enter name: "Boing Boing Tools"
-   - Click "Add New Application Password"
-   - Copy the password (shown only once)
-
-2. Set environment variables:
-   ```bash
-   export WP_USERNAME="your-wordpress-username"
-   export WP_APP_PASSWORD="xxxx xxxx xxxx xxxx xxxx xxxx"
-   export ANTHROPIC_API_KEY="sk-ant-..."
-   ```
+Set your Anthropic API key:
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+```
 
 ## Usage
 
 ```bash
-# List all pending posts
+# Show instructions and browser script
 python3 pending.py
 
 # Process specific posts (creates HTML files + updates index)
@@ -165,36 +157,21 @@ python3 pending.py --process all
 python3 pending.py --dry-run --process all
 ```
 
+## Workflow
+
+1. Go to WordPress Admin → Posts → All Posts → filter by "Pending"
+2. Run `python3 pending.py` to see the browser script
+3. Copy/paste the script into browser console
+4. Save the JSON output to `pending-posts.json`
+5. Run `python3 pending.py --process all`
+
 ## What It Does
 
-1. Fetches all pending posts from WordPress REST API
-2. Displays numbered list with title, author, word count
-3. For selected posts:
-   - Sends to Claude for copy editing
-   - Generates SEO metadata (headlines, tags, descriptions)
-   - Creates HTML file with copy buttons
-   - Adds entry to index.html
-
-## Manual Fallback
-
-If API access fails, use browser console script:
-
-```javascript
-const posts = [];
-document.querySelectorAll('tr.iedit').forEach(row => {
-  const titleLink = row.querySelector('.row-title');
-  const authorEl = row.querySelector('.author a');
-  if (titleLink) {
-    posts.push({
-      title: titleLink.textContent.trim(),
-      author: authorEl ? authorEl.textContent.trim() : 'Unknown'
-    });
-  }
-});
-console.log(JSON.stringify(posts, null, 2));
-```
-
-Then manually copy content from each post's edit page.
+For each selected post:
+- Sends to Claude for copy editing
+- Generates SEO metadata (5 headlines, 5 meta headlines, 5 meta descriptions, tags, focus keyphrase)
+- Creates HTML file with copy buttons
+- Adds entry to index.html
 
 ---
 

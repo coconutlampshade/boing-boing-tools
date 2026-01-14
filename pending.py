@@ -2,14 +2,16 @@
 """
 Automated Pending Posts Processor
 
-Fetches pending posts from WordPress, copy edits with Claude API,
-generates HTML files with SEO metadata, and updates index.html.
+Processes pending posts from WordPress (via browser console JSON),
+copy edits with Claude API, generates HTML files with SEO metadata,
+and updates index.html.
 
 Usage:
-    python3 pending.py              # List all pending posts
-    python3 pending.py --process 1,3,5   # Process specific posts
-    python3 pending.py --process all     # Process all pending posts
-    python3 pending.py --dry-run         # Preview without creating files
+    python3 pending.py                      # Show browser script instructions
+    python3 pending.py --input posts.json   # Process posts from JSON file
+    python3 pending.py --process 1,3,5      # Process specific posts from JSON
+    python3 pending.py --process all        # Process all posts from JSON
+    python3 pending.py --dry-run            # Preview without creating files
 """
 
 import os
@@ -17,91 +19,79 @@ import sys
 import re
 import json
 import argparse
-import base64
 from html import unescape
 from pathlib import Path
 
-import requests
 from anthropic import Anthropic
 
 # Configuration
-WP_BASE_URL = "https://boingboing.net"
-WP_API_URL = f"{WP_BASE_URL}/wp-json/wp/v2"
 SCRIPT_DIR = Path(__file__).parent
 INDEX_FILE = SCRIPT_DIR / "index.html"
+DEFAULT_INPUT = SCRIPT_DIR / "pending-posts.json"
 
+BROWSER_SCRIPT = '''
+// Run this in your browser console on the WordPress Pending Posts page
+// (Posts → All Posts → filter by Pending)
 
-def get_credentials():
-    """Get WordPress credentials from environment."""
-    username = os.environ.get("WP_USERNAME")
-    password = os.environ.get("WP_APP_PASSWORD")
+(async function() {
+    const posts = [];
+    const rows = document.querySelectorAll('tr.iedit');
 
-    if not username or not password:
-        print("Error: Missing WordPress credentials.")
-        print("Set WP_USERNAME and WP_APP_PASSWORD environment variables.")
-        print("See .env.example for details.")
-        sys.exit(1)
+    for (const row of rows) {
+        const titleLink = row.querySelector('.row-title');
+        const authorEl = row.querySelector('.author a');
+        const editLink = row.querySelector('.row-actions .edit a');
 
-    return username, password
-
-
-def fetch_pending_posts():
-    """Fetch all pending posts from WordPress API."""
-    username, password = get_credentials()
-
-    # Basic auth with application password
-    auth_string = f"{username}:{password}"
-    auth_bytes = base64.b64encode(auth_string.encode()).decode()
-
-    headers = {
-        "Authorization": f"Basic {auth_bytes}",
-        "Content-Type": "application/json"
+        if (titleLink && editLink) {
+            const postId = editLink.href.match(/post=(\\d+)/)?.[1];
+            posts.push({
+                id: postId,
+                title: titleLink.textContent.trim(),
+                author: authorEl ? authorEl.textContent.trim() : 'Unknown',
+                editUrl: editLink.href,
+                content: '' // Will be filled below
+            });
+        }
     }
 
-    try:
-        response = requests.get(
-            f"{WP_API_URL}/posts",
-            params={
-                "status": "pending",
-                "per_page": 50,
-                "context": "edit"
-            },
-            headers=headers
-        )
-        response.raise_for_status()
-        return response.json()
-    except requests.exceptions.HTTPError as e:
-        if e.response.status_code == 401:
-            print("Error: Authentication failed.")
-            print("Check your WP_USERNAME and WP_APP_PASSWORD.")
-        else:
-            print(f"Error fetching posts: {e}")
-        sys.exit(1)
+    console.log(`Found ${posts.length} pending posts. Fetching content...`);
 
+    // Fetch content for each post using the nonce from the page
+    for (const post of posts) {
+        try {
+            const response = await fetch(`/wp-json/wp/v2/posts/${post.id}?context=edit`, {
+                credentials: 'same-origin',
+                headers: { 'X-WP-Nonce': wpApiSettings.nonce }
+            });
+            if (response.ok) {
+                const data = await response.json();
+                post.content = data.content?.raw || '';
+                post.title = data.title?.raw || post.title;
+            }
+        } catch (e) {
+            console.log(`Could not fetch post ${post.id}: ${e.message}`);
+        }
+    }
 
-def fetch_author_name(author_id, headers):
-    """Fetch author display name by ID."""
-    try:
-        response = requests.get(
-            f"{WP_API_URL}/users/{author_id}",
-            headers=headers
-        )
-        response.raise_for_status()
-        return response.json().get("name", "Unknown")
-    except:
-        return "Unknown"
+    // Output as JSON
+    const json = JSON.stringify(posts, null, 2);
+    console.log('\\n' + json);
+    console.log('\\nCopy the JSON above and save to pending-posts.json');
+})();
+'''
 
 
 def strip_html(html):
     """Remove HTML tags and decode entities."""
-    text = re.sub(r'<[^>]+>', '', html)
+    if not html:
+        return ""
+    text = re.sub(r'<[^>]+>', '', str(html))
     return unescape(text).strip()
 
 
-def word_count(html):
-    """Count words in HTML content."""
-    text = strip_html(html)
-    return len(text.split())
+def word_count(text):
+    """Count words in text."""
+    return len(strip_html(text).split())
 
 
 def display_posts(posts):
@@ -110,12 +100,14 @@ def display_posts(posts):
     print("─" * 60)
 
     for i, post in enumerate(posts, 1):
-        title = strip_html(post.get("title", {}).get("raw", "Untitled"))
-        author = post.get("_author_name", "Unknown")
-        words = word_count(post.get("content", {}).get("raw", ""))
+        title = strip_html(post.get("title", "Untitled"))
+        author = post.get("author", "Unknown")
+        content = post.get("content", "")
+        words = word_count(content)
+        has_content = "✓" if content else "✗"
 
-        print(f"{i:2}. {title[:55]}")
-        print(f"    Author: {author} | Words: {words}")
+        print(f"{i:2}. {title[:50]}")
+        print(f"    Author: {author} | Words: {words} | Content: {has_content}")
         print()
 
     print(f"Total: {len(posts)} pending posts")
@@ -124,14 +116,18 @@ def display_posts(posts):
 
 def copy_edit_with_claude(post, dry_run=False):
     """Send post to Claude for copy editing and metadata generation."""
+    title = post.get("title", "Untitled")
+    content = post.get("content", "")
+    author = post.get("author", "Unknown")
+
     if dry_run:
         return {
-            "edited_content": post.get("content", {}).get("raw", ""),
-            "headlines": ["Headline 1", "Headline 2", "Headline 3", "Headline 4", "Headline 5"],
-            "meta_headlines": ["Meta 1", "Meta 2", "Meta 3", "Meta 4", "Meta 5"],
-            "meta_descriptions": ["Description 1", "Description 2", "Description 3", "Description 4", "Description 5"],
+            "edited_content": content,
+            "headlines": [f"{title[:60]}" for _ in range(5)],
+            "meta_headlines": [f"{title[:50]}" for _ in range(5)],
+            "meta_descriptions": [f"Description for {title[:80]}" for _ in range(5)],
             "tags": "tag1, tag2, tag3",
-            "focus_keyphrase": "focus keyphrase",
+            "focus_keyphrase": title[:30].lower(),
             "copy_edits_made": "Dry run - no edits made"
         }
 
@@ -141,10 +137,6 @@ def copy_edit_with_claude(post, dry_run=False):
         sys.exit(1)
 
     client = Anthropic(api_key=api_key)
-
-    title = post.get("title", {}).get("raw", "Untitled")
-    content = post.get("content", {}).get("raw", "")
-    author = post.get("_author_name", "Unknown")
 
     prompt = f"""Copy edit this Boing Boing contributor post. Preserve the author's voice while fixing errors and tightening prose.
 
@@ -181,7 +173,6 @@ Output as JSON with these exact keys: edited_content, copy_edits_made, headlines
             messages=[{"role": "user", "content": prompt}]
         )
 
-        # Extract JSON from response
         text = response.content[0].text
 
         # Try to find JSON in the response
@@ -197,23 +188,10 @@ Output as JSON with these exact keys: edited_content, copy_edits_made, headlines
         return None
 
 
-def search_previously(title, content):
-    """Search boingboing.net for related 'Previously' articles."""
-    # Extract key terms from title
-    stop_words = {'the', 'a', 'an', 'is', 'are', 'was', 'were', 'in', 'on', 'at', 'to', 'for', 'of', 'and', 'or'}
-    words = [w.lower() for w in re.findall(r'\w+', title) if w.lower() not in stop_words]
-
-    query = ' '.join(words[:4])
-    search_url = f"https://www.google.com/search?q=site:boingboing.net+{query}"
-
-    # Return placeholder - actual search would need to be done manually or via API
-    return []
-
-
 def generate_html(post, edit_result, source_url=""):
     """Generate HTML file content for the post."""
-    title = strip_html(post.get("title", {}).get("raw", "Untitled"))
-    author = post.get("_author_name", "Unknown")
+    title = strip_html(post.get("title", "Untitled"))
+    author = post.get("author", "Unknown")
     content = edit_result.get("edited_content", "")
 
     headlines_html = "\n".join([
@@ -231,7 +209,9 @@ def generate_html(post, edit_result, source_url=""):
         for d in edit_result.get("meta_descriptions", [])
     ])
 
-    copy_edits = edit_result.get("copy_edits_made", "").replace("\n", "<br>\n")
+    copy_edits = edit_result.get("copy_edits_made", "")
+    if isinstance(copy_edits, str):
+        copy_edits = copy_edits.replace("\n", "<br>\n")
 
     html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -319,10 +299,9 @@ def generate_html(post, edit_result, source_url=""):
 
 def slugify(title):
     """Convert title to filename slug."""
-    # Remove special characters, lowercase, replace spaces with hyphens
     slug = re.sub(r'[^\w\s-]', '', title.lower())
     slug = re.sub(r'[-\s]+', '-', slug).strip('-')
-    return slug[:50]  # Limit length
+    return slug[:50]
 
 
 def update_index(filename, title):
@@ -333,22 +312,28 @@ def update_index(filename, title):
 
     content = INDEX_FILE.read_text()
 
-    # Find the posts array and the contributor posts section
-    # Look for "// Contributor posts (copy edited)" comment
+    # Escape single quotes in title
+    escaped_title = title.replace("'", "\\'")
+
+    # Find the posts array and insert at the beginning (after the opening bracket)
+    # Look for "// Contributor posts" or "// New posts" marker
     contributor_marker = "// Contributor posts (copy edited)"
+    new_posts_marker = "// New posts"
+
+    new_entry = f"    {{ file: '{filename}', title: '{escaped_title}' }},\n"
 
     if contributor_marker in content:
-        # Insert after the contributor marker
-        new_entry = f"    {{ file: '{filename}', title: '{title.replace(chr(39), chr(92)+chr(39))}' }},\n"
         insert_pos = content.index(contributor_marker) + len(contributor_marker) + 1
         content = content[:insert_pos] + new_entry + content[insert_pos:]
+    elif new_posts_marker in content:
+        insert_pos = content.index(new_posts_marker) + len(new_posts_marker) + 1
+        content = content[:insert_pos] + new_entry + content[insert_pos:]
     else:
-        # Fallback: insert near the beginning of the posts array
+        # Fallback: insert after "const posts = ["
         posts_start = content.find("const posts = [")
         if posts_start != -1:
             insert_pos = content.find("[", posts_start) + 1
-            new_entry = f"\n    {{ file: '{filename}', title: '{title.replace(chr(39), chr(92)+chr(39))}' }},"
-            content = content[:insert_pos] + new_entry + content[insert_pos:]
+            content = content[:insert_pos] + "\n" + new_entry + content[insert_pos:]
 
     INDEX_FILE.write_text(content)
     print(f"  Added to index.html")
@@ -356,11 +341,16 @@ def update_index(filename, title):
 
 def process_post(post, dry_run=False):
     """Process a single post: copy edit, generate HTML, update index."""
-    title = strip_html(post.get("title", {}).get("raw", "Untitled"))
-    author = post.get("_author_name", "Unknown")
+    title = strip_html(post.get("title", "Untitled"))
+    author = post.get("author", "Unknown")
+    content = post.get("content", "")
 
     print(f"\nProcessing: {title}")
     print(f"  Author: {author}")
+
+    if not content:
+        print("  Warning: No content found. Skipping.")
+        return None
 
     # Copy edit with Claude
     print("  Sending to Claude for copy editing...")
@@ -393,29 +383,41 @@ def process_post(post, dry_run=False):
     return filename
 
 
+def load_posts(input_file):
+    """Load posts from JSON file."""
+    if not input_file.exists():
+        return None
+
+    try:
+        with open(input_file) as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"Error: Invalid JSON in {input_file}: {e}")
+        return None
+
+
 def main():
     parser = argparse.ArgumentParser(description="Process pending WordPress posts")
-    parser.add_argument("--process", help="Posts to process: comma-separated numbers or 'all'")
-    parser.add_argument("--dry-run", action="store_true", help="Preview without creating files")
+    parser.add_argument("--input", "-i", type=Path, default=DEFAULT_INPUT,
+                        help=f"JSON file with posts (default: {DEFAULT_INPUT.name})")
+    parser.add_argument("--process", "-p", help="Posts to process: comma-separated numbers or 'all'")
+    parser.add_argument("--dry-run", "-n", action="store_true", help="Preview without creating files")
     args = parser.parse_args()
 
-    # Fetch posts
-    print("Fetching pending posts from WordPress...")
-    posts = fetch_pending_posts()
+    # Check for input file
+    posts = load_posts(args.input)
 
     if not posts:
-        print("No pending posts found.")
+        print("PENDING POSTS PROCESSOR")
+        print("═" * 60)
+        print("\nNo posts file found. To get started:")
+        print(f"\n1. Run this script in your browser console on the WordPress")
+        print("   pending posts page (Posts → All Posts → Pending):\n")
+        print(BROWSER_SCRIPT)
+        print(f"\n2. Copy the JSON output and save to: {args.input}")
+        print(f"\n3. Run: python3 pending.py --process all")
+        print("   Or:   python3 pending.py --dry-run --process all")
         return
-
-    # Get author names
-    username, password = get_credentials()
-    auth_string = f"{username}:{password}"
-    auth_bytes = base64.b64encode(auth_string.encode()).decode()
-    headers = {"Authorization": f"Basic {auth_bytes}"}
-
-    for post in posts:
-        author_id = post.get("author")
-        post["_author_name"] = fetch_author_name(author_id, headers)
 
     # Display posts
     display_posts(posts)
@@ -431,16 +433,24 @@ def main():
                 print("Error: Invalid post numbers. Use comma-separated numbers or 'all'.")
                 return
 
-        print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Processing {len(indices)} post(s)...")
+        # Filter to posts with content
+        valid_indices = [i for i in indices if 0 <= i < len(posts) and posts[i].get("content")]
+        skipped = len(indices) - len(valid_indices)
+
+        if skipped:
+            print(f"\nSkipping {skipped} post(s) without content.")
+
+        if not valid_indices:
+            print("No posts with content to process.")
+            return
+
+        print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Processing {len(valid_indices)} post(s)...")
 
         created = []
-        for i in indices:
-            if 0 <= i < len(posts):
-                result = process_post(posts[i], args.dry_run)
-                if result:
-                    created.append(result)
-            else:
-                print(f"Warning: Post #{i+1} out of range. Skipping.")
+        for i in valid_indices:
+            result = process_post(posts[i], args.dry_run)
+            if result:
+                created.append(result)
 
         print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Done! Created {len(created)} file(s).")
     else:
