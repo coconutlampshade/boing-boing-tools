@@ -37,7 +37,8 @@ hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
     font-size: 12px; margin-left: 8px; vertical-align: middle;
 }
 .copy-btn:hover { background: #ccc; }
-.copy-btn.copied { background: #4CAF50; color: white; }
+.copy-btn.copied { background: #2e7d32; color: white; }
+.post-actions .copy-btn.copied { background: #2e7d32; }
 .headline-row { display: flex; align-items: flex-start; margin-bottom: 8px; }
 .headline-row h1 { flex: 1; margin: 0; }
 .item-row { display: flex; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; }

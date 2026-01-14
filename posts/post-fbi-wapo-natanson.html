@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="../post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">FBI raids Washington Post reporter's home, seizes her phone and laptops</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>The FBI executed a search warrant on Washington Post reporter Hannah Natanson's Virginia home on Wednesday, seizing her phone, two laptops, her personal computer, a work laptop belonging to the Bezos-owned newspaper, and even her Garmin watch. According to multiple news outlets, Natanson was told she is not a target of the investigation — but Attorney General Pam Bondi's statement tells a different story.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Bondi said Natanson "was obtaining and reporting classified and illegally leaked information from a Pentagon contractor," adding that the Trump administration "will not tolerate illegal leaks of classified information that, when reported, pose a grave risk to our Nation's national security." The warrant names a government contractor named Aurelio Perez-Lugones, a system administrator with top secret clearance accused of taking classified intelligence reports home in his lunchbox.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Searching a journalist's home is an extraordinary step. Even past administrations that aggressively pursued leak investigations — and the Obama administration was notably aggressive — stopped short of raiding reporters' homes. "Searches of newsrooms and journalists are hallmarks of illiberal regimes, and we must ensure that these practices are not normalized here," said Jameel Jaffer, executive director of the Knight First Amendment Institute.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Natanson, 29, is part of a team covering Trump's overhaul of the federal workforce. She won a Peabody in 2024 and was part of the team that won a Pulitzer for covering the January 6 insurrection. This is what happens when you're good at your job in an administration that treats journalism as a crime.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2016/01/05/new-zealand-rules-police-raid.html">New Zealand rules police raid on journalist Nicky Hager was illegal</a></li>
+<li><a href="https://boingboing.net/2023/12/07/gop-senator-calls-for-criminal-action-against-journalist-over-maga-dictatorship-article.html">GOP Senator calls for criminal action against journalist over MAGA dictatorship article</a></li>
+<li><a href="https://boingboing.net/2023/05/03/today-is-world-press-freedom-day.html">Today is World Press Freedom Day</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.theguardian.com/us-news/2026/jan/14/fbi-raid-washington-post-hannah-natanson</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>FBI raids Washington Post reporter's home, seizes her phone and laptops</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump administration raids Pulitzer-winning journalist's home</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI seizes Washington Post reporter's devices in classified docs probe</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Press freedom advocates alarmed as FBI searches journalist's home</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>AG Bondi: Reporter "obtaining and reporting" leaked classified info</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">news, press freedom, Trump administration, FBI, journalism, Washington Post</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">FBI raid Washington Post reporter</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>FBI raids Washington Post reporter's home</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Trump admin raids Pulitzer-winning journalist</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI seizes WaPo reporter's phone, laptops, watch</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Press freedom groups alarmed by journalist raid</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Bondi says reporter got "illegally leaked" info</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>FBI searched Hannah Natanson's home and seized her devices. Even Obama stopped short of raiding reporters' homes.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The 29-year-old Pulitzer winner was told she's not a target. AG Bondi's statement suggests otherwise.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Searches of journalists are hallmarks of illiberal regimes," says Knight First Amendment Institute director.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI took her phone, two laptops, work computer, and Garmin watch. She covers Trump's federal workforce overhaul.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This is what happens when you're good at your job in an administration that treats journalism as a crime.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Mark Frauenfelder</p>
+
+</div>
+
+<script src="../post-script.js"></script>
+
+</body>
+</html>
