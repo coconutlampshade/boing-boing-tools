@@ -247,7 +247,7 @@ def clean_full_content(html_content):
 
 
 def extract_featured_image(post):
-    """Extract featured image URL and alt text from embedded data."""
+    """Extract featured image URL, alt text, and caption from embedded data."""
     embedded = post.get("_embedded", {})
     media = embedded.get("wp:featuredmedia", [])
 
@@ -256,18 +256,22 @@ def extract_featured_image(post):
         source_url = media_item.get("source_url", "")
         alt_text = media_item.get("alt_text", "")
 
-        # Get caption for alt text fallback
-        if not alt_text:
-            caption_data = media_item.get("caption", {})
-            if isinstance(caption_data, dict):
-                caption_html = caption_data.get("rendered", "")
-                if caption_html:
-                    soup = BeautifulSoup(caption_html, "html.parser")
-                    alt_text = soup.get_text().strip()
+        # Get caption
+        caption = ""
+        caption_data = media_item.get("caption", {})
+        if isinstance(caption_data, dict):
+            caption_html = caption_data.get("rendered", "")
+            if caption_html:
+                soup = BeautifulSoup(caption_html, "html.parser")
+                caption = soup.get_text().strip()
 
-        return source_url, alt_text
+        # Use caption as alt text fallback
+        if not alt_text and caption:
+            alt_text = caption
 
-    return None, None
+        return source_url, alt_text, caption
+
+    return None, None, None
 
 
 def generate_ai_intro(posts):
@@ -436,8 +440,9 @@ def render_html(target_date, subhead, intro, posts):
         else:
             article_content = extract_excerpt(content, max_paragraphs=2)
 
-        img_url, alt_text = extract_featured_image(post)
+        img_url, alt_text, caption = extract_featured_image(post)
         alt_escaped = escape(alt_text) if alt_text else ""
+        caption_escaped = escape(caption) if caption else ""
 
         html += f'''
                 <article class="article">
@@ -449,6 +454,8 @@ def render_html(target_date, subhead, intro, posts):
 
         if img_url:
             html += f'<a href="{link}" title="{title_escaped}" rel="nofollow"><img src="{img_url}" class="article-image" alt="{alt_escaped}" style="display: block; margin: auto; margin-bottom: 5px; max-width: 100%;" /></a>'
+            if caption:
+                html += f'<p class="image-caption" style="color: #666; font-size: 0.9em; text-align: center; font-style: italic; margin-top: 5px;">{caption_escaped}</p>'
 
         html += article_content
 
