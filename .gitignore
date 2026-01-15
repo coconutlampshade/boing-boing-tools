@@ -9,4 +9,5 @@ __pycache__/
 # Generated files
 pending-posts.json
 newsletter_*.html
+digest_*.html
 feed.txt
