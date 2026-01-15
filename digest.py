@@ -453,9 +453,10 @@ def render_html(target_date, subhead, intro, posts):
                         '''
 
         if img_url:
-            html += f'<a href="{link}" title="{title_escaped}" rel="nofollow"><img src="{img_url}" class="article-image" alt="{alt_escaped}" style="display: block; margin: auto; margin-bottom: 5px; max-width: 100%;" /></a>'
             if caption:
-                html += f'<p class="image-caption" style="color: #666; font-size: 0.9em; text-align: center; font-style: italic; margin-top: 5px;">{caption_escaped}</p>'
+                html += f'<figure class="article-figure"><a href="{link}" title="{title_escaped}" rel="nofollow"><img src="{img_url}" alt="{alt_escaped}" /></a><figcaption>{caption_escaped}</figcaption></figure>'
+            else:
+                html += f'<a href="{link}" title="{title_escaped}" rel="nofollow"><img src="{img_url}" class="article-image" alt="{alt_escaped}" /></a>'
 
         html += article_content
 
