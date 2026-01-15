@@ -160,9 +160,8 @@ def fetch_published_posts(start_utc, end_utc):
             print(f"Error fetching posts: {e}")
             sys.exit(1)
 
-    # Filter out shop posts and get author names
+    # Get author names for all posts (including shop posts)
     headers_for_author = headers
-    filtered_posts = []
     for post in all_posts:
         author_id = post.get("author")
         embedded = post.get("_embedded", {})
@@ -172,14 +171,10 @@ def fetch_published_posts(start_utc, end_utc):
         if not author_name and author_id:
             author_name = fetch_author(author_id, headers_for_author)
 
-        if author_name == "Boing Boing's Shop":
-            continue
-
         post["_author_name"] = author_name or "Unknown"
-        filtered_posts.append(post)
 
-    print(f"Found {len(filtered_posts)} posts (excluded shop posts)")
-    return filtered_posts
+    print(f"Found {len(all_posts)} posts")
+    return all_posts
 
 
 def format_post_date(date_str):
@@ -223,6 +218,32 @@ def extract_excerpt(html_content, max_paragraphs=2):
                 break
 
     return '\n'.join(paragraphs)
+
+
+def clean_full_content(html_content):
+    """Clean full content for shop posts (remove ads, keep everything else)."""
+    if not html_content:
+        return ""
+
+    soup = BeautifulSoup(html_content, "html.parser")
+
+    # Remove unwanted elements
+    for tag in soup.find_all(['script', 'style']):
+        tag.decompose()
+
+    # Remove ad placeholders
+    for div in soup.find_all('div', class_=lambda x: x and 'boing-primis' in x):
+        div.decompose()
+    for div in soup.find_all('div', class_=lambda x: x and 'advads' in x):
+        div.decompose()
+
+    # Remove "The post X appeared first on Y" text
+    for p in soup.find_all('p'):
+        text = p.get_text(strip=True).lower()
+        if 'appeared first on' in text or 'this entry was posted' in text:
+            p.decompose()
+
+    return str(soup)
 
 
 def extract_featured_image(post):
@@ -407,7 +428,13 @@ def render_html(target_date, subhead, intro, posts):
         link = post.get("link", "")
 
         content = post.get("content", {}).get("rendered", "")
-        excerpt = extract_excerpt(content, max_paragraphs=2)
+
+        # Shop posts get full content, others get excerpt
+        is_shop_post = author == "Boing Boing's Shop"
+        if is_shop_post:
+            article_content = clean_full_content(content)
+        else:
+            article_content = extract_excerpt(content, max_paragraphs=2)
 
         img_url, alt_text = extract_featured_image(post)
         alt_escaped = escape(alt_text) if alt_text else ""
@@ -423,9 +450,16 @@ def render_html(target_date, subhead, intro, posts):
         if img_url:
             html += f'<a href="{link}" title="{title_escaped}" rel="nofollow"><img src="{img_url}" class="article-image" alt="{alt_escaped}" style="display: block; margin: auto; margin-bottom: 5px; max-width: 100%;" /></a>'
 
-        html += excerpt
+        html += article_content
 
-        html += f'''
+        # Only show "Read more" for non-shop posts
+        if is_shop_post:
+            html += '''
+                    </div>
+                </article>
+                '''
+        else:
+            html += f'''
                     </div>
                     <p><a href="{link}" class="read-more">Read more →</a></p>
                 </article>
