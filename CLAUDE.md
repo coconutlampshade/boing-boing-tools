@@ -13,7 +13,9 @@ BOING BOING TOOLS
 4. writepost     — Write a post from a URL or topic the user provides
 5. copyedit      — Copy edit a contributor post (paste HTML), generate metadata, add to index
 6. pending       — Review and copy edit all pending posts from WordPress
-7. author-stats  — Run author performance report (posts, views, evergreen metrics)
+7. newsletter    — Generate daily newsletter (full posts, noon-to-noon)
+8. digest        — Generate daily digest (excerpts with "Read more" links)
+9. author-stats  — Run author performance report (posts, views, evergreen metrics)
 ```
 
 ---
@@ -213,6 +215,60 @@ For each selected post:
 - Generates SEO metadata (5 headlines, 5 meta headlines, 5 meta descriptions, tags, focus keyphrase)
 - Creates HTML file with copy buttons
 - Adds entry to index.html
+
+---
+
+# Newsletter Generator
+
+Generates a daily newsletter with full post content from noon PT yesterday to noon PT today.
+
+## Setup
+
+Set environment variables:
+```bash
+export WP_USER="your-username"
+export WP_APP_PASSWORD="xxxx xxxx xxxx xxxx"
+export ANTHROPIC_API_KEY="sk-ant-..."
+```
+
+## Usage
+
+```bash
+python3 newsletter.py                    # Generate today's newsletter
+python3 newsletter.py --date 2026-01-14  # Generate for a specific date
+python3 newsletter.py --open             # Generate and open in browser
+```
+
+## What It Does
+
+- Fetches published posts via WordPress REST API
+- Filters to noon-to-noon Pacific time window
+- Excludes "Boing Boing's Shop" posts
+- Generates AI subhead and introduction using Claude
+- Outputs styled HTML with full post content
+- Saves to `newsletter_YYYY-MM-DD.html`
+
+---
+
+# Digest Generator
+
+Generates a daily digest newsletter with excerpts and "Read more" links.
+
+## Usage
+
+```bash
+python3 digest.py                    # Generate today's digest
+python3 digest.py --date 2026-01-14  # Generate for a specific date
+python3 digest.py --open             # Generate and open in browser
+```
+
+## What It Does
+
+- Same WordPress API fetch as newsletter.py
+- Extracts first 1-2 paragraphs as excerpt
+- Adds "Read more →" link for each post
+- Generates AI subhead and introduction
+- Saves to `digest_YYYY-MM-DD.html`
 
 ---
 
