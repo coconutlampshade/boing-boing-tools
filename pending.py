@@ -114,6 +114,67 @@ def display_posts(posts):
     print("─" * 60)
 
 
+def search_previously_links(title, content, dry_run=False):
+    """Search boingboing.net for related articles for Previously section."""
+    if dry_run:
+        return [
+            {"title": "Related Article 1", "url": "https://boingboing.net/example1"},
+            {"title": "Related Article 2", "url": "https://boingboing.net/example2"},
+            {"title": "Related Article 3", "url": "https://boingboing.net/example3"},
+        ]
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        return []
+
+    client = Anthropic(api_key=api_key)
+
+    # Extract key topics from title and content
+    text_sample = strip_html(content)[:500]
+
+    prompt = f"""Find 3 related articles from boingboing.net for a "Previously" section.
+
+Post title: {title}
+Post excerpt: {text_sample}
+
+Search boingboing.net for related articles. Return ONLY a JSON array with exactly 3 objects, each having "title" and "url" keys. URLs must be real boingboing.net URLs you find.
+
+Example format:
+[
+  {{"title": "Article title here", "url": "https://boingboing.net/2024/01/01/article-slug.html"}},
+  {{"title": "Another article", "url": "https://boingboing.net/2023/05/15/another-slug.html"}},
+  {{"title": "Third article", "url": "https://boingboing.net/2022/08/20/third-slug.html"}}
+]
+
+Return ONLY the JSON array, no other text."""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1024,
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        text = response.content[0].text
+
+        # Try to parse JSON array
+        json_match = re.search(r'\[[\s\S]*\]', text)
+        if json_match:
+            links = json.loads(json_match.group())
+            # Validate URLs are boingboing.net
+            valid_links = [
+                link for link in links
+                if isinstance(link, dict)
+                and link.get("url", "").startswith("https://boingboing.net/")
+            ]
+            return valid_links[:3]
+
+    except Exception as e:
+        print(f"  Warning: Could not search for Previously links: {e}")
+
+    return []
+
+
 def copy_edit_with_claude(post, dry_run=False):
     """Send post to Claude for copy editing and metadata generation."""
     title = post.get("title", "Untitled")
@@ -128,7 +189,8 @@ def copy_edit_with_claude(post, dry_run=False):
             "meta_descriptions": [f"Description for {title[:80]}" for _ in range(5)],
             "tags": "tag1, tag2, tag3",
             "focus_keyphrase": title[:30].lower(),
-            "copy_edits_made": "Dry run - no edits made"
+            "copy_edits_made": "Dry run - no edits made",
+            "previously_links": []
         }
 
     api_key = os.environ.get("ANTHROPIC_API_KEY")
@@ -138,7 +200,32 @@ def copy_edit_with_claude(post, dry_run=False):
 
     client = Anthropic(api_key=api_key)
 
-    prompt = f"""Copy edit this Boing Boing contributor post. Preserve the author's voice while fixing errors and tightening prose.
+    prompt = f"""Copy edit this Boing Boing contributor post following these guidelines:
+
+## Copy Editing Rules
+DO:
+- Fix objective errors (typos, grammar, punctuation)
+- Tighten verbose passages aggressively — concision takes priority over preserving exact phrasing
+- Restructure wordy sentences (e.g., "According to a blog post he published earlier this week, X plans on bringing..." → "X plans to bring..., he said in a recent blog post.")
+- Clarify confusing sentences
+- Improve sentence rhythm and flow
+- Remove filler phrases and empty words
+- Convert YouTube Shorts URLs to regular format: https://www.youtube.com/shorts/VIDEO_ID → https://youtu.be/VIDEO_ID
+
+DON'T:
+- Change the author's opinions or positions
+- Remove personality or humor
+- Add your own commentary
+- Over-polish into generic prose
+
+PRESERVE:
+- All hyperlinks (keep href attributes intact)
+- All images (keep src, alt, and any captions)
+- Formatting (bold, italic, lists, blockquotes)
+- Embedded media (YouTube, tweets, etc.)
+- WordPress block comments (<!-- wp:paragraph --> etc.)
+
+---
 
 TITLE: {title}
 AUTHOR: {author}
@@ -150,19 +237,19 @@ CONTENT:
 
 Please provide:
 
-1. EDITED_CONTENT: The copy-edited post (preserve all WordPress block comments, hyperlinks, images, embeds)
+1. EDITED_CONTENT: The copy-edited post with all WordPress block comments, hyperlinks, images, and embeds preserved
 
 2. COPY_EDITS_MADE: Brief list of changes (e.g., "- Fixed typo: 'teh' → 'the'")
 
-3. HEADLINES: 5 headline options (70 chars max each, sentence case)
+3. HEADLINES: 5 headline options (70 chars max each, sentence case NOT title case)
 
 4. TAGS: 3-5 category tags, comma-separated, broadest to most specific
 
 5. FOCUS_KEYPHRASE: Yoast SEO focus keyphrase (3-5 words)
 
-6. META_HEADLINES: 5 meta headline options (60 chars max each)
+6. META_HEADLINES: 5 meta headline options (60 chars max each, sentence case)
 
-7. META_DESCRIPTIONS: 5 meta description options (120 chars max each)
+7. META_DESCRIPTIONS: 5 meta description options (100-120 chars each)
 
 Output as JSON with these exact keys: edited_content, copy_edits_made, headlines (array), tags, focus_keyphrase, meta_headlines (array), meta_descriptions (array)"""
 
@@ -188,7 +275,7 @@ Output as JSON with these exact keys: edited_content, copy_edits_made, headlines
         return None
 
 
-def generate_html(post, edit_result, source_url=""):
+def generate_html(post, edit_result, source_url="", previously_links=None):
     """Generate HTML file content for the post."""
     title = strip_html(post.get("title", "Untitled"))
     author = post.get("author", "Unknown")
@@ -219,6 +306,18 @@ def generate_html(post, edit_result, source_url=""):
     # Only add Previously section wrapper if content doesn't have one
     if has_previously:
         previously_html = ""
+    elif previously_links:
+        links_html = "\n".join([
+            f'<li><a href="{link["url"]}">{link["title"]}</a></li>'
+            for link in previously_links
+        ])
+        previously_html = f'''
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+{links_html}
+</ul>
+</div>'''
     else:
         previously_html = '''
 <div class="previously" id="previously">
@@ -240,7 +339,7 @@ def generate_html(post, edit_result, source_url=""):
 
 <div class="headline-row">
     <h1 id="headline">{title}</h1>
-    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+    <button class="copy-btn" onclick="copyText('headline', this)">copy</button>
 </div>
 
 <article id="postBody">
@@ -249,8 +348,8 @@ def generate_html(post, edit_result, source_url=""):
 </article>
 
 <div class="post-actions">
-    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
-    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+    <button class="copy-btn" onclick="copyPostOnly(this)">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly(this)">Copy previously</button>
 </div>
 
 <hr>
@@ -259,7 +358,7 @@ def generate_html(post, edit_result, source_url=""):
 
 <div class="section-header">
     <h3>Source</h3>
-    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+    <button class="copy-btn" onclick="copyText('sourceUrl', this)">copy</button>
 </div>
 <p class="source-url" id="sourceUrl">{source_url}</p>
 
@@ -268,13 +367,13 @@ def generate_html(post, edit_result, source_url=""):
 
 <div class="section-header" style="margin-top: 1.5em;">
     <h3>Category Tags</h3>
-    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+    <button class="copy-btn" onclick="copyText('tags', this)">copy</button>
 </div>
 <p id="tags">{edit_result.get("tags", "")}</p>
 
 <div class="section-header" style="margin-top: 1.5em;">
     <h3>Yoast Focus Keyphrase</h3>
-    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase', this)">copy</button>
 </div>
 <p id="focusKeyphrase">{edit_result.get("focus_keyphrase", "")}</p>
 
@@ -329,7 +428,7 @@ def update_index(filename, title):
     contributor_marker = "// Contributor posts (copy edited)"
     new_posts_marker = "// New posts"
 
-    new_entry = f"    {{ file: '{filename}', title: '{escaped_title}' }},\n"
+    new_entry = f"    {{ file: 'posts/{filename}', title: '{escaped_title}' }},\n"
 
     if contributor_marker in content:
         insert_pos = content.index(contributor_marker) + len(contributor_marker) + 1
@@ -369,9 +468,18 @@ def process_post(post, dry_run=False):
         print("  Error: Failed to get edit results. Skipping.")
         return None
 
+    # Search for Previously links (skip if content already has them)
+    previously_links = []
+    has_previously = 'Previously:' in content or 'See also:' in content
+    if not has_previously:
+        print("  Searching for Previously links...")
+        previously_links = search_previously_links(title, content, dry_run)
+        if previously_links:
+            print(f"  Found {len(previously_links)} related articles")
+
     # Generate filename
     filename = f"post-{slugify(title)}.html"
-    filepath = SCRIPT_DIR / filename
+    filepath = SCRIPT_DIR / "posts" / filename
 
     if dry_run:
         print(f"  [Dry run] Would create: {filename}")
@@ -380,9 +488,10 @@ def process_post(post, dry_run=False):
 
     # Generate HTML
     print("  Generating HTML file...")
-    html = generate_html(post, edit_result)
+    html = generate_html(post, edit_result, previously_links=previously_links)
 
-    # Write file
+    # Write file (ensure posts directory exists)
+    filepath.parent.mkdir(exist_ok=True)
     filepath.write_text(html)
     print(f"  Created: {filename}")
 

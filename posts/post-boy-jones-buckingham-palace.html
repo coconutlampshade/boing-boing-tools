@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="../post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The teenager who kept breaking into Buckingham Palace to see the Queen</h1>
+    <button class="copy-btn" onclick="copyText('headline')">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Between 1838 and 1841, a teenager named Edward Jones broke into Buckingham Palace not once, not twice, but at least three times — and Victorian England had absolutely no idea what to do with him, <a href="https://en.wikipedia.org/wiki/The_boy_Jones">according to Wikipedia</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Jones was 14 when he first got in, squeezing through a chimney and wandering the palace covered in soot and bear's grease. Staff found him with stolen trousers, a sword, and a portrait of Queen Victoria. At trial, his lawyer argued the boy simply had "an inordinate curiosity to obtain a view of Buckingham Palace" — a "very natural inclination" — and he was acquitted.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Two years later, he was back. This time he scaled a wall on Constitution Hill, entered through a window, and hid under a sofa in the room next to where Victoria had given birth just ten days earlier. When discovered, he told police he'd "sat upon the throne, saw the Queen, and heard the Princess Royal cry." The Privy Council — the monarch's formal body of advisers — interrogated him personally. He explained he wanted to write a book about how royals lived. They gave him three months hard labor.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Two weeks after his release, he broke in again and was caught eating food from the larders.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The authorities were baffled. Jones wasn't violent, didn't steal much, and seemed motivated purely by curiosity. Their solution: the Thames Police secretly pressured him into becoming a sailor, shipping him to Brazil and eventually pressing him into the Royal Navy for six years. He deserted twice. After leaving the service, he was arrested for burglary and transported to Australia, where he likely spent the rest of his life — possibly as a town crier in Perth, tormented by children asking about the Queen.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/08/28/queen-victoria-was-the-worlds-biggest-and-most-muderous-drug-kingpin.html">Queen Victoria was the world's biggest and most murderous drug kingpin</a></li>
+<li><a href="https://boingboing.net/2022/12/26/prince-andrew-evicted-from-buckingham-palace.html">Prince Andrew "evicted" from Buckingham Palace</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly()">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly()">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl')">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://en.wikipedia.org/wiki/The_boy_Jones</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>The teenager who kept breaking into Buckingham Palace to see the Queen</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Victorian England's weirdest security problem: a boy obsessed with royals</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He broke into Buckingham Palace three times. They made him join the Navy.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The boy Jones: palace intruder, royal stalker, impossible to punish</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>In the 1840s, a teen kept sneaking into the Queen's palace to snoop</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags')">copy</button>
+</div>
+<p id="tags">history, royalty, crime, Queen Victoria, Buckingham Palace, 19th century</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase')">copy</button>
+</div>
+<p id="focusKeyphrase">boy Jones Buckingham Palace</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>The teen who kept breaking into Buckingham Palace</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Victorian England's most persistent palace intruder</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He broke in three times. They shipped him to Brazil.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The boy Jones and his royal obsession</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Palace security's strangest problem: one curious teen</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Edward Jones broke into Buckingham Palace three times between 1838-1841. Authorities were so baffled they made him join the Navy.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A teenager kept sneaking into Buckingham Palace to "see how royals lived." He hid under a sofa near the newborn princess.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The boy Jones: Victorian England's weirdest criminal. He broke into the palace, sat on the throne, and ate from the larders.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Between 1838-1841, Edward Jones broke into Buckingham Palace repeatedly. The solution? Force him to become a sailor.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>He wasn't violent, didn't steal much — just really wanted to see how Queen Victoria lived. They shipped him to Australia.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="../post-script.js"></script>
+
+</body>
+</html>
