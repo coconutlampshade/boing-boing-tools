@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">FBI's raid on Washington Post reporter is first of its kind in a leak case</h1>
+    <button class="copy-btn" onclick="copyText('headline', this)">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>The FBI search of Washington Post reporter Hannah Natanson's home marks the first time the Justice Department has executed a search warrant at a journalist's residence in a national security leak case, <a href="https://www.cnn.com/2026/01/15/media/fbi-hannah-natanson-washington-post-doj-search">according to the Reporters Committee for Freedom of the Press</a>. Agents seized her phone, two computers, and a Garmin watch.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Natanson had been reporting on federal workers impacted by Trump administration policies. Last month, she wrote about being "the federal government whisperer," describing 1,169 Signal contacts from across the government — people who "decided to trust me with their stories." Attorney General Pam Bondi said Natanson "was obtaining and reporting classified and illegally leaked information from a Pentagon contractor."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here's the thing: it's not a crime in the United States for journalists to obtain or publish leaked documents. "Journalists are legally permitted to publish government secrets and the courts have again and again reaffirmed that First Amendment right," said Clayton Weimers of Reporters Without Borders USA. The DOJ claims Natanson isn't a target — but raiding her home, seizing her devices, and potentially accessing her sources sends a clear message to every federal worker who might consider talking to a reporter.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>"Searches of newsrooms and journalists are hallmarks of illiberal regimes, and we must ensure that these practices are not normalized here," said Jameel Jaffer of the Knight First Amendment Institute. Last April, the DOJ ended Merrick Garland's policy restricting subpoenas of reporters. Now we see what replaces it.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2026/01/14/fbi-raids-washington-post-reporters-home.html">FBI raids Washington Post reporter's home</a></li>
+<li><a href="https://boingboing.net/2016/06/30/leaked-fbi-documents-reveal-se.html">Leaked FBI documents reveal secret rules for spying on journalists</a></li>
+<li><a href="https://boingboing.net/2014/04/25/state-dept-launches-free-the.html">State Dept launches 'Free the Press' campaign while DOJ asks Supreme Court to force NYT's James Risen to jail</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly(this)">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly(this)">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl', this)">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.cnn.com/2026/01/15/media/fbi-hannah-natanson-washington-post-doj-search</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>FBI's raid on Washington Post reporter is first of its kind in a leak case</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DOJ executes first-ever search warrant on journalist in leak case</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI seized reporter's devices, potentially exposing 1,169 sources</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Press freedom groups condemn unprecedented FBI raid on reporter</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>It's not illegal for journalists to publish leaks. DOJ raided one anyway</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags', this)">copy</button>
+</div>
+<p id="tags">news, press freedom, FBI, DOJ, First Amendment, Washington Post</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase', this)">copy</button>
+</div>
+<p id="focusKeyphrase">FBI Washington Post reporter raid</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>FBI's raid on reporter is first of its kind in leak case</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DOJ executes first search warrant on journalist in leak case</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>FBI seized reporter's devices, exposing 1,169 sources</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Press freedom groups condemn FBI raid on reporter</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Publishing leaks isn't illegal. DOJ raided reporter anyway</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>The FBI search of Hannah Natanson's home is the first time DOJ has raided a journalist in a national security leak case.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Agents seized her phone and computers. She had 1,169 Signal contacts from federal workers. It's not illegal to publish leaks.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>"Searches of journalists are hallmarks of illiberal regimes." The FBI just raided a Washington Post reporter's home.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>DOJ claims the reporter isn't a target. But seizing her devices sends a message to every federal worker who might talk.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Last April, DOJ ended protections for reporters. Now the FBI is raiding journalists' homes for the first time in leak cases.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Frauenfelder</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

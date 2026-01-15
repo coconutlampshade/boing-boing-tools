@@ -1,5 +1,36 @@
 # Boing Boing Tools - To-Do List
 
+## Waiting On
+
+### Cloudflare Whitelist - Better Solution
+**Status:** Waiting on sysadmin
+
+Currently whitelisted by IP (76.86.25.84), but sysadmin offered a more robust solution using User-Agent or custom header.
+
+**Options:**
+1. **User-Agent whitelist** (easiest):
+   ```
+   (http.user_agent eq "BoingBoingTools/1.0")
+   ```
+
+2. **Custom header** (more secure):
+   Sysadmin provides a secret token, we add header like:
+   ```
+   X-BB-Secret: <token-he-provides>
+   ```
+
+**What we send:**
+```
+GET https://boingboing.net/wp-json/wp/v2/posts?status=pending&context=edit
+Headers:
+  User-Agent: BoingBoingTools/1.0
+  Authorization: Basic <base64 credentials>
+```
+
+Once sysadmin decides, update `pending.py` headers dict accordingly.
+
+---
+
 ## Pending
 
 ### Add Publish-Back Feature
