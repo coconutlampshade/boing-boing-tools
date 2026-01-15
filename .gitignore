@@ -5,3 +5,8 @@ __pycache__/
 *.pyo
 .env
 .env.local
+
+# Generated files
+pending-posts.json
+newsletter_*.html
+feed.txt
