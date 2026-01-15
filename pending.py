@@ -2,16 +2,20 @@
 """
 Automated Pending Posts Processor
 
-Processes pending posts from WordPress (via browser console JSON),
-copy edits with Claude API, generates HTML files with SEO metadata,
-and updates index.html.
+Processes pending posts from WordPress, copy edits with Claude API,
+generates HTML files with SEO metadata, and updates index.html.
 
 Usage:
-    python3 pending.py                      # Show browser script instructions
-    python3 pending.py --input posts.json   # Process posts from JSON file
-    python3 pending.py --process 1,3,5      # Process specific posts from JSON
-    python3 pending.py --process all        # Process all posts from JSON
-    python3 pending.py --dry-run            # Preview without creating files
+    python3 pending.py                           # Show instructions
+    python3 pending.py --fetch                   # Fetch pending posts from WordPress API
+    python3 pending.py --fetch --process all     # Fetch and process all pending posts
+    python3 pending.py --fetch --process 1,3    # Fetch and process specific posts
+    python3 pending.py --process all             # Process from cached JSON file
+    python3 pending.py --dry-run --process all   # Preview without creating files
+
+Environment variables (for --fetch):
+    WP_USER          Your WordPress username
+    WP_APP_PASSWORD  WordPress application password (from User → Profile)
 """
 
 import os
@@ -19,15 +23,22 @@ import sys
 import re
 import json
 import argparse
+import base64
 from html import unescape
 from pathlib import Path
 
+import requests
 from anthropic import Anthropic
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
 INDEX_FILE = SCRIPT_DIR / "index.html"
 DEFAULT_INPUT = SCRIPT_DIR / "pending-posts.json"
+
+# WordPress API Configuration
+WP_SITE = "https://boingboing.net"
+WP_USER = os.environ.get("WP_USER", "")
+WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "")
 
 BROWSER_SCRIPT = '''
 // Run this in your browser console on the WordPress Pending Posts page
@@ -514,16 +525,89 @@ def load_posts(input_file):
         return None
 
 
+def fetch_pending_posts(save_to=None):
+    """Fetch pending posts directly from WordPress REST API."""
+    if not WP_USER or not WP_APP_PASSWORD:
+        print("Error: WP_USER and WP_APP_PASSWORD environment variables required.")
+        print("\nSet them with:")
+        print('  export WP_USER="your-username"')
+        print('  export WP_APP_PASSWORD="xxxx xxxx xxxx xxxx"')
+        return None
+
+    # Create Basic Auth header
+    credentials = f"{WP_USER}:{WP_APP_PASSWORD}"
+    auth_header = base64.b64encode(credentials.encode()).decode()
+
+    headers = {
+        "Authorization": f"Basic {auth_header}",
+        "User-Agent": "BoingBoingTools/1.0"
+    }
+
+    print(f"Fetching pending posts from {WP_SITE}...")
+
+    try:
+        response = requests.get(
+            f"{WP_SITE}/wp-json/wp/v2/posts",
+            params={"status": "pending", "context": "edit", "per_page": 50},
+            headers=headers,
+            timeout=30
+        )
+
+        if response.status_code == 401:
+            print("Error: Authentication failed. Check your WP_USER and WP_APP_PASSWORD.")
+            return None
+
+        if response.status_code == 403:
+            print("Error: Access forbidden. Your IP may need to be whitelisted in Cloudflare.")
+            return None
+
+        response.raise_for_status()
+        wp_posts = response.json()
+
+        # Convert to our format
+        posts = []
+        for wp in wp_posts:
+            posts.append({
+                "id": str(wp.get("id", "")),
+                "title": wp.get("title", {}).get("raw", "Untitled"),
+                "author": wp.get("yoast_head_json", {}).get("author", "Unknown"),
+                "content": wp.get("content", {}).get("raw", ""),
+                "editUrl": f"{WP_SITE}/wp-admin/post.php?post={wp.get('id')}&action=edit"
+            })
+
+        print(f"Found {len(posts)} pending post(s)")
+
+        # Optionally save to file
+        if save_to and posts:
+            with open(save_to, 'w') as f:
+                json.dump(posts, f, indent=2)
+            print(f"Saved to {save_to}")
+
+        return posts
+
+    except requests.exceptions.Timeout:
+        print("Error: Request timed out. Try again.")
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching posts: {e}")
+        return None
+
+
 def main():
     parser = argparse.ArgumentParser(description="Process pending WordPress posts")
     parser.add_argument("--input", "-i", type=Path, default=DEFAULT_INPUT,
                         help=f"JSON file with posts (default: {DEFAULT_INPUT.name})")
+    parser.add_argument("--fetch", "-f", action="store_true",
+                        help="Fetch pending posts directly from WordPress API")
     parser.add_argument("--process", "-p", help="Posts to process: comma-separated numbers or 'all'")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Preview without creating files")
     args = parser.parse_args()
 
-    # Check for input file
-    posts = load_posts(args.input)
+    # Fetch from API or load from file
+    if args.fetch:
+        posts = fetch_pending_posts(save_to=args.input)
+    else:
+        posts = load_posts(args.input)
 
     if not posts:
         print("PENDING POSTS PROCESSOR")
