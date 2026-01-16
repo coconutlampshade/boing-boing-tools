@@ -311,7 +311,13 @@ The URL also appears in the Source section at the bottom for easy copying.
 To keep posts sounding human, follow these rules:
 
 ### Words and Phrases to AVOID
+
+**Overused AI Words:**
 - delve, tapestry, multifaceted, underscore, leverage, embark, navigate, unlock, foster, realm, myriad, plethora, testament, pivotal, encompasses, intricacies
+- rich cultural heritage, vibrant community, enduring legacy, cutting-edge, revolutionary, unprecedented
+- key insight, nuanced, straightforward
+
+**Significance Inflation Phrases:**
 - "marking a pivotal moment in..."
 - "representing a significant shift toward..."
 - "highlighting the importance of..."
@@ -321,11 +327,39 @@ To keep posts sounding human, follow these rules:
 - "It's important to note that..."
 - "This serves as a reminder that..."
 - "At its core..."
-- "rich cultural heritage," "vibrant community," "enduring legacy," "cutting-edge," "revolutionary," "unprecedented"
 - "because nothing says X like Y"
 - "The timing feels notable"
 - "It's worth noting"
 - "What's particularly interesting"
+
+**Therapist-Mode Phrases:**
+- "and honestly?" (as sentence starter)
+- "you're not imagining it"
+- "you're not alone"
+- "you're right to push back on that"
+- "that really resonates with me"
+- "do you want to sit with that for a while"
+- "are you ready to go deeper"
+
+**Artificial Drama/Signposting:**
+- "here's the kicker"
+- "and the best part?"
+- "here's the breakdown:"
+- "let's decode it plainly"
+- "I'll be blunt"
+- "let me be direct"
+
+**Overused Sentence Structures:**
+- "It's not X, it's Y" / "It's not just X, it's Y"
+- "That kind of [distance/trust/loyalty]..."
+- "There's something [adjective] about..."
+- "The [noun] isn't [X] — it's [Y]"
+
+**The "Quietly" Problem:**
+Avoid using "quietly" or "quiet" to add false profundity:
+- "quiet truth," "quiet confidence," "quiet power," "quiet defiance"
+- "quietly revolutionary," "quietly devastating"
+- Any "quietly [verb]ing" construction meant to sound deep
 
 ### Structural Rules
 - Em dashes must have a space before and after ( — not —)
@@ -335,6 +369,23 @@ To keep posts sounding human, follow these rules:
 - Avoid "not only X but also Y" constructions
 - Don't hedge everything with "it can be argued" or "one might say"
 - Skip significance inflation — don't tell readers how important something is, just show them
+- Don't use rapid-fire short sentences to create fake punch: "He knew. She saw. They understood." reads as AI
+- Avoid compulsive signposting followed by verbose elaboration (announcing what you'll say, then saying it)
+
+### Avoiding Sycophancy
+AI often validates excessively or mirrors the user's framing too eagerly. Avoid:
+- Starting responses by agreeing: "You're absolutely right..." "Great question..."
+- Forced reassurance: "That makes total sense" "You're spot on"
+- Mirroring emotion: "I can see why you'd feel that way"
+- Over-acknowledging: "That's a really important point"
+- Padding with agreement before making your actual point
+
+### Metaphor Misuse
+AI often uses metaphors that don't quite fit or feel forced:
+- Don't force metaphors where plain language works better
+- Avoid extended metaphors that collapse under scrutiny
+- If a metaphor doesn't clarify, cut it
+- Generic metaphors ("a tapestry of," "a symphony of," "a dance between") signal AI
 
 ### What TO Do
 - Use concrete, specific details (dates, names, numbers)
@@ -342,6 +393,7 @@ To keep posts sounding human, follow these rules:
 - Let prose have texture — short sentences, longer ones, fragments
 - Trust the reader to understand significance without being told
 - State facts directly instead of attributing to vague "experts"
+- Be specific rather than profound — facts beat philosophy
 
 ### Avoiding "Smooth but Empty" Writing
 Avoid lines that sound good but lack substance, specificity, or verifiable content. This prevents "drift" — places where writing becomes vague or platitudinous.

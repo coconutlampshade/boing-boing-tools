@@ -6,14 +6,13 @@ Processes pending posts from WordPress, copy edits with Claude API,
 generates HTML files with SEO metadata, and updates index.html.
 
 Usage:
-    python3 pending.py                           # Show instructions
-    python3 pending.py --fetch                   # Fetch pending posts from WordPress API
-    python3 pending.py --fetch --process all     # Fetch and process all pending posts
-    python3 pending.py --fetch --process 1,3    # Fetch and process specific posts
-    python3 pending.py --process all             # Process from cached JSON file
+    python3 pending.py                     # Fetch and display pending posts
+    python3 pending.py --process all       # Fetch and process all pending posts
+    python3 pending.py --process 1,3       # Fetch and process specific posts
+    python3 pending.py --cached            # Use cached JSON file instead of fetching
     python3 pending.py --dry-run --process all   # Preview without creating files
 
-Environment variables (for --fetch):
+Environment variables:
     WP_USER          Your WordPress username
     WP_APP_PASSWORD  WordPress application password (from User → Profile)
 """
@@ -29,9 +28,13 @@ from pathlib import Path
 
 import requests
 from anthropic import Anthropic
+from dotenv import load_dotenv
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
+
+# Load environment variables from .env file
+load_dotenv(SCRIPT_DIR / ".env")
 INDEX_FILE = SCRIPT_DIR / "index.html"
 DEFAULT_INPUT = SCRIPT_DIR / "pending-posts.json"
 
@@ -597,28 +600,32 @@ def main():
     parser = argparse.ArgumentParser(description="Process pending WordPress posts")
     parser.add_argument("--input", "-i", type=Path, default=DEFAULT_INPUT,
                         help=f"JSON file with posts (default: {DEFAULT_INPUT.name})")
-    parser.add_argument("--fetch", "-f", action="store_true",
-                        help="Fetch pending posts directly from WordPress API")
+    parser.add_argument("--cached", "-c", action="store_true",
+                        help="Use cached posts from JSON file instead of fetching fresh")
     parser.add_argument("--process", "-p", help="Posts to process: comma-separated numbers or 'all'")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Preview without creating files")
     args = parser.parse_args()
 
-    # Fetch from API or load from file
-    if args.fetch:
-        posts = fetch_pending_posts(save_to=args.input)
-    else:
+    # Fetch fresh from API by default, or load from cached file if --cached
+    if args.cached:
         posts = load_posts(args.input)
+    else:
+        posts = fetch_pending_posts(save_to=args.input)
 
-    if not posts:
-        print("PENDING POSTS PROCESSOR")
-        print("═" * 60)
-        print("\nNo posts file found. To get started:")
-        print(f"\n1. Run this script in your browser console on the WordPress")
-        print("   pending posts page (Posts → All Posts → Pending):\n")
-        print(BROWSER_SCRIPT)
-        print(f"\n2. Copy the JSON output and save to: {args.input}")
-        print(f"\n3. Run: python3 pending.py --process all")
-        print("   Or:   python3 pending.py --dry-run --process all")
+    if posts is None:
+        # API fetch failed
+        if args.cached:
+            print(f"No cached posts file found at {args.input}")
+            print("Run without --cached to fetch fresh from WordPress API.")
+        else:
+            print("\nFailed to fetch posts from WordPress API.")
+            print("\nMake sure these environment variables are set (or add to .env):")
+            print('  WP_USER="your-username"')
+            print('  WP_APP_PASSWORD="xxxx xxxx xxxx xxxx"')
+        return
+
+    if len(posts) == 0:
+        print("\nNo pending posts in WordPress.")
         return
 
     # Display posts

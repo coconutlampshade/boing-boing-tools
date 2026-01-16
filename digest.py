@@ -32,9 +32,13 @@ import requests
 import pytz
 from bs4 import BeautifulSoup
 from anthropic import Anthropic
+from dotenv import load_dotenv
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
+
+# Load environment variables from .env file
+load_dotenv(SCRIPT_DIR / ".env")
 WP_SITE = "https://boingboing.net"
 WP_USER = os.environ.get("WP_USER", "")
 WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "")
