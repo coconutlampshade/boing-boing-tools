@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">A 12-year-old Michelangelo painted this, but no one knew for 500 years</h1>
+    <button class="copy-btn" onclick="copyText('headline', this)">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>Before the Sistine Chapel ceiling, before the David, before any of the masterworks that would make him a legend, a preteen Michelangelo was painting demons. <em>The Torment of Saint Anthony</em> shows the desert hermit besieged by grotesque creatures — and the kid who painted it was maybe 12 or 13 years old.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The painting spent five centuries as a nobody's work until a buyer brought it to the Metropolitan Museum of Art in 2008 for cleaning. Conservators scraped away the grime and found something unexpected: a color palette and approach to human figures that looked a lot like the Sistine Chapel. Infrared imaging revealed <em>pentimenti</em> — correction marks showing the artist was making creative decisions, not just copying someone else's work.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Kimbell Art Museum in Fort Worth took the leap, with its director finding "not a single convincing argument against the attribution." Art historian Giorgio Bonsanti later backed up the claim, <a href="https://www.openculture.com/2026/01/discover-michelangelos-first-painting.html">reports Open Culture</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It's now the only Michelangelo painting in the Americas and one of just four easel paintings attributed to him — fitting, since he later trash-talked oil painting as a medium. Some scholars remain skeptical, and Michelangelo himself probably would have dismissed it as juvenilia. But there's something undeniably compelling about seeing a future master's work from when he was still young enough to be grounded for staying out too late.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2009/08/05/michelangelos-the-to.html">Michelangelo's The Torment of St. Anthony</a></li>
+<li><a href="https://boingboing.net/2023/11/03/look-inside-this-secret-room-where-michelangelos-sketches-were-discovered-on-the-walls.html">Look inside this secret room where Michelangelo's sketches were discovered on the walls</a></li>
+<li><a href="https://boingboing.net/2021/07/29/michelangelos-fingerprints-discovered-on-the-butt-of-a-wax-sculpture.html">Michelangelo's fingerprints discovered on the butt of a wax sculpture</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly(this)">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly(this)">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl', this)">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://www.openculture.com/2026/01/discover-michelangelos-first-painting.html</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>A 12-year-old Michelangelo painted this, but no one knew for 500 years</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Michelangelo's first painting spent centuries as an anonymous work</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The only Michelangelo painting in the Americas was made when he was 12</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Teen Michelangelo painted demons, and it took 500 years to prove it</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>How a painting of demon-tormented saints turned out to be a Michelangelo</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags', this)">copy</button>
+</div>
+<p id="tags">art, art history, Michelangelo, Renaissance, Kimbell Art Museum, Metropolitan Museum of Art</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase', this)">copy</button>
+</div>
+<p id="focusKeyphrase">Michelangelo first painting</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Michelangelo painted this at 12 — no one knew for 500 years</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A teen Michelangelo's demon painting finally identified</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The only Michelangelo painting in the Americas found</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Lost Michelangelo painting authenticated after 500 years</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Michelangelo's first known painting discovered in Texas</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>A painting of demons tormenting Saint Anthony sat unattributed for 500 years before experts realized a 12-year-old Michelangelo made it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The Torment of Saint Anthony is the only Michelangelo painting in the Americas — and he painted it as a preteen.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Conservators cleaning a 500-year-old painting discovered it was made by a 12-year-old Michelangelo. It's now in Texas.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Before the Sistine Chapel, teenage Michelangelo painted demons. The work went unrecognized for five centuries.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A Texas museum owns Michelangelo's first painting — a demon scene he created around age 12, authenticated in 2008.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

@@ -333,13 +333,8 @@ def generate_html(post, edit_result, source_url="", previously_links=None):
 </ul>
 </div>'''
     else:
-        previously_html = '''
-<div class="previously" id="previously">
-<strong>Previously:</strong>
-<ul>
-<li>[Add related boingboing.net articles]</li>
-</ul>
-</div>'''
+        # No placeholder - omit Previously section entirely if no links found
+        previously_html = ''
 
     html = f'''<!DOCTYPE html>
 <html lang="en">

@@ -28,7 +28,12 @@ This script scrapes the 20 most recent headlines from memeorandum.com/river.
 
 1. Run the `memeorandum` script to display the 20 most recent headlines with numbered options
 2. User selects which articles they want posts about (e.g., "3, 7, 12")
-3. For each selected article, fetch the full article content and generate a ~250 word blog post
+3. For each selected article:
+   - Fetch the full article content
+   - Generate a ~250 word blog post
+   - Search site:boingboing.net for "Previously" links
+   - **CREATE the HTML file** in `posts/`
+   - **ADD to index.html** at the top of the posts array
 
 ---
 
@@ -50,7 +55,12 @@ Do NOT use Wikipedia's general random article feature. Only articles listed on t
    - At least one full sentence describing what makes the article unusual/interesting (not a fragment)
    - URL
 2. User selects which articles they want posts about (e.g., "3, 7, 12")
-3. For each selected article, fetch the full content and generate a ~250 word blog post
+3. For each selected article:
+   - Fetch the full Wikipedia content
+   - Generate a ~250 word blog post
+   - Search site:boingboing.net for "Previously" links
+   - **CREATE the HTML file** in `posts/`
+   - **ADD to index.html** at the top of the posts array
 
 ## Example Output Format
 
@@ -86,7 +96,12 @@ Articles are pulled from the local file `weird.html`, which contains ~500+ curat
    - Brief description
    - URL
 2. User selects which articles they want posts about (e.g., "2, 5, 8")
-3. For each selected article, fetch the full content and generate a ~250 word blog post
+3. For each selected article:
+   - Fetch the full Wikipedia content
+   - Generate a ~250 word blog post
+   - Search site:boingboing.net for "Previously" links
+   - **CREATE the HTML file** in `posts/`
+   - **ADD to index.html** at the top of the posts array
 
 ## Example Output Format
 
@@ -103,6 +118,46 @@ WEIRD WIKIPEDIA ARTICLES
 
 [...continues to 10]
 ```
+
+---
+
+# Writepost Tool
+
+This tool creates a blog post from a URL or topic the user provides.
+
+## Workflow
+
+**CRITICAL: Every writepost MUST complete ALL of these steps:**
+
+1. Fetch and read the source article
+2. Write a ~250 word blog post following the style guidelines
+3. Search site:boingboing.net for 2-3 related "Previously" articles
+4. Generate all metadata (headlines, tags, meta descriptions, etc.)
+5. **CREATE the HTML file** in the `posts/` directory using the standard template
+6. **ADD the post to index.html** at the TOP of the posts array
+
+## File Creation Checklist
+
+For each writepost, you MUST:
+- [ ] Create `posts/post-[slug].html` with full HTML template
+- [ ] Add entry to `index.html` in the posts array (at the top, under the first comment)
+- [ ] Include REAL Previously links (search site:boingboing.net, broaden terms until you find matches)
+- [ ] Confirm both files were created/updated before moving to the next post
+
+If the user provides multiple URLs, complete ALL steps for each URL before showing the final summary.
+
+**DO NOT** just output the post text — the HTML file and index entry are required.
+
+## Previously Links — NEVER Use Placeholders
+
+Previously links MUST be real boingboing.net URLs found via search. **NEVER** use placeholders like `[Add related boingboing.net articles]`.
+
+If your first search returns no results:
+1. Broaden search terms (e.g., "AI voice" instead of "Matthew McConaughey AI voice")
+2. Search for related concepts (e.g., "deepfake" for AI likeness stories)
+3. Search for the general topic (e.g., "trademark" or "celebrity")
+
+You must find at least 1-2 real links. If truly nothing exists, omit the Previously section entirely rather than using a placeholder.
 
 ---
 
@@ -163,7 +218,7 @@ When editing contributor posts:
 
 The HTML post file should include:
 - The edited post body with all original formatting, links, and images preserved
-- Previously section (MUST search site:boingboing.net for real related articles — broaden search terms until you find matches, never fabricate URLs)
+- Previously section (MUST search site:boingboing.net for real related articles — broaden search terms until you find matches. NEVER use placeholders like "[Add related articles]" — find real URLs or omit the section entirely)
 - Source URL
 - 5 headline options (70 chars max, sentence case)
 - Category tags

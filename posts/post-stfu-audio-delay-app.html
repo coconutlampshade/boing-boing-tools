@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">This web app plays your voice back with a delay to make you shut up</h1>
+    <button class="copy-btn" onclick="copyText('headline', this)">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>We've all been trapped near someone blasting videos on their phone in public — the airport gate, the train car, the waiting room. Developer Pankaj Tanwar got fed up with exactly this situation at Bombay airport and built a delightfully petty solution: a web app called STFU that weaponizes delayed auditory feedback.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The concept is simple but effective. Point your phone at the offender, and the app captures audio through your microphone, then plays it back about 200 milliseconds later. This tiny delay creates a phenomenon called delayed auditory feedback, which messes with the brain's speech processing in ways that make it genuinely difficult to keep talking. It's the same principle behind apps designed to help people who stutter, just deployed for chaos.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Tanwar <a href="https://github.com/Pankajtanwarbanna/stfu">built the whole thing</a> using Claude AI, and says it worked on the first prompt. The entire project is just HTML using the Web Audio API — no complex dependencies, no installation, just open the website and start creating cognitive dissonance. The MIT license means you can do whatever you want with it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Will pointing your phone at a stranger and blasting their own voice back at them create an awkward confrontation? Almost certainly. Is it passive-aggressive in the extreme? Absolutely. But sometimes you're on hour three of a layover and someone is watching TikToks at full volume, and desperate times call for desperate measures.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2021/03/22/video-tutorial-and-how-to-cause-your-voice-to-lag-in-real-life.html">Video tutorial on how to make your voice lag in real life</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly(this)">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly(this)">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl', this)">copy</button>
+</div>
+<p class="source-url" id="sourceUrl">https://github.com/Pankajtanwarbanna/stfu</p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>This web app plays your voice back with a delay to make you shut up</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Developer builds app that uses audio delay to silence loud strangers</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>STFU is a web app that weaponizes cognitive dissonance against noise</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Annoyed by loud phone videos? This app fights back with science</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Web app creates audio feedback loop to make people stop talking</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags', this)">copy</button>
+</div>
+<p id="tags">technology, web apps, audio, open source, GitHub, passive aggression</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase', this)">copy</button>
+</div>
+<p id="focusKeyphrase">delayed auditory feedback app</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>Web app uses audio delay to make loud people shut up</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>STFU app weaponizes cognitive dissonance against noise</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This app plays your voice back to make you stop talking</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Developer's petty solution to loud airport passengers</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Audio feedback app silences noisy strangers</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>STFU captures audio and plays it back with a delay, creating cognitive dissonance that makes it hard to keep talking.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>A developer got fed up with loud airport passengers and built a web app that uses delayed audio feedback to shut them up.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>This simple web app uses the same audio delay trick that speech therapists use — but for silencing noisy strangers.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Point your phone at someone being loud in public and let cognitive dissonance do the rest. MIT licensed, built with AI.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>STFU is a web app that plays audio back with a 200ms delay, exploiting a brain glitch that makes talking difficult.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Preview</title>
+    <link rel="stylesheet" href="post-style.css">
+</head>
+<body>
+
+<div class="headline-row">
+    <h1 id="headline">The COVID-19 Pandemic is seven years old this year</h1>
+    <button class="copy-btn" onclick="copyText('headline', this)">copy</button>
+</div>
+
+<article id="postBody">
+<!-- wp:paragraph -->
+<p>It's strange that the COVID-19 pandemic, which sent the world into lockdown seven years ago, <a href="https://boingboing.net/2025/03/18/snls-50th-celebration-sees-covid-19-spread-among-cast-and-guests.html">never ended</a>. It continues to kill and cripple us today—we simply stopped talking about it. Despite the death and those forced to live with the disease's lasting effects, the media (I'm as guilty as anyone at The New York Times) and governments moved on to shinier crises. We didn't have enough <a href="https://www.pbs.org/wgbh/nova/article/covid19-ventilators-sharing-safe/">ventilators or beds</a>. Corpses <a href="https://www.bbc.co.uk/news/world-asia-india-57154564">floated down rivers</a> in India. Bodies were <a href="https://apnews.com/article/virus-outbreak-us-news-ap-top-news-new-york-city-new-york-1b40d68e4969af9fa03e833afd24d709">stacked like sandbags in freezer trucks</a> as morgues overflowed. Doctors and nurses died in the same wards as patients they'd struggled to save days before.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It's hard to rekindle the fear and uncertainty I felt then. I was worried sick for my little chosen family. I recall driving Calgary's parkways and ring road after dusk during lockdown. Normally, the city—fast-growing and full of entitled drivers hungry to get home—was a sea of high-beams and road-stained metal. That evening, the roads were ours alone. For a moment, I thought it was funny that my phone shuffled to "Ghost Town" by the Specials. That moment passed quickly. It's easy to forget the terrible things we survived when facing new terrors we don't yet know how to navigate. We don't talk much about it, but the <a href="https://www.wsws.org/en/articles/2026/01/16/zjmv-j16.html">state of the pandemic right now</a> is… well, not great.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>…the United States facing the 12th major wave of infections. Conservative estimates place cumulative COVID deaths in the United States at over 1.2 million, while excess-mortality analyses indicate a substantially higher toll. Globally, excess-mortality modeling places the true pandemic death toll in the tens of millions, with central estimates near 27 million worldwide, far exceeding official counts. Transmission continues at high rates—presently at roughly 1 million infections per day, with more than 240 million infections recorded in 2025 alone. Reinfections are widespread, and Long COVID remains a mass disabling condition affecting millions.</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>When I lay awake at night and the intrusive thoughts in my rotation recede long enough to hear other musings, I wonder how we can ever hope to take care of one another when we've been so quickly convinced not to take care of ourselves.</p>
+<!-- /wp:paragraph -->
+
+<div class="previously" id="previously">
+<strong>Previously:</strong>
+<ul>
+<li><a href="https://boingboing.net/2025/06/19/new-study-suggests-long-covid-is-now-most-common-childhood-chronic-health-problem.html">New study suggests Long COVID is now most common childhood chronic health problem</a></li>
+<li><a href="https://boingboing.net/2024/07/22/public-health-and-science-communicator-provides-terrific-primer-on-all-things-long-covid.html">A terrific primer on all things Long Covid</a></li>
+<li><a href="https://boingboing.net/2024/02/06/new-study-reveals-that-almost-1-in-4-adults-in-the-united-states-who-had-covid-also-developed-long-covid-symptoms.html">New study reveals that almost 1 in 4 adults who had COVID also developed long COVID symptoms</a></li>
+</ul>
+</div>
+</article>
+
+<div class="post-actions">
+    <button class="copy-btn" onclick="copyPostOnly(this)">Copy post</button>
+    <button class="copy-btn" onclick="copyPreviouslyOnly(this)">Copy previously</button>
+</div>
+
+<hr>
+
+<div class="metadata">
+
+<div class="section-header">
+    <h3>Source</h3>
+    <button class="copy-btn" onclick="copyText('sourceUrl', this)">copy</button>
+</div>
+<p class="source-url" id="sourceUrl"></p>
+
+<h3>Headlines (70 characters max)</h3>
+<div class="item-row"><span>COVID-19 pandemic enters its seventh year with no end in sight</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Seven years later, the COVID pandemic continues killing us</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>We stopped talking about COVID but it never stopped killing</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The forgotten pandemic: COVID's ongoing toll seven years later</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>COVID at seven: Why we stopped caring about an endless crisis</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Category Tags</h3>
+    <button class="copy-btn" onclick="copyText('tags', this)">copy</button>
+</div>
+<p id="tags">Health, COVID-19, pandemic, public health, society</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Yoast Focus Keyphrase</h3>
+    <button class="copy-btn" onclick="copyText('focusKeyphrase', this)">copy</button>
+</div>
+<p id="focusKeyphrase">COVID pandemic seven years</p>
+
+<h3>Meta Headlines (60 characters max)</h3>
+<div class="item-row"><span>COVID pandemic enters seventh year with no end in sight</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Seven years of COVID: The crisis we stopped discussing</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>COVID at seven: Why we stopped caring about the pandemic</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The forgotten pandemic continues killing seven years later</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>COVID's seventh year: Still here, still deadly</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<h3>Meta Descriptions (120 characters max)</h3>
+<div class="item-row"><span>Seven years after COVID lockdowns began, the pandemic continues killing millions while society pretends it's over.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The COVID-19 pandemic enters its seventh year with high infection rates, but we've stopped talking about it.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>COVID didn't end—we just stopped paying attention. Seven years later, it's still killing and disabling millions.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>Reflecting on seven years of COVID: how we moved on from a pandemic that never actually ended its deadly march.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+<div class="item-row"><span>The world declared COVID over, but seven years in, it's still here—killing, spreading, and disabling millions.</span><button class="copy-btn" onclick="copyThis(this)">copy</button></div>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Author</h3>
+</div>
+<p>Séamus Bellamy</p>
+
+<div class="section-header" style="margin-top: 1.5em;">
+    <h3>Copy Edits Made</h3>
+</div>
+<p style="color: #666; font-size: 14px;">
+["- Removed 'to this day' redundancy", "- Tightened 'crippled by the after effects' to 'with lasting effects'", "- Streamlined 'the media (and I'm just as guilty...)' parenthetical", "- Changed 'ones that bleed in a sexy way that draws the eye' to 'shinier crises'", "- Improved sentence flow in 'Doctors and nurses died...'", "- Tightened 'around Calgary, Canada' to 'Calgary's'", "- Fixed 'high-beam lights' to 'high-beams'", '- Streamlined final sentence for better flow', '- Removed empty paragraph at end']
+</p>
+
+</div>
+
+<script src="post-script.js"></script>
+
+</body>
+</html>
